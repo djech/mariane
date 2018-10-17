@@ -1,0 +1,60 @@
+{% extends "base.html.twig" %}
+
+{% block head_content %}
+    {{ parent() }}
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <meta http-equiv="Content-Language" content="fr-FR"/>
+    <meta name="Keywords" content="Mariane, Erard, strasbourg, cv, portfolio, curiculum"/>
+    <meta name="Description" content="Mariane Erard"/>
+    <meta name="rating" content="General"/>
+    <meta name="expires" content="never"/>
+    <meta name="language" content="fr-FR"/>
+    <meta name="distribution" content="Global"/>
+    <meta name="robots" content="INDEX,FOLLOW"/>
+    <meta name="revisit-after" content="15 jours"/>
+    <meta name="Revisit-After" content="15 days"/>
+    <meta name="Title" content="Mariane Erard" xml:lang="fr-FR"/>
+
+    {% block icon %}
+        <link rel="shortcut icon" href="{{ asset('favicon.ico')}}" type="image/x-icon"/>
+    {% endblock %}
+
+    {% block stylesheets %}
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('build/aos.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/main.css') }}">
+
+    {% endblock %}
+
+{% endblock %}
+
+{% block body_content %}
+
+    {% block body %}
+
+        {% include 'header.html.twig' %}
+
+        <div class="page-content">
+            {% block contenu %}{% endblock %}
+        </div>
+
+        {% include 'footer.html.twig' %}
+
+    {% endblock %}
+
+    {% block body_bottom %}
+        {% block javascripts %}
+            <script src="{{ asset('build/jquery.3.2.1.min.js') }}"></script>
+            <script src="{{ asset('build/popper.min.js') }}"></script>
+            <script src="{{ asset('build/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('build/now-ui-kit.js?v=1.1.0') }}"></script>
+            <script src="{{ asset('build/aos.js') }}"></script>
+            <script src="{{ asset('build/main.js') }}"></script>
+        {% endblock %}
+    {% endblock %}
+
+
+{% endblock %}
