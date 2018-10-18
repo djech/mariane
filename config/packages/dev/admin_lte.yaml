@@ -1,0 +1,17 @@
+admin_lte:
+    options:
+        default_avatar: mariane/public/index.php/bundles/adminlte/images/default_avatar.png
+        skin: skin-blue
+        fixed_layout: false
+        boxed_layout: false
+        collapsed_sidebar: false
+        mini_sidebar: false
+
+    knp_menu:
+        enable: true
+
+    routes:
+        adminlte_login: fos_user_security_login
+        adminlte_login_check: fos_user_security_check
+        adminlte_registration: fos_user_registration_register
+        adminlte_password_reset: fos_user_resetting_request

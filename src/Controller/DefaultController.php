@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Information;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -19,6 +20,12 @@ class DefaultController extends Controller
      */
     public function homeAction()
     {
-        return $this->render('default/index.html.twig');
+        $information = $this->getDoctrine()->getRepository(Information::class)->findOrCreateOne();
+
+        return $this->render('default/index.html.twig', array(
+            'information' => $information
+        ));
     }
+
+
 }

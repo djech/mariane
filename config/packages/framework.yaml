@@ -1,6 +1,7 @@
 framework:
     secret: '%env(APP_SECRET)%'
-    #default_locale: en
+    default_locale: fr
+    translator:      { fallback: fr }
     #csrf_protection: true
     #http_method_override: true
     assets:
@@ -15,6 +16,9 @@ framework:
     #fragments: true
     php_errors:
         log: true
+
+    templating:
+        engines: ['twig', 'php']
 
     cache:
         # Put the unique name of your app here: the prefix seed

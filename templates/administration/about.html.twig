@@ -1,0 +1,15 @@
+{% extends 'administration/layout.html.twig' %}
+
+{% if form is defined %}
+    {% form_theme form '@AdminLTE/layout/form-theme.html.twig' %}
+{% endif %}
+
+{% block page_title %}À propos{% endblock %}
+
+{% block page_subtitle %}L'encadré figurera à gauche des informations civiles en haut de page{% endblock %}
+
+{% block page_content %}
+
+    {{ form(form) }}
+
+{% endblock %}
