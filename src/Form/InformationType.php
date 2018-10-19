@@ -24,7 +24,6 @@ class InformationType extends AbstractType
             ->add('email', EmailType::class)
             ->add('langue', TextType::class, array('label' => 'Langue parlée, écrite'))
             ->add('description', TextType::class, array('label' => 'Petite description pro (figure en dessous du nom sur la page principale)'))
-            ->add('sauvegarder', SubmitType::class)
         ;
     }
 

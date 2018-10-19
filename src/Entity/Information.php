@@ -69,7 +69,7 @@ class Information
     private $about;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Skill", mappedBy="information")
+     * @ORM\OneToMany(targetEntity="App\Entity\Skill", mappedBy="information", cascade={"persist"})
      */
     private $skills;
 
@@ -82,12 +82,12 @@ class Information
     private $portfolio;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Experience", mappedBy="information")
+     * @ORM\OneToMany(targetEntity="App\Entity\Experience", mappedBy="information", cascade={"persist"})
      */
     private $experiences;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Formation", mappedBy="information")
+     * @ORM\OneToMany(targetEntity="App\Entity\Formation", mappedBy="information", cascade={"persist"})
      */
     private $formations;
 

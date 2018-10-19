@@ -31,3 +31,14 @@ services:
         class: App\EventListener\KnpMenuBuilderListener
         tags:
             - { name: kernel.event_listener, event: theme.sidebar_setup_knp_menu, method: onSetupMenu }
+
+    ac_strasbourg_crud.routing_loader:
+        class: App\Routing\ExtraLoader
+        arguments: ['%ac_strasbourg_crud.extra%']
+        tags:
+            - { name: routing.loader }
+
+    ac_strasbourg_crud.crud:
+        class: App\Service\Crud
+        arguments: ["@doctrine"]
+        public: true

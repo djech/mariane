@@ -11,7 +11,9 @@ namespace App\Controller;
 use App\Entity\About;
 use App\Entity\Information;
 use App\Form\AboutType;
+use App\Form\InformationSkillsType;
 use App\Form\InformationType;
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -94,6 +96,38 @@ class AdministrationController extends Controller
         }
 
         return $this->render('administration/about.html.twig', array(
+            'form' => $form->createView()
+        ));
+    }
+
+    /**
+     * @Route("/administration/skills", name="skills")
+     */
+    public function skillAction(Request $request)
+    {
+        $information = $this->getDoctrine()->getRepository(Information::class)->findOrCreateOne();
+
+        $form = $this->get('form.factory')
+            ->createBuilder(InformationSkillsType::class, $information)
+            ->getForm()
+        ;
+
+        if ($request->isMethod('POST')) {
+
+            $form->handleRequest($request);
+
+            if ($form->isValid()) {
+
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($information);
+                $em->flush();
+
+                $this->addFlash('success', "\"Compétences\" bien modifié !");
+
+            }
+        }
+
+        return $this->render('administration/skills.html.twig', array(
             'form' => $form->createView()
         ));
     }

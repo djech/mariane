@@ -67,6 +67,7 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     '/administration' => array(array('_route' => 'administration', '_controller' => 'App\\Controller\\AdministrationController::indexAction'), null, null, null),
                     '/administration/information' => array(array('_route' => 'information', '_controller' => 'App\\Controller\\AdministrationController::administrationAction'), null, null, null),
                     '/administration/about' => array(array('_route' => 'about', '_controller' => 'App\\Controller\\AdministrationController::aboutAction'), null, null, null),
+                    '/administration/skills' => array(array('_route' => 'skills', '_controller' => 'App\\Controller\\AdministrationController::skillAction'), null, null, null),
                     '/' => array(array('_route' => 'home', '_controller' => 'App\\Controller\\DefaultController::homeAction'), null, null, null),
                     '/_profiler/' => array(array('_route' => '_profiler_home', '_controller' => 'web_profiler.controller.profiler::homeAction'), null, null, null),
                     '/_profiler/search' => array(array('_route' => '_profiler_search', '_controller' => 'web_profiler.controller.profiler::searchAction'), null, null, null),
@@ -129,6 +130,10 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                         .'|gister/confirm/([^/]++)(*:198)'
                         .'|setting/reset/([^/]++)(*:228)'
                     .')'
+                    .'|/e(?'
+                        .'|fconnect(?:/([^/]++)(?:/([^/]++))?)?(*:278)'
+                        .'|lfinder(?:/([^/]++)(?:/([^/]++))?)?(*:321)'
+                    .')'
                 .')$}sD',
         );
 
@@ -146,6 +151,8 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                             159 => array(array('_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'), array('token'), null, null),
                             198 => array(array('_route' => 'fos_user_registration_confirm', '_controller' => 'fos_user.registration.controller:confirmAction'), array('token'), array('GET' => 0), null),
                             228 => array(array('_route' => 'fos_user_resetting_reset', '_controller' => 'fos_user.resetting.controller:resetAction'), array('token'), array('GET' => 0, 'POST' => 1), null),
+                            278 => array(array('_route' => 'ef_connect', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::loadAction', 'instance' => 'default', 'homeFolder' => ''), array('instance', 'homeFolder'), null, null),
+                            321 => array(array('_route' => 'elfinder', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::showAction', 'instance' => 'default', 'homeFolder' => ''), array('instance', 'homeFolder'), null, null),
                         );
 
                         list($ret, $vars, $requiredMethods, $requiredSchemes) = $routes[$m];
@@ -171,7 +178,7 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                         return $ret;
                 }
 
-                if (228 === $m) {
+                if (321 === $m) {
                     break;
                 }
                 $regex = substr_replace($regex, 'F', $m - $offset, 1 + strlen($m));

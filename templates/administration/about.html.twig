@@ -10,6 +10,13 @@
 
 {% block page_content %}
 
-    {{ form(form) }}
+    {{ form_start(form) }}
+
+    {{ form_widget(form) }}
+
+    <button class="btn btn-sm btn-primary center-block" type="submit">
+        <i class="fa fa-save"></i>&nbsp;Enregistrer</button>
+
+    {{ form_end(form) }}
 
 {% endblock %}
