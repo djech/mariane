@@ -69,6 +69,11 @@ class Information
     private $about;
 
     /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Logiciel", mappedBy="information", cascade={"persist"})
+     */
+    private $logiciels;
+
+    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Skill", mappedBy="information", cascade={"persist"})
      */
     private $skills;
@@ -93,11 +98,10 @@ class Information
 
     public function __construct()
     {
-        $this->about = new About();
         $this->skills = new ArrayCollection();
-        $this->portfolio = new Portfolio();
         $this->experiences = new ArrayCollection();
         $this->formations = new ArrayCollection();
+        $this->logiciels = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -314,6 +318,37 @@ class Information
     public function setLangue(?string $langue): self
     {
         $this->langue = $langue;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Logiciel[]
+     */
+    public function getLogiciels(): Collection
+    {
+        return $this->logiciels;
+    }
+
+    public function addLogiciel(Logiciel $logiciel): self
+    {
+        if (!$this->logiciels->contains($logiciel)) {
+            $this->logiciels[] = $logiciel;
+            $logiciel->setInformation($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLogiciel(Logiciel $logiciel): self
+    {
+        if ($this->logiciels->contains($logiciel)) {
+            $this->logiciels->removeElement($logiciel);
+            // set the owning side to null (unless already changed)
+            if ($logiciel->getInformation() === $this) {
+                $logiciel->setInformation(null);
+            }
+        }
 
         return $this;
     }

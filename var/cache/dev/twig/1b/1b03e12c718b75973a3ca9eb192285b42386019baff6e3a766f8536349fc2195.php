@@ -174,6 +174,6 @@ class __TwigTemplate_45bda11cd4eee654ea75c0953debe0655cd70148514e871e81958eab532
     {% endfor %}
     </tbody>
 </table>
-", "TwigBundle:Exception:logs.html.twig", "/home/jerome/Developpement/mariane/vendor/symfony/twig-bundle/Resources/views/Exception/logs.html.twig");
+", "TwigBundle:Exception:logs.html.twig", "/Users/djech/Developpement/mariane/vendor/symfony/twig-bundle/Resources/views/Exception/logs.html.twig");
     }
 }

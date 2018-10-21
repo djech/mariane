@@ -157,6 +157,6 @@ class __TwigTemplate_54fb60b8c527f3a8d457ce68338e94fdb763f5d8bdf24c30f8e52bdc091
             </div>
         </div>
     </div>
-</div>", "default/section/reference.html.twig", "/home/jerome/Developpement/mariane/templates/default/section/reference.html.twig");
+</div>", "default/section/reference.html.twig", "/Users/djech/Developpement/mariane/templates/default/section/reference.html.twig");
     }
 }

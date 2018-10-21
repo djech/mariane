@@ -42,7 +42,7 @@ class Experience
     private $poste;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Information", inversedBy="experiences")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Information", inversedBy="experiences", cascade={"persist"})
      */
     private $information;
 

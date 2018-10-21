@@ -81,6 +81,6 @@ class __TwigTemplate_86edab6b798d87e3d1e89f9b0746b661ec340240496da7a41679fc82454
 {% block fos_user_content %}
 {% include \"@FOSUser/Group/list_content.html.twig\" %}
 {% endblock fos_user_content %}
-", "FOSUserBundle:Group:list.html.twig", "/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/views/Group/list.html.twig");
+", "FOSUserBundle:Group:list.html.twig", "/Users/djech/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/views/Group/list.html.twig");
     }
 }

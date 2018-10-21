@@ -51,7 +51,7 @@ class __TwigTemplate_60816449acbbd57b0dce9e726f44fd06488cfbdf6f2b2725058dcda1a47
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "logo_path"));
 
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath($this->extensions['KevinPapst\AdminLTEBundle\Twig\AdminExtension']->getRouteByAlias("administration"));
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath($this->extensions['KevinPapst\AdminLTEBundle\Twig\AdminExtension']->getRouteByAlias("information"));
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -115,10 +115,10 @@ class __TwigTemplate_60816449acbbd57b0dce9e726f44fd06488cfbdf6f2b2725058dcda1a47
     {
         return new Twig_Source("{% extends '@AdminLTE/layout/default-layout.html.twig' %}
 
-{% block logo_path %}{{ path('administration'|route_alias) }}{% endblock %}
+{% block logo_path %}{{ path('information'|route_alias) }}{% endblock %}
 
 {% block logo_mini %}<b>M</b>Er{% endblock %}
 
-{% block logo_large %} <b>Mariane</b>Erard {% endblock %}", "administration/layout.html.twig", "/home/jerome/Developpement/mariane/templates/administration/layout.html.twig");
+{% block logo_large %} <b>Mariane</b>Erard {% endblock %}", "administration/layout.html.twig", "/Users/djech/Developpement/mariane/templates/administration/layout.html.twig");
     }
 }

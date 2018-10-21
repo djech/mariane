@@ -218,6 +218,6 @@ class __TwigTemplate_4870d644c56222bfc99d860843c74aa92764f9bfadd8a3cea27c81debcd
     {{ parent() }}
     <script src=\"{{ asset('build/jquery.3.2.1.min.js') }}\"></script>
     <script src=\"{{ asset('build/collectionSkills.js') }}\"></script>
-{% endblock %}", "administration/skills.html.twig", "/home/jerome/Developpement/mariane/templates/administration/skills.html.twig");
+{% endblock %}", "administration/skills.html.twig", "/Users/djech/Developpement/mariane/templates/administration/skills.html.twig");
     }
 }

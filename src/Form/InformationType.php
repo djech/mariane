@@ -16,14 +16,14 @@ class InformationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nom', TextType::class)
-            ->add('prenom', TextType::class)
-            ->add('age', IntegerType::class)
-            ->add('adresse', TextType::class)
-            ->add('telephone', TextType::class)
-            ->add('email', EmailType::class)
-            ->add('langue', TextType::class, array('label' => 'Langue parlée, écrite'))
-            ->add('description', TextType::class, array('label' => 'Petite description pro (figure en dessous du nom sur la page principale)'))
+            ->add('nom', TextType::class, array('required' => true))
+            ->add('prenom', TextType::class, array('required' => true))
+            ->add('age', IntegerType::class, array('required' => false))
+            ->add('adresse', TextType::class, array('required' => false))
+            ->add('telephone', TextType::class, array('required' => false))
+            ->add('email', EmailType::class, array('required' => false))
+            ->add('langue', TextType::class, array('required' => false))
+            ->add('description', TextType::class, array('required' => false, 'label' => 'Petite description pro (figure en dessous du nom sur la page principale)'))
         ;
     }
 

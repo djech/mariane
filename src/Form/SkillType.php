@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Skill;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -15,7 +16,7 @@ class SkillType extends AbstractType
     {
         $builder
             ->add('nom', TextType::class)
-            ->add('percentage', IntegerType::class)
+            ->add('description', CKEditorType::class, array('config_name' => 'my_config'))
         ;
     }
 

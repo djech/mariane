@@ -206,6 +206,6 @@ class __TwigTemplate_3288170672a64e185de49dd5b096e53160f42958e6e01ef54712fbbedff
         {% endif %}
     </ul>
 </li>
-", "AdminLTEBundle:Navbar:user.html.twig", "/home/jerome/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/views/Navbar/user.html.twig");
+", "AdminLTEBundle:Navbar:user.html.twig", "/Users/djech/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/views/Navbar/user.html.twig");
     }
 }

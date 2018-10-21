@@ -163,6 +163,6 @@ class __TwigTemplate_abe983df3cc88e067bc3e5c85d846d179e931f33c218910a6c1d2ca0390
         {{ 'Show homepage'|trans({}, 'AdminLTEBundle') }}
     </a>
 {% endblock %}
-", "AdminLTEBundle:FOSUserBundle/Registration:confirmed.html.twig", "/home/jerome/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/views/FOSUserBundle/Registration/confirmed.html.twig");
+", "AdminLTEBundle:FOSUserBundle/Registration:confirmed.html.twig", "/Users/djech/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/views/FOSUserBundle/Registration/confirmed.html.twig");
     }
 }

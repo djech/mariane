@@ -66,6 +66,6 @@ class __TwigTemplate_e6411e24913e9d2b99bca87025afffbad4e337139574246728f0d2752a4
 <div class=\"fos_user_group_show\">
     <p>{{ 'group.show.name'|trans }}: {{ group.getName() }}</p>
 </div>
-", "FOSUserBundle:Group:show_content.html.twig", "/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/views/Group/show_content.html.twig");
+", "FOSUserBundle:Group:show_content.html.twig", "/Users/djech/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/views/Group/show_content.html.twig");
     }
 }

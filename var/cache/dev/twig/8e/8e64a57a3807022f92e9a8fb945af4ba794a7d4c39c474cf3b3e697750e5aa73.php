@@ -77,6 +77,6 @@ class __TwigTemplate_c46f3b47a65111784b4ae6fac735ed38b49783908524a348c3e26dd150b
     {
         return new Twig_Source("{% extends '@AdminLTE/FOSUserBundle/Security/login.html.twig' %}
 
-{% block logo_login %}<b>Connexion</b>{% endblock %}", "@FOSUser/Security/login.html.twig", "/home/jerome/Developpement/mariane/templates/bundles/FOSUserBundle/Security/login.html.twig");
+{% block logo_login %}<b>Connexion</b>{% endblock %}", "@FOSUser/Security/login.html.twig", "/Users/djech/Developpement/mariane/templates/bundles/FOSUserBundle/Security/login.html.twig");
     }
 }

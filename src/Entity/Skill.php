@@ -22,12 +22,12 @@ class Skill
     private $nom;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="text")
      */
-    private $percentage;
+    private $description;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Information", inversedBy="skills")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Information", inversedBy="skills", cascade={"persist"})
      */
     private $information;
 
@@ -48,18 +48,6 @@ class Skill
         return $this;
     }
 
-    public function getPercentage(): ?int
-    {
-        return $this->percentage;
-    }
-
-    public function setPercentage(int $percentage): self
-    {
-        $this->percentage = $percentage;
-
-        return $this;
-    }
-
     public function getInformation(): ?Information
     {
         return $this->information;
@@ -68,6 +56,18 @@ class Skill
     public function setInformation(?Information $information): self
     {
         $this->information = $information;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }

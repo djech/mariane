@@ -42,7 +42,7 @@ class Formation
     private $description;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Information", inversedBy="formations")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Information", inversedBy="formations", cascade={"persist"})
      */
     private $information;
 

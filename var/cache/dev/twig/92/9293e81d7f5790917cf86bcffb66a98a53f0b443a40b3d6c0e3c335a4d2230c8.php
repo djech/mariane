@@ -79,6 +79,6 @@ class __TwigTemplate_a712966bd23333690b4b34ad1ef253445a0ec72c81fd58f79d7ca7b5cd6
         <input type=\"submit\" value=\"{{ 'registration.submit'|trans }}\" />
     </div>
 {{ form_end(form) }}
-", "FOSUserBundle:Registration:register_content.html.twig", "/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/views/Registration/register_content.html.twig");
+", "FOSUserBundle:Registration:register_content.html.twig", "/Users/djech/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/views/Registration/register_content.html.twig");
     }
 }

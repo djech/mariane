@@ -351,6 +351,6 @@ class __TwigTemplate_bc339d3d51b6fe8534b4ad06e9d20c0576a8e1e8173a3edbf4d94484a14
 {% block login_form %}{% if block('avanzu_login_form') is defined %}{{ block('avanzu_login_form') }}{% else %}{{ parent() }}{% endif %}{% endblock %}
 {% block login_social_auth %}{% if block('avanzu_login_social_auth') is defined %}{{ block('avanzu_login_social_auth') }}{% else %}{{ parent() }}{% endif %}{% endblock %}
 {% block login_actions %}{% if block('avanzu_login_actions') is defined %}{{ block('avanzu_login_actions') }}{% else %}{{ parent() }}{% endif %}{% endblock %}
-", "AdminLTEBundle:layout:login-layout-avanzu.html.twig", "/home/jerome/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/views/layout/login-layout-avanzu.html.twig");
+", "AdminLTEBundle:layout:login-layout-avanzu.html.twig", "/Users/djech/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/views/layout/login-layout-avanzu.html.twig");
     }
 }

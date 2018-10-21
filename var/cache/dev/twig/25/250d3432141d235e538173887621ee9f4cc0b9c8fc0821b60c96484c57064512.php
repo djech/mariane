@@ -125,6 +125,6 @@ class __TwigTemplate_cbe0a5be0c5575bdab2bad0195eb7f4a425488f806ade3ddfce8baf6c1c
         <li class=\"footer\"><a href=\"{{ path('adminlte_notifications'|route_alias) }}\">{{'View all'|trans({}, 'AdminLTEBundle')}}</a></li>
     </ul>
 </li>
-", "AdminLTEBundle:Navbar:notifications.html.twig", "/home/jerome/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/views/Navbar/notifications.html.twig");
+", "AdminLTEBundle:Navbar:notifications.html.twig", "/Users/djech/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/views/Navbar/notifications.html.twig");
     }
 }

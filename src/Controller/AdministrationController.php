@@ -11,6 +11,7 @@ namespace App\Controller;
 use App\Entity\About;
 use App\Entity\Information;
 use App\Form\AboutType;
+use App\Form\InformationLogicielsType;
 use App\Form\InformationSkillsType;
 use App\Form\InformationType;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -21,15 +22,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdministrationController extends Controller
 {
     /**
-     * @Route("/administration", name="administration")
-     */
-    public function indexAction()
-    {
-        return $this->render('administration/index.html.twig');
-    }
-
-    /**
-     * @Route("/administration/information", name="information")
+     * @Route("/administration", name="information")
      */
     public function administrationAction(Request $request)
     {
@@ -128,6 +121,70 @@ class AdministrationController extends Controller
         }
 
         return $this->render('administration/skills.html.twig', array(
+            'form' => $form->createView()
+        ));
+    }
+
+    /**
+     * @Route("/administration/logiciels", name="logiciels")
+     */
+    public function logicielAction(Request $request)
+    {
+        $information = $this->getDoctrine()->getRepository(Information::class)->findOrCreateOne();
+
+        $form = $this->get('form.factory')
+            ->createBuilder(InformationLogicielsType::class, $information)
+            ->getForm()
+        ;
+
+        if ($request->isMethod('POST')) {
+
+            $form->handleRequest($request);
+
+            if ($form->isValid()) {
+
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($information);
+                $em->flush();
+
+                $this->addFlash('success', "\"Logiciels connus\" bien modifié !");
+
+            }
+        }
+
+        return $this->render('administration/logiciels.html.twig', array(
+            'form' => $form->createView()
+        ));
+    }
+
+    /**
+     * @Route("/administration/portfolio", name="portfolio")
+     */
+    public function portfolioAction(Request $request)
+    {
+        $information = $this->getDoctrine()->getRepository(Information::class)->findOrCreateOne();
+
+        $form = $this->get('form.factory')
+            ->createBuilder(InformationLogicielsType::class, $information)
+            ->getForm()
+        ;
+
+        if ($request->isMethod('POST')) {
+
+            $form->handleRequest($request);
+
+            if ($form->isValid()) {
+
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($information);
+                $em->flush();
+
+                $this->addFlash('success', "\"Logiciels connus\" bien modifié !");
+
+            }
+        }
+
+        return $this->render('administration/logiciels.html.twig', array(
             'form' => $form->createView()
         ));
     }

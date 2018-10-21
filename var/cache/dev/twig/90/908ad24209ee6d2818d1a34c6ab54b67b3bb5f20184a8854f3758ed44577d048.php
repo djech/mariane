@@ -32,7 +32,7 @@ class __TwigTemplate_97a69101b7894aafdf9f4a5d48cbd39ada53e7141e46a8ed9e243644a52
     </noscript>
 
     <div class=\"profile-page sidebar-collapse\">
-        <nav class=\"navbar navbar-expand-lg fixed-top navbar-transparent bg-primary\" color-on-scroll=\"400\">
+        <nav class=\"navbar navbar-expand-lg fixed-top navbar-transparent bg-secondary\" color-on-scroll=\"400\">
             <div class=\"container\">
                 <div class=\"navbar-translate\"><a class=\"navbar-brand\" href=\"#\" rel=\"tooltip\"></a>
                     <button class=\"navbar-toggler navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navigation\" aria-controls=\"navigation\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span class=\"navbar-toggler-bar bar1\"></span><span class=\"navbar-toggler-bar bar2\"></span><span class=\"navbar-toggler-bar bar3\"></span></button>
@@ -40,23 +40,24 @@ class __TwigTemplate_97a69101b7894aafdf9f4a5d48cbd39ada53e7141e46a8ed9e243644a52
                 <div class=\"collapse navbar-collapse justify-content-end\" id=\"navigation\">
                     <ul class=\"navbar-nav\">
                         <li class=\"nav-item\"><a class=\"nav-link smooth-scroll\" href=\"#about\">À propos</a></li>
-                        <li class=\"nav-item\"><a class=\"nav-link smooth-scroll\" href=\"#skill\">Talents</a></li>
+                        <li class=\"nav-item\"><a class=\"nav-link smooth-scroll\" href=\"#skill\">Competences</a></li>
+                        <li class=\"nav-item\"><a class=\"nav-link smooth-scroll\" href=\"#logiciels\">Logiciels connus</a></li>
                         <li class=\"nav-item\"><a class=\"nav-link smooth-scroll\" href=\"#portfolio\">Portfolio</a></li>
                         <li class=\"nav-item\"><a class=\"nav-link smooth-scroll\" href=\"#experience\">Experiences</a></li>
                         <li class=\"nav-item\"><a class=\"nav-link smooth-scroll\" href=\"#contact\">Contact</a></li>
                         ";
-        // line 19
+        // line 20
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) {
-            // line 20
+            // line 21
             echo "
                             <li class=\"nav-item\"><a class=\"nav-link smooth-scroll\" href=\"";
-            // line 21
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("administration");
+            // line 22
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("information");
             echo "\">Administration</a></li>
 
                         ";
         }
-        // line 24
+        // line 25
         echo "                    </ul>
                 </div>
             </div>
@@ -83,7 +84,7 @@ class __TwigTemplate_97a69101b7894aafdf9f4a5d48cbd39ada53e7141e46a8ed9e243644a52
 
     public function getDebugInfo()
     {
-        return array (  60 => 24,  54 => 21,  51 => 20,  49 => 19,  29 => 1,);
+        return array (  61 => 25,  55 => 22,  52 => 21,  50 => 20,  29 => 1,);
     }
 
     public function getSourceContext()
@@ -94,7 +95,7 @@ class __TwigTemplate_97a69101b7894aafdf9f4a5d48cbd39ada53e7141e46a8ed9e243644a52
     </noscript>
 
     <div class=\"profile-page sidebar-collapse\">
-        <nav class=\"navbar navbar-expand-lg fixed-top navbar-transparent bg-primary\" color-on-scroll=\"400\">
+        <nav class=\"navbar navbar-expand-lg fixed-top navbar-transparent bg-secondary\" color-on-scroll=\"400\">
             <div class=\"container\">
                 <div class=\"navbar-translate\"><a class=\"navbar-brand\" href=\"#\" rel=\"tooltip\"></a>
                     <button class=\"navbar-toggler navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navigation\" aria-controls=\"navigation\" aria-expanded=\"false\" aria-label=\"Toggle navigation\"><span class=\"navbar-toggler-bar bar1\"></span><span class=\"navbar-toggler-bar bar2\"></span><span class=\"navbar-toggler-bar bar3\"></span></button>
@@ -102,13 +103,14 @@ class __TwigTemplate_97a69101b7894aafdf9f4a5d48cbd39ada53e7141e46a8ed9e243644a52
                 <div class=\"collapse navbar-collapse justify-content-end\" id=\"navigation\">
                     <ul class=\"navbar-nav\">
                         <li class=\"nav-item\"><a class=\"nav-link smooth-scroll\" href=\"#about\">À propos</a></li>
-                        <li class=\"nav-item\"><a class=\"nav-link smooth-scroll\" href=\"#skill\">Talents</a></li>
+                        <li class=\"nav-item\"><a class=\"nav-link smooth-scroll\" href=\"#skill\">Competences</a></li>
+                        <li class=\"nav-item\"><a class=\"nav-link smooth-scroll\" href=\"#logiciels\">Logiciels connus</a></li>
                         <li class=\"nav-item\"><a class=\"nav-link smooth-scroll\" href=\"#portfolio\">Portfolio</a></li>
                         <li class=\"nav-item\"><a class=\"nav-link smooth-scroll\" href=\"#experience\">Experiences</a></li>
                         <li class=\"nav-item\"><a class=\"nav-link smooth-scroll\" href=\"#contact\">Contact</a></li>
                         {% if is_granted(\"IS_AUTHENTICATED_FULLY\") %}
 
-                            <li class=\"nav-item\"><a class=\"nav-link smooth-scroll\" href=\"{{ path('administration') }}\">Administration</a></li>
+                            <li class=\"nav-item\"><a class=\"nav-link smooth-scroll\" href=\"{{ path('information') }}\">Administration</a></li>
 
                         {% endif %}
                     </ul>
@@ -116,6 +118,6 @@ class __TwigTemplate_97a69101b7894aafdf9f4a5d48cbd39ada53e7141e46a8ed9e243644a52
             </div>
         </nav>
     </div>
-</header>", "header.html.twig", "/home/jerome/Developpement/mariane/templates/header.html.twig");
+</header>", "header.html.twig", "/Users/djech/Developpement/mariane/templates/header.html.twig");
     }
 }

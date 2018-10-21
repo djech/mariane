@@ -936,6 +936,6 @@ class __TwigTemplate_7561b460c32568c52ee383ef928020e1cf07befc4eed2795e9d956f2df6
         </table>
     {% endif %}
 {% endblock %}
-", "WebProfilerBundle:Collector:config.html.twig", "/home/jerome/Developpement/mariane/vendor/symfony/web-profiler-bundle/Resources/views/Collector/config.html.twig");
+", "WebProfilerBundle:Collector:config.html.twig", "/Users/djech/Developpement/mariane/vendor/symfony/web-profiler-bundle/Resources/views/Collector/config.html.twig");
     }
 }

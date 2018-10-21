@@ -140,6 +140,6 @@ class __TwigTemplate_0d980dc4af1a2326e165c42f4b500f4335c486f89c3a7e2fac3dd551b61
     <h2>{{ messages[about].title }}</h2>
     <p>{{ messages[about].message }}</p>
 {% endblock %}
-", "WebProfilerBundle:Profiler:info.html.twig", "/home/jerome/Developpement/mariane/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/info.html.twig");
+", "WebProfilerBundle:Profiler:info.html.twig", "/Users/djech/Developpement/mariane/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/info.html.twig");
     }
 }

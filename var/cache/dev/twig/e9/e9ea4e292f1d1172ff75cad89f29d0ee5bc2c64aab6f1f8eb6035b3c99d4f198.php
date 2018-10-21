@@ -86,6 +86,6 @@ class __TwigTemplate_8e0b3118af46e9d3fe820b941e7aa9f310191ff116483ab3b82ab9a5d4d
         <a href=\"#\"><i class=\"fas fa-circle text-success\"></i> {{ 'Online'|trans({}, 'AdminLTEBundle') }}</a>
     </div>
 </div>
-", "AdminLTEBundle:Sidebar:user-panel.html.twig", "/home/jerome/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/views/Sidebar/user-panel.html.twig");
+", "AdminLTEBundle:Sidebar:user-panel.html.twig", "/Users/djech/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/views/Sidebar/user-panel.html.twig");
     }
 }

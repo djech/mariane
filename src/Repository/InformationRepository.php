@@ -2,7 +2,9 @@
 
 namespace App\Repository;
 
+use App\Entity\About;
 use App\Entity\Information;
+use App\Entity\Portfolio;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 

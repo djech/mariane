@@ -42,42 +42,73 @@ class __TwigTemplate_ed59db46cf74e9551fba1d55292e9db1e69d04f56e960b7794931a646cd
                 <div class=\"col-lg-6 col-md-12\">
                     <div class=\"card-body\">
                         <div class=\"h4 mt-0 title\">Information</div>
-                        <div class=\"row\">
-                            <div class=\"col-sm-4\"><strong class=\"text-uppercase\">Age:</strong></div>
-                            <div class=\"col-sm-8\">";
-        // line 16
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["information"]) || array_key_exists("information", $context) ? $context["information"] : (function () { throw new Twig_Error_Runtime('Variable "information" does not exist.', 16, $this->source); })()), "age", array()), "html", null, true);
-        echo "</div>
-                        </div>
-                        <div class=\"row mt-3\">
+                        ";
+        // line 14
+        if ( !(null === twig_get_attribute($this->env, $this->source, (isset($context["information"]) || array_key_exists("information", $context) ? $context["information"] : (function () { throw new Twig_Error_Runtime('Variable "information" does not exist.', 14, $this->source); })()), "age", array()))) {
+            // line 15
+            echo "                            <div class=\"row\">
+                                <div class=\"col-sm-4\"><strong class=\"text-uppercase\">Age:</strong></div>
+                                <div class=\"col-sm-8\">";
+            // line 17
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["information"]) || array_key_exists("information", $context) ? $context["information"] : (function () { throw new Twig_Error_Runtime('Variable "information" does not exist.', 17, $this->source); })()), "age", array()), "html", null, true);
+            echo "</div>
+                            </div>
+                        ";
+        }
+        // line 20
+        echo "                        ";
+        if ( !(null === twig_get_attribute($this->env, $this->source, (isset($context["information"]) || array_key_exists("information", $context) ? $context["information"] : (function () { throw new Twig_Error_Runtime('Variable "information" does not exist.', 20, $this->source); })()), "email", array()))) {
+            // line 21
+            echo "                        <div class=\"row mt-3\">
                             <div class=\"col-sm-4\"><strong class=\"text-uppercase\">Email:</strong></div>
                             <div class=\"col-sm-8\">";
-        // line 20
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["information"]) || array_key_exists("information", $context) ? $context["information"] : (function () { throw new Twig_Error_Runtime('Variable "information" does not exist.', 20, $this->source); })()), "email", array()), "html", null, true);
-        echo "</div>
+            // line 23
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["information"]) || array_key_exists("information", $context) ? $context["information"] : (function () { throw new Twig_Error_Runtime('Variable "information" does not exist.', 23, $this->source); })()), "email", array()), "html", null, true);
+            echo "</div>
                         </div>
-                        <div class=\"row mt-3\">
+                        ";
+        }
+        // line 26
+        echo "                        ";
+        if ( !(null === twig_get_attribute($this->env, $this->source, (isset($context["information"]) || array_key_exists("information", $context) ? $context["information"] : (function () { throw new Twig_Error_Runtime('Variable "information" does not exist.', 26, $this->source); })()), "telephone", array()))) {
+            // line 27
+            echo "                        <div class=\"row mt-3\">
                             <div class=\"col-sm-4\"><strong class=\"text-uppercase\">Téléphone:</strong></div>
                             <div class=\"col-sm-8\">";
-        // line 24
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["information"]) || array_key_exists("information", $context) ? $context["information"] : (function () { throw new Twig_Error_Runtime('Variable "information" does not exist.', 24, $this->source); })()), "telephone", array()), "html", null, true);
-        echo "</div>
+            // line 29
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["information"]) || array_key_exists("information", $context) ? $context["information"] : (function () { throw new Twig_Error_Runtime('Variable "information" does not exist.', 29, $this->source); })()), "telephone", array()), "html", null, true);
+            echo "</div>
                         </div>
-                        <div class=\"row mt-3\">
+                        ";
+        }
+        // line 32
+        echo "                        ";
+        if ( !(null === twig_get_attribute($this->env, $this->source, (isset($context["information"]) || array_key_exists("information", $context) ? $context["information"] : (function () { throw new Twig_Error_Runtime('Variable "information" does not exist.', 32, $this->source); })()), "adresse", array()))) {
+            // line 33
+            echo "                        <div class=\"row mt-3\">
                             <div class=\"col-sm-4\"><strong class=\"text-uppercase\">Adresse:</strong></div>
                             <div class=\"col-sm-8\">";
-        // line 28
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["information"]) || array_key_exists("information", $context) ? $context["information"] : (function () { throw new Twig_Error_Runtime('Variable "information" does not exist.', 28, $this->source); })()), "adresse", array()), "html", null, true);
-        echo "</div>
+            // line 35
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["information"]) || array_key_exists("information", $context) ? $context["information"] : (function () { throw new Twig_Error_Runtime('Variable "information" does not exist.', 35, $this->source); })()), "adresse", array()), "html", null, true);
+            echo "</div>
                         </div>
-                        <div class=\"row mt-3\">
+                        ";
+        }
+        // line 38
+        echo "                        ";
+        if ( !(null === twig_get_attribute($this->env, $this->source, (isset($context["information"]) || array_key_exists("information", $context) ? $context["information"] : (function () { throw new Twig_Error_Runtime('Variable "information" does not exist.', 38, $this->source); })()), "langue", array()))) {
+            // line 39
+            echo "                        <div class=\"row mt-3\">
                             <div class=\"col-sm-4\"><strong class=\"text-uppercase\">Langue:</strong></div>
                             <div class=\"col-sm-8\">";
-        // line 32
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["information"]) || array_key_exists("information", $context) ? $context["information"] : (function () { throw new Twig_Error_Runtime('Variable "information" does not exist.', 32, $this->source); })()), "langue", array()), "html", null, true);
-        echo "</div>
+            // line 41
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["information"]) || array_key_exists("information", $context) ? $context["information"] : (function () { throw new Twig_Error_Runtime('Variable "information" does not exist.', 41, $this->source); })()), "langue", array()), "html", null, true);
+            echo "</div>
                         </div>
-                    </div>
+                        ";
+        }
+        // line 44
+        echo "                    </div>
                 </div>
             </div>
         </div>
@@ -104,7 +135,7 @@ class __TwigTemplate_ed59db46cf74e9551fba1d55292e9db1e69d04f56e960b7794931a646cd
 
     public function getDebugInfo()
     {
-        return array (  77 => 32,  70 => 28,  63 => 24,  56 => 20,  49 => 16,  38 => 8,  29 => 1,);
+        return array (  111 => 44,  105 => 41,  101 => 39,  98 => 38,  92 => 35,  88 => 33,  85 => 32,  79 => 29,  75 => 27,  72 => 26,  66 => 23,  62 => 21,  59 => 20,  53 => 17,  49 => 15,  47 => 14,  38 => 8,  29 => 1,);
     }
 
     public function getSourceContext()
@@ -122,32 +153,42 @@ class __TwigTemplate_ed59db46cf74e9551fba1d55292e9db1e69d04f56e960b7794931a646cd
                 <div class=\"col-lg-6 col-md-12\">
                     <div class=\"card-body\">
                         <div class=\"h4 mt-0 title\">Information</div>
-                        <div class=\"row\">
-                            <div class=\"col-sm-4\"><strong class=\"text-uppercase\">Age:</strong></div>
-                            <div class=\"col-sm-8\">{{ information.age }}</div>
-                        </div>
+                        {% if information.age is not null %}
+                            <div class=\"row\">
+                                <div class=\"col-sm-4\"><strong class=\"text-uppercase\">Age:</strong></div>
+                                <div class=\"col-sm-8\">{{ information.age }}</div>
+                            </div>
+                        {% endif %}
+                        {% if information.email is not null %}
                         <div class=\"row mt-3\">
                             <div class=\"col-sm-4\"><strong class=\"text-uppercase\">Email:</strong></div>
                             <div class=\"col-sm-8\">{{ information.email }}</div>
                         </div>
+                        {% endif %}
+                        {% if information.telephone is not null %}
                         <div class=\"row mt-3\">
                             <div class=\"col-sm-4\"><strong class=\"text-uppercase\">Téléphone:</strong></div>
                             <div class=\"col-sm-8\">{{ information.telephone }}</div>
                         </div>
+                        {% endif %}
+                        {% if information.adresse is not null %}
                         <div class=\"row mt-3\">
                             <div class=\"col-sm-4\"><strong class=\"text-uppercase\">Adresse:</strong></div>
                             <div class=\"col-sm-8\">{{ information.adresse }}</div>
                         </div>
+                        {% endif %}
+                        {% if information.langue is not null %}
                         <div class=\"row mt-3\">
                             <div class=\"col-sm-4\"><strong class=\"text-uppercase\">Langue:</strong></div>
                             <div class=\"col-sm-8\">{{ information.langue }}</div>
                         </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-", "default/section/about.html.twig", "/home/jerome/Developpement/mariane/templates/default/section/about.html.twig");
+", "default/section/about.html.twig", "/Users/djech/Developpement/mariane/templates/default/section/about.html.twig");
     }
 }

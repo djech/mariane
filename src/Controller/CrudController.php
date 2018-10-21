@@ -62,6 +62,7 @@ abstract class CrudController extends Controller
     protected function initialize()
     {
         $classPath = get_class($this);
+        dump($classPath);
         $crud = $this->get('ac_strasbourg_crud.crud');
 
         // Chemins - Impose que le controller soit dans un répertoire "Controller"

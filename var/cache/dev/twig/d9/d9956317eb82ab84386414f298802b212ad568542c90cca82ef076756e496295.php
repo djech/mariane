@@ -69,28 +69,33 @@ class __TwigTemplate_420f5e5989a47490a0b129af44ab01816dd4772f39b9739c8cbc7e6f46e
         echo "
         ";
         // line 12
-        $this->loadTemplate("default/section/portfolio.html.twig", "default/index.html.twig", 12)->display($context);
+        $this->loadTemplate("default/section/logiciel.html.twig", "default/index.html.twig", 12)->display($context);
         // line 13
         echo "
         ";
         // line 14
-        $this->loadTemplate("default/section/experience.html.twig", "default/index.html.twig", 14)->display($context);
+        $this->loadTemplate("default/section/portfolio.html.twig", "default/index.html.twig", 14)->display($context);
         // line 15
         echo "
         ";
         // line 16
-        $this->loadTemplate("default/section/formation.html.twig", "default/index.html.twig", 16)->display($context);
+        $this->loadTemplate("default/section/experience.html.twig", "default/index.html.twig", 16)->display($context);
         // line 17
         echo "
         ";
         // line 18
-        $this->loadTemplate("default/section/reference.html.twig", "default/index.html.twig", 18)->display($context);
+        $this->loadTemplate("default/section/formation.html.twig", "default/index.html.twig", 18)->display($context);
         // line 19
         echo "
         ";
         // line 20
-        $this->loadTemplate("default/section/contact.html.twig", "default/index.html.twig", 20)->display($context);
+        $this->loadTemplate("default/section/reference.html.twig", "default/index.html.twig", 20)->display($context);
         // line 21
+        echo "
+        ";
+        // line 22
+        $this->loadTemplate("default/section/contact.html.twig", "default/index.html.twig", 22)->display($context);
+        // line 23
         echo "
     </div>
 
@@ -115,7 +120,7 @@ class __TwigTemplate_420f5e5989a47490a0b129af44ab01816dd4772f39b9739c8cbc7e6f46e
 
     public function getDebugInfo()
     {
-        return array (  94 => 21,  92 => 20,  89 => 19,  87 => 18,  84 => 17,  82 => 16,  79 => 15,  77 => 14,  74 => 13,  72 => 12,  69 => 11,  67 => 10,  64 => 9,  62 => 8,  59 => 7,  57 => 6,  53 => 4,  44 => 3,  15 => 1,);
+        return array (  99 => 23,  97 => 22,  94 => 21,  92 => 20,  89 => 19,  87 => 18,  84 => 17,  82 => 16,  79 => 15,  77 => 14,  74 => 13,  72 => 12,  69 => 11,  67 => 10,  64 => 9,  62 => 8,  59 => 7,  57 => 6,  53 => 4,  44 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -131,6 +136,8 @@ class __TwigTemplate_420f5e5989a47490a0b129af44ab01816dd4772f39b9739c8cbc7e6f46e
 
         {% include 'default/section/skill.html.twig' %}
 
+        {% include 'default/section/logiciel.html.twig' %}
+
         {% include 'default/section/portfolio.html.twig' %}
 
         {% include 'default/section/experience.html.twig' %}
@@ -143,6 +150,6 @@ class __TwigTemplate_420f5e5989a47490a0b129af44ab01816dd4772f39b9739c8cbc7e6f46e
 
     </div>
 
-{% endblock %}", "default/index.html.twig", "/home/jerome/Developpement/mariane/templates/default/index.html.twig");
+{% endblock %}", "default/index.html.twig", "/Users/djech/Developpement/mariane/templates/default/index.html.twig");
     }
 }

@@ -168,7 +168,7 @@ class __TwigTemplate_b8e6cfcaf1c801e42c95d5798dd64f1d45cc741bd7e05ca3b57930e2c8d
     ";
         // line 48
         $this->displayBlock('body_bottom', $context, $blocks);
-        // line 65
+        // line 58
         echo "
 
 ";
@@ -246,7 +246,7 @@ class __TwigTemplate_b8e6cfcaf1c801e42c95d5798dd64f1d45cc741bd7e05ca3b57930e2c8d
         // line 49
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 64
+        // line 57
         echo "    ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -279,27 +279,14 @@ class __TwigTemplate_b8e6cfcaf1c801e42c95d5798dd64f1d45cc741bd7e05ca3b57930e2c8d
         echo "\"></script>
             <script src=\"";
         // line 53
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/ckeditor/ckeditor.js"), "html", null, true);
-        echo "\" type=\"text/javascript\"></script>
-            <script src=\"";
-        // line 54
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/ckeditor/adapters/jquery.js"), "html", null, true);
-        echo "\" type=\"text/javascript\"></script>
-            <script type=\"text/javascript\">
-                \$(function() {
-                    \$('textarea.ckeditor').ckeditor();
-                });
-            </script>
-            <script src=\"";
-        // line 60
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/now-ui-kit.js?v=1.1.0"), "html", null, true);
         echo "\"></script>
             <script src=\"";
-        // line 61
+        // line 54
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/aos.js"), "html", null, true);
         echo "\"></script>
             <script src=\"";
-        // line 62
+        // line 55
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/main.js"), "html", null, true);
         echo "\"></script>
         ";
@@ -323,7 +310,7 @@ class __TwigTemplate_b8e6cfcaf1c801e42c95d5798dd64f1d45cc741bd7e05ca3b57930e2c8d
 
     public function getDebugInfo()
     {
-        return array (  303 => 62,  299 => 61,  295 => 60,  286 => 54,  282 => 53,  278 => 52,  274 => 51,  269 => 50,  260 => 49,  250 => 64,  247 => 49,  238 => 48,  221 => 41,  210 => 45,  208 => 44,  204 => 42,  202 => 41,  198 => 39,  196 => 38,  193 => 37,  184 => 36,  172 => 65,  170 => 48,  167 => 47,  165 => 36,  162 => 35,  153 => 34,  140 => 28,  136 => 27,  132 => 26,  127 => 23,  118 => 22,  105 => 19,  96 => 18,  85 => 31,  83 => 22,  80 => 21,  78 => 18,  60 => 4,  51 => 3,  15 => 1,);
+        return array (  290 => 55,  286 => 54,  282 => 53,  278 => 52,  274 => 51,  269 => 50,  260 => 49,  250 => 57,  247 => 49,  238 => 48,  221 => 41,  210 => 45,  208 => 44,  204 => 42,  202 => 41,  198 => 39,  196 => 38,  193 => 37,  184 => 36,  172 => 58,  170 => 48,  167 => 47,  165 => 36,  162 => 35,  153 => 34,  140 => 28,  136 => 27,  132 => 26,  127 => 23,  118 => 22,  105 => 19,  96 => 18,  85 => 31,  83 => 22,  80 => 21,  78 => 18,  60 => 4,  51 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -380,13 +367,6 @@ class __TwigTemplate_b8e6cfcaf1c801e42c95d5798dd64f1d45cc741bd7e05ca3b57930e2c8d
             <script src=\"{{ asset('build/jquery.3.2.1.min.js') }}\"></script>
             <script src=\"{{ asset('build/popper.min.js') }}\"></script>
             <script src=\"{{ asset('build/bootstrap.min.js') }}\"></script>
-            <script src=\"{{ asset('build/ckeditor/ckeditor.js') }}\" type=\"text/javascript\"></script>
-            <script src=\"{{ asset('build/ckeditor/adapters/jquery.js') }}\" type=\"text/javascript\"></script>
-            <script type=\"text/javascript\">
-                \$(function() {
-                    \$('textarea.ckeditor').ckeditor();
-                });
-            </script>
             <script src=\"{{ asset('build/now-ui-kit.js?v=1.1.0') }}\"></script>
             <script src=\"{{ asset('build/aos.js') }}\"></script>
             <script src=\"{{ asset('build/main.js') }}\"></script>
@@ -395,6 +375,6 @@ class __TwigTemplate_b8e6cfcaf1c801e42c95d5798dd64f1d45cc741bd7e05ca3b57930e2c8d
 
 
 {% endblock %}
-", "layout.html.twig", "/home/jerome/Developpement/mariane/templates/layout.html.twig");
+", "layout.html.twig", "/Users/djech/Developpement/mariane/templates/layout.html.twig");
     }
 }

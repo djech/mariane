@@ -168,6 +168,6 @@ class __TwigTemplate_74353fad6f212cf67d4878f9e1c138961bd928514e07cf6595ffb100f7e
     <body {% block body_attributes %}{% endblock %}>
         {% block body_content %}{% endblock %}
     </body>
-</html>", "base_structure.html.twig", "/home/jerome/Developpement/mariane/templates/base_structure.html.twig");
+</html>", "base_structure.html.twig", "/Users/djech/Developpement/mariane/templates/base_structure.html.twig");
     }
 }

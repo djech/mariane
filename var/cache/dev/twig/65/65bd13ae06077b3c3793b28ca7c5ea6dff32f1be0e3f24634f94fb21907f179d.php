@@ -81,6 +81,6 @@ class __TwigTemplate_8d83fc73d28bb9d2b9f9200667a48357c832ba123e7903661a0b845e840
         {{ menu_item(item) }}
     {% endfor %}
 </ul>
-", "AdminLTEBundle:Sidebar:menu.html.twig", "/home/jerome/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/views/Sidebar/menu.html.twig");
+", "AdminLTEBundle:Sidebar:menu.html.twig", "/Users/djech/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/views/Sidebar/menu.html.twig");
     }
 }

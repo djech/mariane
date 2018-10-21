@@ -11,26 +11,36 @@
                 <div class="col-lg-6 col-md-12">
                     <div class="card-body">
                         <div class="h4 mt-0 title">Information</div>
-                        <div class="row">
-                            <div class="col-sm-4"><strong class="text-uppercase">Age:</strong></div>
-                            <div class="col-sm-8">{{ information.age }}</div>
-                        </div>
+                        {% if information.age is not null %}
+                            <div class="row">
+                                <div class="col-sm-4"><strong class="text-uppercase">Age:</strong></div>
+                                <div class="col-sm-8">{{ information.age }}</div>
+                            </div>
+                        {% endif %}
+                        {% if information.email is not null %}
                         <div class="row mt-3">
                             <div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
                             <div class="col-sm-8">{{ information.email }}</div>
                         </div>
+                        {% endif %}
+                        {% if information.telephone is not null %}
                         <div class="row mt-3">
                             <div class="col-sm-4"><strong class="text-uppercase">Téléphone:</strong></div>
                             <div class="col-sm-8">{{ information.telephone }}</div>
                         </div>
+                        {% endif %}
+                        {% if information.adresse is not null %}
                         <div class="row mt-3">
                             <div class="col-sm-4"><strong class="text-uppercase">Adresse:</strong></div>
                             <div class="col-sm-8">{{ information.adresse }}</div>
                         </div>
+                        {% endif %}
+                        {% if information.langue is not null %}
                         <div class="row mt-3">
                             <div class="col-sm-4"><strong class="text-uppercase">Langue:</strong></div>
                             <div class="col-sm-8">{{ information.langue }}</div>
                         </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>

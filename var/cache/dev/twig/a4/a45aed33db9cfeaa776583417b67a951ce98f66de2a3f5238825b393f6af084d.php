@@ -739,6 +739,6 @@ class __TwigTemplate_fa7e180a4a3ec78586e8f77f9022f6ac441c4bb34f33a50c5be11835b02
 {% block page_content_after %}{% if block('avanzu_page_content_after') is defined %}{{ block('avanzu_page_content_after') }}{% else %}{{ parent() }}{% endif %}{% endblock %}
 {% block footer %}{% if block('avanzu_footer') is defined %}{{ block('avanzu_footer') }}{% else %}{{ parent() }}{% endif %}{% endblock %}
 {% block control_sidebar %}{% if block('avanzu_control_sidebar') is defined %}{{ block('avanzu_control_sidebar') }}{% else %}{{ parent() }}{% endif %}{% endblock %}
-", "AdminLTEBundle:layout:default-layout-avanzu.html.twig", "/home/jerome/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/views/layout/default-layout-avanzu.html.twig");
+", "AdminLTEBundle:layout:default-layout-avanzu.html.twig", "/Users/djech/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/views/layout/default-layout-avanzu.html.twig");
     }
 }

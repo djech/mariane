@@ -64,10 +64,11 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         switch ($pathinfo) {
             default:
                 $routes = array(
-                    '/administration' => array(array('_route' => 'administration', '_controller' => 'App\\Controller\\AdministrationController::indexAction'), null, null, null),
-                    '/administration/information' => array(array('_route' => 'information', '_controller' => 'App\\Controller\\AdministrationController::administrationAction'), null, null, null),
+                    '/administration' => array(array('_route' => 'information', '_controller' => 'App\\Controller\\AdministrationController::administrationAction'), null, null, null),
                     '/administration/about' => array(array('_route' => 'about', '_controller' => 'App\\Controller\\AdministrationController::aboutAction'), null, null, null),
                     '/administration/skills' => array(array('_route' => 'skills', '_controller' => 'App\\Controller\\AdministrationController::skillAction'), null, null, null),
+                    '/administration/logiciels' => array(array('_route' => 'logiciels', '_controller' => 'App\\Controller\\AdministrationController::logicielAction'), null, null, null),
+                    '/administration/portfolio' => array(array('_route' => 'portfolio', '_controller' => 'App\\Controller\\AdministrationController::portfolioAction'), null, null, null),
                     '/' => array(array('_route' => 'home', '_controller' => 'App\\Controller\\DefaultController::homeAction'), null, null, null),
                     '/_profiler/' => array(array('_route' => '_profiler_home', '_controller' => 'web_profiler.controller.profiler::homeAction'), null, null, null),
                     '/_profiler/search' => array(array('_route' => '_profiler_search', '_controller' => 'web_profiler.controller.profiler::searchAction'), null, null, null),
