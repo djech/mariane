@@ -27,57 +27,55 @@ class __TwigTemplate_d2d8028982d6f488b0c8e57c248acb0a4700ad71a6df526236e656106e8
 
         // line 1
         echo "<div class=\"section\" id=\"experience\">
-    <div class=\"container cc-experience\">
-        <div class=\"h4 text-center mb-4 title\">Work Experience</div>
-        <div class=\"card\">
-            <div class=\"row\">
-                <div class=\"col-md-3 bg-primary\" data-aos=\"fade-right\" data-aos-offset=\"50\" data-aos-duration=\"500\">
-                    <div class=\"card-body cc-experience-header\">
-                        <p>March 2016 - Present</p>
-                        <div class=\"h5\">CreativeM</div>
+    <div class=\"container cc-education\">
+        <div class=\"h4 text-center mb-4 title\">Expériences professionelles</div>
+        ";
+        // line 4
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["information"]) || array_key_exists("information", $context) ? $context["information"] : (function () { throw new Twig_Error_Runtime('Variable "information" does not exist.', 4, $this->source); })()), "experiences", array()));
+        foreach ($context['_seq'] as $context["_key"] => $context["experience"]) {
+            // line 5
+            echo "            <div class=\"card\">
+                <div class=\"row\">
+                    <div class=\"col-md-3 bg-primary\" data-aos=\"fade-right\" data-aos-offset=\"50\" data-aos-duration=\"500\">
+                        <div class=\"card-body cc-education-header\">
+                            <p>";
+            // line 9
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["experience"], "dateDebut", array()), "F Y"), "html", null, true);
+            echo " - ";
+            if ((null === twig_get_attribute($this->env, $this->source, $context["experience"], "dateFin", array()))) {
+                echo "Aujourd'hui";
+            } else {
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["experience"], "dateFin", array()), "F Y"), "html", null, true);
+            }
+            echo "</p>
+                            <div class=\"h5\">";
+            // line 10
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["experience"], "lieu", array()), "html", null, true);
+            echo "</div>
+                        </div>
                     </div>
-                </div>
-                <div class=\"col-md-9\" data-aos=\"fade-left\" data-aos-offset=\"50\" data-aos-duration=\"500\">
-                    <div class=\"card-body\">
-                        <div class=\"h5\">Front End Developer</div>
-                        <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class=\"card\">
-            <div class=\"row\">
-                <div class=\"col-md-3 bg-primary\" data-aos=\"fade-right\" data-aos-offset=\"50\" data-aos-duration=\"500\">
-                    <div class=\"card-body cc-experience-header\">
-                        <p>April 2014 - March 2016</p>
-                        <div class=\"h5\">WebNote</div>
-                    </div>
-                </div>
-                <div class=\"col-md-9\" data-aos=\"fade-left\" data-aos-offset=\"50\" data-aos-duration=\"500\">
-                    <div class=\"card-body\">
-                        <div class=\"h5\">Web Developer</div>
-                        <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class=\"card\">
-            <div class=\"row\">
-                <div class=\"col-md-3 bg-primary\" data-aos=\"fade-right\" data-aos-offset=\"50\" data-aos-duration=\"500\">
-                    <div class=\"card-body cc-experience-header\">
-                        <p>April 2013 - February 2014</p>
-                        <div class=\"h5\">WEBM</div>
-                    </div>
-                </div>
-                <div class=\"col-md-9\" data-aos=\"fade-left\" data-aos-offset=\"50\" data-aos-duration=\"500\">
-                    <div class=\"card-body\">
-                        <div class=\"h5\">Intern</div>
-                        <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
+                    <div class=\"col-md-9\" data-aos=\"fade-left\" data-aos-offset=\"50\" data-aos-duration=\"500\">
+                        <div class=\"card-body\">
+                            <div class=\"h5\">";
+            // line 15
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["experience"], "poste", array()), "html", null, true);
+            echo "</div>
+                            <p>";
+            // line 16
+            echo twig_get_attribute($this->env, $this->source, $context["experience"], "description", array());
+            echo "</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['experience'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 22
+        echo "    </div>
 </div>
 ";
         
@@ -93,66 +91,41 @@ class __TwigTemplate_d2d8028982d6f488b0c8e57c248acb0a4700ad71a6df526236e656106e8
         return "default/section/experience.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  29 => 1,);
+        return array (  78 => 22,  66 => 16,  62 => 15,  54 => 10,  44 => 9,  38 => 5,  34 => 4,  29 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Twig_Source("<div class=\"section\" id=\"experience\">
-    <div class=\"container cc-experience\">
-        <div class=\"h4 text-center mb-4 title\">Work Experience</div>
-        <div class=\"card\">
-            <div class=\"row\">
-                <div class=\"col-md-3 bg-primary\" data-aos=\"fade-right\" data-aos-offset=\"50\" data-aos-duration=\"500\">
-                    <div class=\"card-body cc-experience-header\">
-                        <p>March 2016 - Present</p>
-                        <div class=\"h5\">CreativeM</div>
+    <div class=\"container cc-education\">
+        <div class=\"h4 text-center mb-4 title\">Expériences professionelles</div>
+        {% for experience in information.experiences %}
+            <div class=\"card\">
+                <div class=\"row\">
+                    <div class=\"col-md-3 bg-primary\" data-aos=\"fade-right\" data-aos-offset=\"50\" data-aos-duration=\"500\">
+                        <div class=\"card-body cc-education-header\">
+                            <p>{{ experience.dateDebut|date('F Y') }} - {% if experience.dateFin is null %}Aujourd'hui{% else %}{{ experience.dateFin|date('F Y') }}{% endif %}</p>
+                            <div class=\"h5\">{{ experience.lieu }}</div>
+                        </div>
                     </div>
-                </div>
-                <div class=\"col-md-9\" data-aos=\"fade-left\" data-aos-offset=\"50\" data-aos-duration=\"500\">
-                    <div class=\"card-body\">
-                        <div class=\"h5\">Front End Developer</div>
-                        <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class=\"card\">
-            <div class=\"row\">
-                <div class=\"col-md-3 bg-primary\" data-aos=\"fade-right\" data-aos-offset=\"50\" data-aos-duration=\"500\">
-                    <div class=\"card-body cc-experience-header\">
-                        <p>April 2014 - March 2016</p>
-                        <div class=\"h5\">WebNote</div>
-                    </div>
-                </div>
-                <div class=\"col-md-9\" data-aos=\"fade-left\" data-aos-offset=\"50\" data-aos-duration=\"500\">
-                    <div class=\"card-body\">
-                        <div class=\"h5\">Web Developer</div>
-                        <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
+                    <div class=\"col-md-9\" data-aos=\"fade-left\" data-aos-offset=\"50\" data-aos-duration=\"500\">
+                        <div class=\"card-body\">
+                            <div class=\"h5\">{{ experience.poste }}</div>
+                            <p>{{ experience.description|raw }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class=\"card\">
-            <div class=\"row\">
-                <div class=\"col-md-3 bg-primary\" data-aos=\"fade-right\" data-aos-offset=\"50\" data-aos-duration=\"500\">
-                    <div class=\"card-body cc-experience-header\">
-                        <p>April 2013 - February 2014</p>
-                        <div class=\"h5\">WEBM</div>
-                    </div>
-                </div>
-                <div class=\"col-md-9\" data-aos=\"fade-left\" data-aos-offset=\"50\" data-aos-duration=\"500\">
-                    <div class=\"card-body\">
-                        <div class=\"h5\">Intern</div>
-                        <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
-", "default/section/experience.html.twig", "/Users/djech/Developpement/mariane/templates/default/section/experience.html.twig");
+", "default/section/experience.html.twig", "/home/jerome/Developpement/mariane/templates/default/section/experience.html.twig");
     }
 }

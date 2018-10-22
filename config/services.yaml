@@ -5,8 +5,11 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: 'fr'
-    ac_strasbourg_crud.extra:
+    app_crud.extra:
         - App\Controller\SkillController:Skill
+        - App\Controller\LogicielController:Logiciel
+        - App\Controller\FormationController:Formation
+        - App\Controller\ExperienceController:Experience
 
 services:
     # default configuration for services in *this* file
@@ -34,13 +37,13 @@ services:
         tags:
             - { name: kernel.event_listener, event: theme.sidebar_setup_knp_menu, method: onSetupMenu }
 
-    ac_strasbourg_crud.routing_loader:
+    app_crud.routing_loader:
         class: App\Routing\ExtraLoader
-        arguments: ['%ac_strasbourg_crud.extra%']
+        arguments: ['%app_crud.extra%']
         tags:
             - { name: routing.loader }
 
-    ac_strasbourg_crud.crud:
+    app_crud.crud:
         class: App\Service\Crud
         arguments: ["@doctrine"]
         public: true

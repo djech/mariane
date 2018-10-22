@@ -43,12 +43,12 @@ final class Crud
      * @var string
      */
     private $parentTwig = null;
-    private $indexTwig = 'AcStrasbourgCrudBundle:crud:index.html.twig';
-    private $actionTwig = 'AcStrasbourgCrudBundle:crud:action.html.twig';
-    private $filterTwig = 'AcStrasbourgCrudBundle:crud:filter.html.twig';
-    private $newTwig = 'AcStrasbourgCrudBundle:crud:new.html.twig';
-    private $showTwig = 'AcStrasbourgCrudBundle:crud:show.html.twig';
-    private $editTwig = 'AcStrasbourgCrudBundle:crud:edit.html.twig';
+    private $indexTwig = 'crud/index.html.twig';
+    private $actionTwig = 'crud/action.html.twig';
+    private $filterTwig = 'crud/filter.html.twig';
+    private $newTwig = 'crud/new.html.twig';
+    private $showTwig = 'crud/show.html.twig';
+    private $editTwig = 'crud/edit.html.twig';
 
     /**
      * Liste des twig pour les thèmes

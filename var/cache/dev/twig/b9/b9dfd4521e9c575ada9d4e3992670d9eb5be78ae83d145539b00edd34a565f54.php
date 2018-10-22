@@ -138,7 +138,7 @@ class __TwigTemplate_184260615413984047f63c44aec5bc8577511704d9b5cfcb7f1c82a88a7
 
     ";
         // line 41
-        $this->loadTemplate("crud/show.html.twig", "crud/show.html.twig", 41, "1513315368")->display(array_merge($context, array("box_class" => "box-primary")));
+        $this->loadTemplate("crud/show.html.twig", "crud/show.html.twig", 41, "2089835334")->display(array_merge($context, array("box_class" => "box-primary")));
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -204,7 +204,7 @@ class __TwigTemplate_184260615413984047f63c44aec5bc8577511704d9b5cfcb7f1c82a88a7
     {% endif %}
     <p></p>
 
-    {% embed \"AcStrasbourgCrudBundle::box.html.twig\" with {'box_class': 'box-primary'}%}
+    {% embed \"crud/box.html.twig\" with {'box_class': 'box-primary'}%}
         {% block boxcontent %}
             <table class=\"table table-hover table-condensed\">
                 <tbody>
@@ -223,7 +223,7 @@ class __TwigTemplate_184260615413984047f63c44aec5bc8577511704d9b5cfcb7f1c82a88a7
                                     'value': attribute(entity, key),
                                     'join_separator': join_separator
                                 } %}
-                                <td>{% include 'AcStrasbourgCrudBundle:crud:filter.html.twig' with vars only %}</td>
+                                <td>{% include 'filter.html.twig' with vars only %}</td>
                             </tr>
                         {% endif %}
                     {% endfor %}
@@ -232,13 +232,13 @@ class __TwigTemplate_184260615413984047f63c44aec5bc8577511704d9b5cfcb7f1c82a88a7
         {% endblock %}
     {% endembed %}
 {% endblock %}
-", "crud/show.html.twig", "/Users/djech/Developpement/mariane/templates/crud/show.html.twig");
+", "crud/show.html.twig", "/home/jerome/Developpement/mariane/templates/crud/show.html.twig");
     }
 }
 
 
 /* crud/show.html.twig */
-class __TwigTemplate_184260615413984047f63c44aec5bc8577511704d9b5cfcb7f1c82a88a741718_1513315368 extends Twig_Template
+class __TwigTemplate_184260615413984047f63c44aec5bc8577511704d9b5cfcb7f1c82a88a741718_2089835334 extends Twig_Template
 {
     private $source;
 
@@ -248,7 +248,7 @@ class __TwigTemplate_184260615413984047f63c44aec5bc8577511704d9b5cfcb7f1c82a88a7
 
         $this->source = $this->getSourceContext();
 
-        $this->parent = $this->loadTemplate("AcStrasbourgCrudBundle::box.html.twig", "crud/show.html.twig", 41);
+        $this->parent = $this->loadTemplate("crud/box.html.twig", "crud/show.html.twig", 41);
         $this->blocks = array(
             'boxcontent' => array($this, 'block_boxcontent'),
         );
@@ -256,7 +256,7 @@ class __TwigTemplate_184260615413984047f63c44aec5bc8577511704d9b5cfcb7f1c82a88a7
 
     protected function doGetParent(array $context)
     {
-        return "AcStrasbourgCrudBundle::box.html.twig";
+        return "crud/box.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -315,7 +315,7 @@ $context["field_options"], "choices", array(), "array"), "filter" => null, "valu
 (isset($context["join_separator"]) || array_key_exists("join_separator", $context) ? $context["join_separator"] : (function () { throw new Twig_Error_Runtime('Variable "join_separator" does not exist.', 58, $this->source); })()));
                 // line 60
                 echo "                                <td>";
-                $this->loadTemplate("AcStrasbourgCrudBundle:crud:filter.html.twig", "crud/show.html.twig", 60)->display((isset($context["vars"]) || array_key_exists("vars", $context) ? $context["vars"] : (function () { throw new Twig_Error_Runtime('Variable "vars" does not exist.', 60, $this->source); })()));
+                $this->loadTemplate("filter.html.twig", "crud/show.html.twig", 60)->display((isset($context["vars"]) || array_key_exists("vars", $context) ? $context["vars"] : (function () { throw new Twig_Error_Runtime('Variable "vars" does not exist.', 60, $this->source); })()));
                 echo "</td>
                             </tr>
                         ";
@@ -395,7 +395,7 @@ $context["field_options"], "choices", array(), "array"), "filter" => null, "valu
     {% endif %}
     <p></p>
 
-    {% embed \"AcStrasbourgCrudBundle::box.html.twig\" with {'box_class': 'box-primary'}%}
+    {% embed \"crud/box.html.twig\" with {'box_class': 'box-primary'}%}
         {% block boxcontent %}
             <table class=\"table table-hover table-condensed\">
                 <tbody>
@@ -414,7 +414,7 @@ $context["field_options"], "choices", array(), "array"), "filter" => null, "valu
                                     'value': attribute(entity, key),
                                     'join_separator': join_separator
                                 } %}
-                                <td>{% include 'AcStrasbourgCrudBundle:crud:filter.html.twig' with vars only %}</td>
+                                <td>{% include 'filter.html.twig' with vars only %}</td>
                             </tr>
                         {% endif %}
                     {% endfor %}
@@ -423,6 +423,6 @@ $context["field_options"], "choices", array(), "array"), "filter" => null, "valu
         {% endblock %}
     {% endembed %}
 {% endblock %}
-", "crud/show.html.twig", "/Users/djech/Developpement/mariane/templates/crud/show.html.twig");
+", "crud/show.html.twig", "/home/jerome/Developpement/mariane/templates/crud/show.html.twig");
     }
 }

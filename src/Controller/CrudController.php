@@ -62,8 +62,7 @@ abstract class CrudController extends Controller
     protected function initialize()
     {
         $classPath = get_class($this);
-        dump($classPath);
-        $crud = $this->get('ac_strasbourg_crud.crud');
+        $crud = $this->get('app_crud.crud');
 
         // Chemins - Impose que le controller soit dans un répertoire "Controller"
         $this->bundlePath = substr($classPath, 0, strpos($classPath, '\Controller'));
@@ -92,7 +91,7 @@ abstract class CrudController extends Controller
      */
     public function indexAction() : Response
     {
-        $crud = $this->get('ac_strasbourg_crud.crud');
+        $crud = $this->get('app_crud.crud');
 
         $formOptions = $crud->getFormInformation($this->createForm($this->formPath, null, $crud->getFormOptions()));
 
@@ -132,7 +131,7 @@ abstract class CrudController extends Controller
      */
     public function sourceAction() : JsonResponse
     {
-        $crud = $this->get('ac_strasbourg_crud.crud');
+        $crud = $this->get('app_crud.crud');
         $manager = $this->getDoctrine()->getManager($crud->getConnection());
 
         $data = array();
@@ -209,7 +208,7 @@ abstract class CrudController extends Controller
             throw new AccessDeniedException();
         }
 
-        $crud = $this->get('ac_strasbourg_crud.crud');
+        $crud = $this->get('app_crud.crud');
         $session = $this->get('session');
         $manager = $this->getDoctrine()->getManager($crud->getConnection());
 
@@ -229,7 +228,7 @@ abstract class CrudController extends Controller
 
         // On enregistre le referer au premier affichage du formulaire en vue de la future validation
         if ($crud->getUseReferer() && !$form->isSubmitted()) {
-            $session->set('_acstrasbourg_referer', $request->headers->get('referer'));
+            $session->set('_app_referer', $request->headers->get('referer'));
         }
 
         if ($form->isSubmitted()) {
@@ -247,8 +246,8 @@ abstract class CrudController extends Controller
                     $this->addFlash('success', $this->textAddSuccess);
 
                     // Redirection vers le referer
-                    if ($crud->getUseReferer() && $session->has('_acstrasbourg_referer')) {
-                        return $this->redirect($session->remove('_acstrasbourg_referer'));
+                    if ($crud->getUseReferer() && $session->has('_app_referer')) {
+                        return $this->redirect($session->remove('_app_referer'));
                     }
 
                     return $this->redirectToRoute($this->showRoute, array('id' => $entity->getId()));
@@ -281,7 +280,7 @@ abstract class CrudController extends Controller
      */
     public function showAction(Request $request, int $id) : Response
     {
-        $crud = $this->get('ac_strasbourg_crud.crud');
+        $crud = $this->get('app_crud.crud');
         $session = $this->get('session');
 
         $entity = $crud->convertToEntity($id, $this->entityPath, $crud->getConnection());
@@ -320,7 +319,7 @@ abstract class CrudController extends Controller
      */
     public function editAction(Request $request, int $id) : Response
     {
-        $crud = $this->get('ac_strasbourg_crud.crud');
+        $crud = $this->get('app_crud.crud');
         $session = $this->get('session');
         $manager = $this->getDoctrine()->getManager($crud->getConnection());
 
@@ -343,7 +342,7 @@ abstract class CrudController extends Controller
 
         // On enregistre le referer au premier affichage du formulaire en vue de la future suppression
         if ($crud->getUseReferer() && !$editForm->isSubmitted()) {
-            $session->set('_acstrasbourg_referer', $request->headers->get('referer'));
+            $session->set('_app_referer', $request->headers->get('referer'));
         }
 
         if ($editForm->isSubmitted()) {
@@ -401,7 +400,7 @@ abstract class CrudController extends Controller
      */
     public function deleteAction(Request $request, int $id) : Response
     {
-        $crud = $this->get('ac_strasbourg_crud.crud');
+        $crud = $this->get('app_crud.crud');
         $session = $this->get('session');
 
         $entity = $crud->convertToEntity($id, $this->entityPath, $crud->getConnection());
@@ -433,8 +432,8 @@ abstract class CrudController extends Controller
         }
 
         // Redirection vers le referer
-        if ($crud->getUseReferer() && $session->has('_acstrasbourg_referer')) {
-            return $this->redirect($session->remove('_acstrasbourg_referer'));
+        if ($crud->getUseReferer() && $session->has('_app_referer')) {
+            return $this->redirect($session->remove('_app_referer'));
         }
 
         return $this->redirectToRoute($this->indexRoute);

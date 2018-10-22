@@ -77,6 +77,6 @@ class __TwigTemplate_2775ff0c8f3a4ffbaf113dbc943b56b86c0fd01fc337cb49d473494cb21
     {
         return new Twig_Source("{% extends 'administration/layout.html.twig' %}
 
-{% block page_title %}Mariane{% endblock %}", "administration/index.html.twig", "/Users/djech/Developpement/mariane/templates/administration/index.html.twig");
+{% block page_title %}Mariane{% endblock %}", "administration/index.html.twig", "/home/jerome/Developpement/mariane/templates/administration/index.html.twig");
     }
 }

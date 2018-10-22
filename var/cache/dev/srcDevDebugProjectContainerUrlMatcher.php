@@ -87,6 +87,14 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     '/resetting/send-email' => array(array('_route' => 'fos_user_resetting_send_email', '_controller' => 'fos_user.resetting.controller:sendEmailAction'), null, array('POST' => 0), null),
                     '/resetting/check-email' => array(array('_route' => 'fos_user_resetting_check_email', '_controller' => 'fos_user.resetting.controller:checkEmailAction'), null, array('GET' => 0), null),
                     '/profile/change-password' => array(array('_route' => 'fos_user_change_password', '_controller' => 'fos_user.change_password.controller:changePasswordAction'), null, array('GET' => 0, 'POST' => 1), null),
+                    '/skill/' => array(array('_route' => 'skill_index', '_controller' => 'App\\Controller\\SkillController:indexAction'), null, array('GET' => 0), null),
+                    '/skill/source' => array(array('_route' => 'skill_source', '_controller' => 'App\\Controller\\SkillController:sourceAction'), null, array('GET' => 0), null),
+                    '/logiciel/' => array(array('_route' => 'logiciel_index', '_controller' => 'App\\Controller\\LogicielController:indexAction'), null, array('GET' => 0), null),
+                    '/logiciel/source' => array(array('_route' => 'logiciel_source', '_controller' => 'App\\Controller\\LogicielController:sourceAction'), null, array('GET' => 0), null),
+                    '/formation/' => array(array('_route' => 'formation_index', '_controller' => 'App\\Controller\\FormationController:indexAction'), null, array('GET' => 0), null),
+                    '/formation/source' => array(array('_route' => 'formation_source', '_controller' => 'App\\Controller\\FormationController:sourceAction'), null, array('GET' => 0), null),
+                    '/experience/' => array(array('_route' => 'experience_index', '_controller' => 'App\\Controller\\ExperienceController:indexAction'), null, array('GET' => 0), null),
+                    '/experience/source' => array(array('_route' => 'experience_source', '_controller' => 'App\\Controller\\ExperienceController:sourceAction'), null, array('GET' => 0), null),
                 );
 
                 if (!isset($routes[$pathinfo])) {
@@ -134,6 +142,30 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     .'|/e(?'
                         .'|fconnect(?:/([^/]++)(?:/([^/]++))?)?(*:278)'
                         .'|lfinder(?:/([^/]++)(?:/([^/]++))?)?(*:321)'
+                        .'|xperience/(?'
+                            .'|new(?:/(\\d+))?(*:356)'
+                            .'|(\\d+)(*:369)'
+                            .'|(\\d+)/edit(*:387)'
+                            .'|(\\d+)(*:400)'
+                        .')'
+                    .')'
+                    .'|/skill/(?'
+                        .'|new(?:/(\\d+))?(*:434)'
+                        .'|(\\d+)(*:447)'
+                        .'|(\\d+)/edit(*:465)'
+                        .'|(\\d+)(*:478)'
+                    .')'
+                    .'|/logiciel/(?'
+                        .'|new(?:/(\\d+))?(*:514)'
+                        .'|(\\d+)(*:527)'
+                        .'|(\\d+)/edit(*:545)'
+                        .'|(\\d+)(*:558)'
+                    .')'
+                    .'|/formation/(?'
+                        .'|new(?:/(\\d+))?(*:595)'
+                        .'|(\\d+)(*:608)'
+                        .'|(\\d+)/edit(*:626)'
+                        .'|(\\d+)(*:639)'
                     .')'
                 .')$}sD',
         );
@@ -154,6 +186,22 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                             228 => array(array('_route' => 'fos_user_resetting_reset', '_controller' => 'fos_user.resetting.controller:resetAction'), array('token'), array('GET' => 0, 'POST' => 1), null),
                             278 => array(array('_route' => 'ef_connect', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::loadAction', 'instance' => 'default', 'homeFolder' => ''), array('instance', 'homeFolder'), null, null),
                             321 => array(array('_route' => 'elfinder', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::showAction', 'instance' => 'default', 'homeFolder' => ''), array('instance', 'homeFolder'), null, null),
+                            356 => array(array('_route' => 'experience_new', '_controller' => 'App\\Controller\\ExperienceController:newAction', 'id' => null), array('id'), array('GET' => 0, 'POST' => 1), null),
+                            369 => array(array('_route' => 'experience_show', '_controller' => 'App\\Controller\\ExperienceController:showAction'), array('id'), array('GET' => 0), null),
+                            387 => array(array('_route' => 'experience_edit', '_controller' => 'App\\Controller\\ExperienceController:editAction'), array('id'), array('GET' => 0, 'POST' => 1), null),
+                            400 => array(array('_route' => 'experience_delete', '_controller' => 'App\\Controller\\ExperienceController:deleteAction'), array('id'), array('DELETE' => 0), null),
+                            434 => array(array('_route' => 'skill_new', '_controller' => 'App\\Controller\\SkillController:newAction', 'id' => null), array('id'), array('GET' => 0, 'POST' => 1), null),
+                            447 => array(array('_route' => 'skill_show', '_controller' => 'App\\Controller\\SkillController:showAction'), array('id'), array('GET' => 0), null),
+                            465 => array(array('_route' => 'skill_edit', '_controller' => 'App\\Controller\\SkillController:editAction'), array('id'), array('GET' => 0, 'POST' => 1), null),
+                            478 => array(array('_route' => 'skill_delete', '_controller' => 'App\\Controller\\SkillController:deleteAction'), array('id'), array('DELETE' => 0), null),
+                            514 => array(array('_route' => 'logiciel_new', '_controller' => 'App\\Controller\\LogicielController:newAction', 'id' => null), array('id'), array('GET' => 0, 'POST' => 1), null),
+                            527 => array(array('_route' => 'logiciel_show', '_controller' => 'App\\Controller\\LogicielController:showAction'), array('id'), array('GET' => 0), null),
+                            545 => array(array('_route' => 'logiciel_edit', '_controller' => 'App\\Controller\\LogicielController:editAction'), array('id'), array('GET' => 0, 'POST' => 1), null),
+                            558 => array(array('_route' => 'logiciel_delete', '_controller' => 'App\\Controller\\LogicielController:deleteAction'), array('id'), array('DELETE' => 0), null),
+                            595 => array(array('_route' => 'formation_new', '_controller' => 'App\\Controller\\FormationController:newAction', 'id' => null), array('id'), array('GET' => 0, 'POST' => 1), null),
+                            608 => array(array('_route' => 'formation_show', '_controller' => 'App\\Controller\\FormationController:showAction'), array('id'), array('GET' => 0), null),
+                            626 => array(array('_route' => 'formation_edit', '_controller' => 'App\\Controller\\FormationController:editAction'), array('id'), array('GET' => 0, 'POST' => 1), null),
+                            639 => array(array('_route' => 'formation_delete', '_controller' => 'App\\Controller\\FormationController:deleteAction'), array('id'), array('DELETE' => 0), null),
                         );
 
                         list($ret, $vars, $requiredMethods, $requiredSchemes) = $routes[$m];
@@ -179,7 +227,7 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                         return $ret;
                 }
 
-                if (321 === $m) {
+                if (639 === $m) {
                     break;
                 }
                 $regex = substr_replace($regex, 'F', $m - $offset, 1 + strlen($m));

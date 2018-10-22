@@ -103,6 +103,6 @@ class __TwigTemplate_4ea84d9df6f12bac2e01518a6d4bb985e5c638f398c89a84a377831d33e
 
 {% block login_box_msg %}
     {{ 'Sign in to start your session'|trans({}, 'AdminLTEBundle') }}
-{% endblock %}", "AdminLTEBundle:FOSUserBundle/Security:login.html.twig", "/Users/djech/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/views/FOSUserBundle/Security/login.html.twig");
+{% endblock %}", "AdminLTEBundle:FOSUserBundle/Security:login.html.twig", "/home/jerome/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/views/FOSUserBundle/Security/login.html.twig");
     }
 }

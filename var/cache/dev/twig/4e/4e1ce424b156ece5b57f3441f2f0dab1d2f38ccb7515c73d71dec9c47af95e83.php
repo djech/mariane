@@ -61,6 +61,6 @@ class __TwigTemplate_8cbed35c0480adf3947d520626603ec519e50fea8bf8f0913f434822d1f
     </div>
     <!-- Default to the left -->
     <strong>Copyright &copy; 2018 <a href=\"#\">Company</a>.</strong> All rights reserved.
-</footer>", "AdminLTEBundle:Partials:_footer.html.twig", "/Users/djech/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/views/Partials/_footer.html.twig");
+</footer>", "AdminLTEBundle:Partials:_footer.html.twig", "/home/jerome/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/views/Partials/_footer.html.twig");
     }
 }

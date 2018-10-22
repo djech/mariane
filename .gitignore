@@ -1,6 +1,7 @@
 ###> symfony/webpack-encore-pack ###
 npm-debug.log
 yarn-error.log
+var/
 ###< symfony/webpack-encore-pack ###
 
 ###> symfony/web-server-bundle ###

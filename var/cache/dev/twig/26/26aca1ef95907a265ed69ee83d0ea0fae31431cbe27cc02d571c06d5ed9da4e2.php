@@ -58,7 +58,7 @@ class __TwigTemplate_c2e5b1330da8ddbc92451ba8cac4f96993576ea5d19392df004fb408271
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "page_title"));
 
-        echo "Compétences";
+        echo "Logiciels connus";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -190,7 +190,7 @@ class __TwigTemplate_c2e5b1330da8ddbc92451ba8cac4f96993576ea5d19392df004fb408271
     {% form_theme form '@AdminLTE/layout/form-theme.html.twig' %}
 {% endif %}
 
-{% block page_title %}Compétences{% endblock %}
+{% block page_title %}Logiciels connus{% endblock %}
 
 {% block page_subtitle %}La liste des compétences s'affichera avec des pourcentages{% endblock %}
 
@@ -218,6 +218,6 @@ class __TwigTemplate_c2e5b1330da8ddbc92451ba8cac4f96993576ea5d19392df004fb408271
     {{ parent() }}
     <script src=\"{{ asset('build/jquery.3.2.1.min.js') }}\"></script>
     <script src=\"{{ asset('build/collectionSkills.js') }}\"></script>
-{% endblock %}", "administration/logiciels.html.twig", "/Users/djech/Developpement/mariane/templates/administration/logiciels.html.twig");
+{% endblock %}", "administration/logiciels.html.twig", "/home/jerome/Developpement/mariane/templates/administration/logiciels.html.twig");
     }
 }

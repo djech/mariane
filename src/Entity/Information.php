@@ -88,11 +88,15 @@ class Information
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Experience", mappedBy="information", cascade={"persist"})
+     *
+     * @ORM\OrderBy({"dateFin" = "DESC"})
      */
     private $experiences;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Formation", mappedBy="information", cascade={"persist"})
+     *
+     * @ORM\OrderBy({"dateFin" = "DESC"})
      */
     private $formations;
 
@@ -351,5 +355,14 @@ class Information
         }
 
         return $this;
+    }
+
+    /**
+     * Retourne le __toString()
+     * @return string Libellé
+     */
+    public function getTitle() : string
+    {
+        return "Compétence n°";
     }
 }

@@ -19,7 +19,12 @@ class Experience
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $nom;
+    private $poste;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $lieu;
 
     /**
      * @ORM\Column(type="datetime")
@@ -37,11 +42,6 @@ class Experience
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $poste;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Information", inversedBy="experiences", cascade={"persist"})
      */
     private $information;
@@ -51,14 +51,14 @@ class Experience
         return $this->id;
     }
 
-    public function getNom(): ?string
+    public function getLieu(): ?string
     {
-        return $this->nom;
+        return $this->lieu;
     }
 
-    public function setNom(string $nom): self
+    public function setLieu(string $lieu): self
     {
-        $this->nom = $nom;
+        $this->lieu = $lieu;
 
         return $this;
     }

@@ -205,6 +205,6 @@ class __TwigTemplate_46260b951dcf5b91326e2c3843aeff347b7638637c1dedc6a178917717f
         </div>
     {% endif %}
 {% endblock %}
-", "WebProfilerBundle:Collector:exception.html.twig", "/Users/djech/Developpement/mariane/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.html.twig");
+", "WebProfilerBundle:Collector:exception.html.twig", "/home/jerome/Developpement/mariane/vendor/symfony/web-profiler-bundle/Resources/views/Collector/exception.html.twig");
     }
 }

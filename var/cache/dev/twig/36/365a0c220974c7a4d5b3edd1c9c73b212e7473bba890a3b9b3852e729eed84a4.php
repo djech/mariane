@@ -148,6 +148,6 @@ class __TwigTemplate_a7b85c840af7f0279b79db00f725abb8df48217faaeab50506577c6e6da
     </div><!-- /.info-box-content -->
 </div><!-- /.info-box -->
 {% if block('box_after') is defined %}{{ block('box_after') }}{% endif %}
-", "AdminLTEBundle:Widgets:infobox-widget.html.twig", "/Users/djech/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/views/Widgets/infobox-widget.html.twig");
+", "AdminLTEBundle:Widgets:infobox-widget.html.twig", "/home/jerome/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/views/Widgets/infobox-widget.html.twig");
     }
 }

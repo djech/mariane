@@ -56,6 +56,6 @@ class __TwigTemplate_2dc8e9711a2be03507a16b6fdd6142cf7359f8f206dded6461ef54a4656
 
     public function getSourceContext()
     {
-        return new Twig_Source("{% extends '@AdminLTE/FOSUserBundle/Registration/confirmed.html.twig' %}", "@FOSUser/Registration/confirmed.html.twig", "/Users/djech/Developpement/mariane/templates/bundles/FOSUserBundle/Registration/confirmed.html.twig");
+        return new Twig_Source("{% extends '@AdminLTE/FOSUserBundle/Registration/confirmed.html.twig' %}", "@FOSUser/Registration/confirmed.html.twig", "/home/jerome/Developpement/mariane/templates/bundles/FOSUserBundle/Registration/confirmed.html.twig");
     }
 }

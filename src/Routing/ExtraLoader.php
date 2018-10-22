@@ -43,14 +43,14 @@ class ExtraLoader extends Loader
         $routes = new RouteCollection();
 
         foreach ($this->extra as $extra) {
-            $controllerPath = $extra;
+            $controllerPath = (explode(':', $extra))[0];
             $baseRoute = strtolower((explode(':', $extra))[1]);
 
             /**
              * Route prefix_index
              */
             $route = new Route('/'.$baseRoute.'/');
-            $route->setDefaults(array('_controller' => $controllerPath.':index'));
+            $route->setDefaults(array('_controller' => $controllerPath.':indexAction'));
             $route->setMethods("GET");
             $routes->add($baseRoute.'_index', $route);
 
@@ -58,7 +58,7 @@ class ExtraLoader extends Loader
              * Route prefix_source
              */
             $route = new Route('/'.$baseRoute.'/source');
-            $route->setDefaults(array('_controller' => $controllerPath.':source'));
+            $route->setDefaults(array('_controller' => $controllerPath.':sourceAction'));
             $route->setMethods(array("GET"));
             $routes->add($baseRoute.'_source', $route);
 
@@ -66,7 +66,7 @@ class ExtraLoader extends Loader
              * Route prefix_new
              */
             $route = new Route('/'.$baseRoute.'/new/{id}');
-            $route->setDefaults(array('_controller' => $controllerPath.':new', 'id' => null));
+            $route->setDefaults(array('_controller' => $controllerPath.':newAction', 'id' => null));
             $route->setMethods(array("GET","POST"));
             $route->setRequirements(array('id' => '\d+'));
             $routes->add($baseRoute.'_new', $route);
@@ -75,7 +75,7 @@ class ExtraLoader extends Loader
              * Route prefix_show
              */
             $route = new Route('/'.$baseRoute.'/{id}');
-            $route->setDefaults(array('_controller' => $controllerPath.':show'));
+            $route->setDefaults(array('_controller' => $controllerPath.':showAction'));
             $route->setMethods("GET");
             $route->setRequirements(array('id' => '\d+'));
             $routes->add($baseRoute.'_show', $route);
@@ -84,7 +84,7 @@ class ExtraLoader extends Loader
              * Route prefix_edit
              */
             $route = new Route('/'.$baseRoute.'/{id}/edit');
-            $route->setDefaults(array('_controller' => $controllerPath.':edit'));
+            $route->setDefaults(array('_controller' => $controllerPath.':editAction'));
             $route->setMethods(array("GET","POST"));
             $route->setRequirements(array('id' => '\d+'));
             $routes->add($baseRoute.'_edit', $route);
@@ -93,7 +93,7 @@ class ExtraLoader extends Loader
              * Route prefix_delete
              */
             $route = new Route('/'.$baseRoute.'/{id}');
-            $route->setDefaults(array('_controller' => $controllerPath.':delete'));
+            $route->setDefaults(array('_controller' => $controllerPath.':deleteAction'));
             $route->setMethods("DELETE");
             $route->setRequirements(array('id' => '\d+'));
             $routes->add($baseRoute.'_delete', $route);

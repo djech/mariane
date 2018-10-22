@@ -28,59 +28,46 @@ class __TwigTemplate_e437f5d727bac497a059f80c92e8dfe3c7291bdcbd2cd81a84545a64ffe
         // line 1
         echo "<div class=\"section\" id=\"formation\">
     <div class=\"container cc-education\">
-        <div class=\"h4 text-center mb-4 title\">Education</div>
-        <div class=\"card\">
-            <div class=\"row\">
-                <div class=\"col-md-3 bg-primary\" data-aos=\"fade-right\" data-aos-offset=\"50\" data-aos-duration=\"500\">
-                    <div class=\"card-body cc-education-header\">
-                        <p>2013 - 2015</p>
-                        <div class=\"h5\">Master's Degree</div>
+        <div class=\"h4 text-center mb-4 title\">Formation</div>
+        ";
+        // line 4
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["information"]) || array_key_exists("information", $context) ? $context["information"] : (function () { throw new Twig_Error_Runtime('Variable "information" does not exist.', 4, $this->source); })()), "formations", array()));
+        foreach ($context['_seq'] as $context["_key"] => $context["formation"]) {
+            // line 5
+            echo "            <div class=\"card\">
+                <div class=\"row\">
+                    <div class=\"col-md-3 bg-primary\" data-aos=\"fade-right\" data-aos-offset=\"50\" data-aos-duration=\"500\">
+                        <div class=\"card-body cc-education-header\">
+                            <div class=\"h5\">";
+            // line 9
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["formation"], "dateDebut", array()), "Y"), "html", null, true);
+            echo " - ";
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["formation"], "dateFin", array()), "Y"), "html", null, true);
+            echo "</div>
+                        </div>
                     </div>
-                </div>
-                <div class=\"col-md-9\" data-aos=\"fade-left\" data-aos-offset=\"50\" data-aos-duration=\"500\">
-                    <div class=\"card-body\">
-                        <div class=\"h5\">Master of Information Technology</div>
-                        <p class=\"category\">University of Computer Science</p>
-                        <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class=\"card\">
-            <div class=\"row\">
-                <div class=\"col-md-3 bg-primary\" data-aos=\"fade-right\" data-aos-offset=\"50\" data-aos-duration=\"500\">
-                    <div class=\"card-body cc-education-header\">
-                        <p>2009 - 2013</p>
-                        <div class=\"h5\">Bachelor's Degree</div>
-                    </div>
-                </div>
-                <div class=\"col-md-9\" data-aos=\"fade-left\" data-aos-offset=\"50\" data-aos-duration=\"500\">
-                    <div class=\"card-body\">
-                        <div class=\"h5\">Bachelor of Computer Science</div>
-                        <p class=\"category\">University of Computer Science</p>
-                        <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class=\"card\">
-            <div class=\"row\">
-                <div class=\"col-md-3 bg-primary\" data-aos=\"fade-right\" data-aos-offset=\"50\" data-aos-duration=\"500\">
-                    <div class=\"card-body cc-education-header\">
-                        <p>2007 - 2009</p>
-                        <div class=\"h5\">High School</div>
-                    </div>
-                </div>
-                <div class=\"col-md-9\" data-aos=\"fade-left\" data-aos-offset=\"50\" data-aos-duration=\"500\">
-                    <div class=\"card-body\">
-                        <div class=\"h5\">Science and Mathematics</div>
-                        <p class=\"category\">School of Secondary board</p>
-                        <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
+                    <div class=\"col-md-9\" data-aos=\"fade-left\" data-aos-offset=\"50\" data-aos-duration=\"500\">
+                        <div class=\"card-body\">
+                            <p class=\"category\">";
+            // line 14
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["formation"], "lieu", array()), "html", null, true);
+            echo "</p>
+                            <p style=\"font-size: 25px;\"><b>";
+            // line 15
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["formation"], "nom", array()), "html", null, true);
+            echo "</b></p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['formation'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 21
+        echo "    </div>
 </div>
 ";
         
@@ -96,69 +83,40 @@ class __TwigTemplate_e437f5d727bac497a059f80c92e8dfe3c7291bdcbd2cd81a84545a64ffe
         return "default/section/formation.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  29 => 1,);
+        return array (  70 => 21,  58 => 15,  54 => 14,  44 => 9,  38 => 5,  34 => 4,  29 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Twig_Source("<div class=\"section\" id=\"formation\">
     <div class=\"container cc-education\">
-        <div class=\"h4 text-center mb-4 title\">Education</div>
-        <div class=\"card\">
-            <div class=\"row\">
-                <div class=\"col-md-3 bg-primary\" data-aos=\"fade-right\" data-aos-offset=\"50\" data-aos-duration=\"500\">
-                    <div class=\"card-body cc-education-header\">
-                        <p>2013 - 2015</p>
-                        <div class=\"h5\">Master's Degree</div>
+        <div class=\"h4 text-center mb-4 title\">Formation</div>
+        {% for formation in information.formations %}
+            <div class=\"card\">
+                <div class=\"row\">
+                    <div class=\"col-md-3 bg-primary\" data-aos=\"fade-right\" data-aos-offset=\"50\" data-aos-duration=\"500\">
+                        <div class=\"card-body cc-education-header\">
+                            <div class=\"h5\">{{ formation.dateDebut|date('Y') }} - {{ formation.dateFin|date('Y') }}</div>
+                        </div>
                     </div>
-                </div>
-                <div class=\"col-md-9\" data-aos=\"fade-left\" data-aos-offset=\"50\" data-aos-duration=\"500\">
-                    <div class=\"card-body\">
-                        <div class=\"h5\">Master of Information Technology</div>
-                        <p class=\"category\">University of Computer Science</p>
-                        <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class=\"card\">
-            <div class=\"row\">
-                <div class=\"col-md-3 bg-primary\" data-aos=\"fade-right\" data-aos-offset=\"50\" data-aos-duration=\"500\">
-                    <div class=\"card-body cc-education-header\">
-                        <p>2009 - 2013</p>
-                        <div class=\"h5\">Bachelor's Degree</div>
-                    </div>
-                </div>
-                <div class=\"col-md-9\" data-aos=\"fade-left\" data-aos-offset=\"50\" data-aos-duration=\"500\">
-                    <div class=\"card-body\">
-                        <div class=\"h5\">Bachelor of Computer Science</div>
-                        <p class=\"category\">University of Computer Science</p>
-                        <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
+                    <div class=\"col-md-9\" data-aos=\"fade-left\" data-aos-offset=\"50\" data-aos-duration=\"500\">
+                        <div class=\"card-body\">
+                            <p class=\"category\">{{ formation.lieu }}</p>
+                            <p style=\"font-size: 25px;\"><b>{{ formation.nom }}</b></p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class=\"card\">
-            <div class=\"row\">
-                <div class=\"col-md-3 bg-primary\" data-aos=\"fade-right\" data-aos-offset=\"50\" data-aos-duration=\"500\">
-                    <div class=\"card-body cc-education-header\">
-                        <p>2007 - 2009</p>
-                        <div class=\"h5\">High School</div>
-                    </div>
-                </div>
-                <div class=\"col-md-9\" data-aos=\"fade-left\" data-aos-offset=\"50\" data-aos-duration=\"500\">
-                    <div class=\"card-body\">
-                        <div class=\"h5\">Science and Mathematics</div>
-                        <p class=\"category\">School of Secondary board</p>
-                        <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
-", "default/section/formation.html.twig", "/Users/djech/Developpement/mariane/templates/default/section/formation.html.twig");
+", "default/section/formation.html.twig", "/home/jerome/Developpement/mariane/templates/default/section/formation.html.twig");
     }
 }

@@ -1,12 +1,21 @@
 <div class="section" id="skill">
-    <div class="container">
+    <div class="container cc-experience">
         <div class="h4 text-center mb-4 title">Compétences</div>
-        <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-            <div class="card-body">
+        {% for skill in information.skills %}
+            <div class="card">
                 <div class="row">
-                    bla bla bla
+                    <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+                        <div class="card-body cc-experience-header">
+                            <div class="h5">{{ skill.nom }}</div>
+                        </div>
+                    </div>
+                    <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+                        <div class="card-body">
+                            <p>{{ skill.description|raw }}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        {% endfor %}
     </div>
 </div>

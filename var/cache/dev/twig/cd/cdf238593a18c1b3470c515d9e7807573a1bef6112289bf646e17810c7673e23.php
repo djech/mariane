@@ -287,6 +287,6 @@ class __TwigTemplate_3c594d045ac1f89e6c9aa4917c112bfbf9502dc1fdadc64c4e580f4e467
         <small class=\"label pull-right bg-{{ item.badgeColor }}\">{{ item.badge }}</small>
     {% endif %}
 {% endmacro %}
-", "AdminLTEBundle:Macros:menu.html.twig", "/Users/djech/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/views/Macros/menu.html.twig");
+", "AdminLTEBundle:Macros:menu.html.twig", "/home/jerome/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/views/Macros/menu.html.twig");
     }
 }

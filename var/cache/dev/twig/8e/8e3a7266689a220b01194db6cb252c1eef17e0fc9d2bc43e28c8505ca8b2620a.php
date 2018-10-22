@@ -36,7 +36,12 @@ class __TwigTemplate_406b85a84e873541d3d815a151a1f2c5ef7bc393f2b5b248c4d3fe916da
         // line 7
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/mariane_erard.jpg"), "html", null, true);
         echo "\" alt=\"Image\"/></a></div>
-                    <div class=\"h2 title\">Mariane Erard</div>
+                    <div class=\"h2 title\">";
+        // line 8
+        echo twig_escape_filter($this->env, twig_capitalize_string_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["information"]) || array_key_exists("information", $context) ? $context["information"] : (function () { throw new Twig_Error_Runtime('Variable "information" does not exist.', 8, $this->source); })()), "prenom", array())), "html", null, true);
+        echo " ";
+        echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["information"]) || array_key_exists("information", $context) ? $context["information"] : (function () { throw new Twig_Error_Runtime('Variable "information" does not exist.', 8, $this->source); })()), "nom", array())), "html", null, true);
+        echo "</div>
                     <p class=\"category text-white\">Relation presse</p><a class=\"btn btn-primary smooth-scroll mr-2\" href=\"#contact\" data-aos=\"zoom-in\" data-aos-anchor=\"data-aos-anchor\">Engagez moi</a><a class=\"btn btn-primary\" href=\"#\" data-aos=\"zoom-in\" data-aos-anchor=\"data-aos-anchor\">Télécharger CV</a>
                 </div>
             </div>
@@ -81,7 +86,7 @@ class __TwigTemplate_406b85a84e873541d3d815a151a1f2c5ef7bc393f2b5b248c4d3fe916da
 
     public function getDebugInfo()
     {
-        return array (  37 => 7,  29 => 1,);
+        return array (  41 => 8,  37 => 7,  29 => 1,);
     }
 
     public function getSourceContext()
@@ -93,7 +98,7 @@ class __TwigTemplate_406b85a84e873541d3d815a151a1f2c5ef7bc393f2b5b248c4d3fe916da
             <div class=\"container\">
                 <div class=\"content-center\">
                     <div class=\"cc-profile-image\"><a href=\"#\"><img src=\"{{asset('build/images/mariane_erard.jpg')}}\" alt=\"Image\"/></a></div>
-                    <div class=\"h2 title\">Mariane Erard</div>
+                    <div class=\"h2 title\">{{ information.prenom|capitalize }} {{ information.nom|upper }}</div>
                     <p class=\"category text-white\">Relation presse</p><a class=\"btn btn-primary smooth-scroll mr-2\" href=\"#contact\" data-aos=\"zoom-in\" data-aos-anchor=\"data-aos-anchor\">Engagez moi</a><a class=\"btn btn-primary\" href=\"#\" data-aos=\"zoom-in\" data-aos-anchor=\"data-aos-anchor\">Télécharger CV</a>
                 </div>
             </div>
@@ -117,6 +122,6 @@ class __TwigTemplate_406b85a84e873541d3d815a151a1f2c5ef7bc393f2b5b248c4d3fe916da
             </div>
         </div>
     </div>
-</div>", "default/section/profile.html.twig", "/Users/djech/Developpement/mariane/templates/default/section/profile.html.twig");
+</div>", "default/section/profile.html.twig", "/home/jerome/Developpement/mariane/templates/default/section/profile.html.twig");
     }
 }

@@ -33,14 +33,30 @@ class KnpMenuBuilderListener
         ])->setLabelAttribute('icon', 'fas fa-tachometer-alt');
 
         $menu->addChild('skills', [
-            'route' => 'skills',
+            'route' => 'skill_edit',
+            'routeParameters' => array('id' => 1),
             'label' => 'Compétences',
             'childOptions' => $event->getChildOptions()
         ])->setLabelAttribute('icon', 'fas fa-tachometer-alt');
 
         $menu->addChild('logiciels', [
-            'route' => 'logiciels',
+            'route' => 'logiciel_edit',
+            'routeParameters' => array('id' => 1),
             'label' => 'Logiciels connus',
+            'childOptions' => $event->getChildOptions()
+        ])->setLabelAttribute('icon', 'fas fa-tachometer-alt');
+
+        $menu->addChild('formations', [
+            'route' => 'formation_edit',
+            'routeParameters' => array('id' => 1),
+            'label' => 'Formation',
+            'childOptions' => $event->getChildOptions()
+        ])->setLabelAttribute('icon', 'fas fa-tachometer-alt');
+
+        $menu->addChild('experiences', [
+            'route' => 'experience_edit',
+            'routeParameters' => array('id' => 1),
+            'label' => 'Expériences professionnelles',
             'childOptions' => $event->getChildOptions()
         ])->setLabelAttribute('icon', 'fas fa-tachometer-alt');
 

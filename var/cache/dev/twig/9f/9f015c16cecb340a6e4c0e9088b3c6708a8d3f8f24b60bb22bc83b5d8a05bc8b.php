@@ -12,7 +12,7 @@ class __TwigTemplate_4599b5ad5914e1ca4f073afaae49dfd0036309e798045ea864228a9c6f8
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("AcStrasbourgCrudBundle:crud:form.html.twig", "crud/edit.html.twig", 1);
+        $this->parent = $this->loadTemplate("crud/form.html.twig", "crud/edit.html.twig", 1);
         $this->blocks = array(
             'content_header_small' => array($this, 'block_content_header_small'),
             'buttons' => array($this, 'block_buttons'),
@@ -21,7 +21,7 @@ class __TwigTemplate_4599b5ad5914e1ca4f073afaae49dfd0036309e798045ea864228a9c6f8
 
     protected function doGetParent(array $context)
     {
-        return "AcStrasbourgCrudBundle:crud:form.html.twig";
+        return "crud/form.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -134,7 +134,7 @@ class __TwigTemplate_4599b5ad5914e1ca4f073afaae49dfd0036309e798045ea864228a9c6f8
 
     public function getSourceContext()
     {
-        return new Twig_Source("{% extends \"AcStrasbourgCrudBundle:crud:form.html.twig\" %}
+        return new Twig_Source("{% extends \"crud/form.html.twig\" %}
 
 {% block content_header_small %}
     Modifier
@@ -161,6 +161,6 @@ class __TwigTemplate_4599b5ad5914e1ca4f073afaae49dfd0036309e798045ea864228a9c6f8
         </div>
     {% endif %}
 {% endblock %}
-", "crud/edit.html.twig", "/Users/djech/Developpement/mariane/templates/crud/edit.html.twig");
+", "crud/edit.html.twig", "/home/jerome/Developpement/mariane/templates/crud/edit.html.twig");
     }
 }

@@ -77,7 +77,7 @@ class __TwigTemplate_e5892489437712bd5ff042a00510b495ed265ca09305a37200ece2ead34
 
         // line 11
         echo "    ";
-        $this->loadTemplate("crud/index.html.twig", "crud/index.html.twig", 11, "1986774227")->display(array_merge($context, array("box_class" => "box-primary")));
+        $this->loadTemplate("crud/index.html.twig", "crud/index.html.twig", 11, "1234402787")->display(array_merge($context, array("box_class" => "box-primary")));
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -113,7 +113,7 @@ class __TwigTemplate_e5892489437712bd5ff042a00510b495ed265ca09305a37200ece2ead34
 {% endblock %}
 
 {% block content %}
-    {% embed \"AcStrasbourgCrudBundle::box.html.twig\" with {'box_class': 'box-primary'}%}
+    {% embed \"crud/box.html.twig\" with {'box_class': 'box-primary'}%}
         {% block boxheader %}
             {% if right_create == true %}
                 <a class=\"btn btn-sm btn-success\" href=\"{{ path(route_new) }}\">
@@ -145,13 +145,13 @@ class __TwigTemplate_e5892489437712bd5ff042a00510b495ed265ca09305a37200ece2ead34
         {% endblock %}
     {% endembed %}
 {% endblock %}
-", "crud/index.html.twig", "/Users/djech/Developpement/mariane/templates/crud/index.html.twig");
+", "crud/index.html.twig", "/home/jerome/Developpement/mariane/templates/crud/index.html.twig");
     }
 }
 
 
 /* crud/index.html.twig */
-class __TwigTemplate_e5892489437712bd5ff042a00510b495ed265ca09305a37200ece2ead34d90c4_1986774227 extends Twig_Template
+class __TwigTemplate_e5892489437712bd5ff042a00510b495ed265ca09305a37200ece2ead34d90c4_1234402787 extends Twig_Template
 {
     private $source;
 
@@ -161,7 +161,7 @@ class __TwigTemplate_e5892489437712bd5ff042a00510b495ed265ca09305a37200ece2ead34
 
         $this->source = $this->getSourceContext();
 
-        $this->parent = $this->loadTemplate("AcStrasbourgCrudBundle::box.html.twig", "crud/index.html.twig", 11);
+        $this->parent = $this->loadTemplate("crud/box.html.twig", "crud/index.html.twig", 11);
         $this->blocks = array(
             'boxheader' => array($this, 'block_boxheader'),
             'boxcontent' => array($this, 'block_boxcontent'),
@@ -170,7 +170,7 @@ class __TwigTemplate_e5892489437712bd5ff042a00510b495ed265ca09305a37200ece2ead34
 
     protected function doGetParent(array $context)
     {
-        return "AcStrasbourgCrudBundle::box.html.twig";
+        return "crud/box.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -317,7 +317,7 @@ class __TwigTemplate_e5892489437712bd5ff042a00510b495ed265ca09305a37200ece2ead34
 {% endblock %}
 
 {% block content %}
-    {% embed \"AcStrasbourgCrudBundle::box.html.twig\" with {'box_class': 'box-primary'}%}
+    {% embed \"crud/box.html.twig\" with {'box_class': 'box-primary'}%}
         {% block boxheader %}
             {% if right_create == true %}
                 <a class=\"btn btn-sm btn-success\" href=\"{{ path(route_new) }}\">
@@ -349,6 +349,6 @@ class __TwigTemplate_e5892489437712bd5ff042a00510b495ed265ca09305a37200ece2ead34
         {% endblock %}
     {% endembed %}
 {% endblock %}
-", "crud/index.html.twig", "/Users/djech/Developpement/mariane/templates/crud/index.html.twig");
+", "crud/index.html.twig", "/home/jerome/Developpement/mariane/templates/crud/index.html.twig");
     }
 }

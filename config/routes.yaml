@@ -3,3 +3,7 @@ fos_user:
 
 elfinder:
     resource: "@FMElfinderBundle/Resources/config/routing.yml"
+
+app_extra:
+    resource: .
+    type: extra

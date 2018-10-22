@@ -237,7 +237,7 @@ class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9
             echo "
         ";
             // line 72
-            $this->loadTemplate("crud/form.html.twig", "crud/form.html.twig", 72, "1809506402")->display(array_merge($context, array("override_tab_tabs" =>             // line 73
+            $this->loadTemplate("crud/form.html.twig", "crud/form.html.twig", 72, "1475584748")->display(array_merge($context, array("override_tab_tabs" =>             // line 73
 (isset($context["override_tab_tabs"]) || array_key_exists("override_tab_tabs", $context) ? $context["override_tab_tabs"] : (function () { throw new Twig_Error_Runtime('Variable "override_tab_tabs" does not exist.', 73, $this->source); })()), "override_tab_tabscontent" =>             // line 74
 (isset($context["override_tab_tabscontent"]) || array_key_exists("override_tab_tabscontent", $context) ? $context["override_tab_tabscontent"] : (function () { throw new Twig_Error_Runtime('Variable "override_tab_tabscontent" does not exist.', 74, $this->source); })()))));
             // line 83
@@ -271,7 +271,7 @@ class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9
             echo "
         ";
             // line 102
-            $this->loadTemplate("crud/form.html.twig", "crud/form.html.twig", 102, "69733101")->display(array_merge($context, array("box_class" => "box-primary", "override_box_boxcontent" =>             // line 104
+            $this->loadTemplate("crud/form.html.twig", "crud/form.html.twig", 102, "152322705")->display(array_merge($context, array("box_class" => "box-primary", "override_box_boxcontent" =>             // line 104
 (isset($context["override_box_boxcontent"]) || array_key_exists("override_box_boxcontent", $context) ? $context["override_box_boxcontent"] : (function () { throw new Twig_Error_Runtime('Variable "override_box_boxcontent" does not exist.', 104, $this->source); })()))));
             // line 110
             echo "        <button class=\"btn btn-sm btn-success\" type=\"submit\">
@@ -305,13 +305,19 @@ class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "buttons"));
 
         // line 16
-        echo "        <div class=\"btn-group\">
-            <a class=\"btn btn-sm btn-info\" href=\"javascript:history.back()\">
-                <i class=\"fa fa-reply\"></i>&nbsp;Retour</a>
-            <a class=\"btn btn-sm btn-info\" href=\"#anchor\">
-                <i class=\"fa fa-arrow-down\"></i>&nbsp;Bas de page</a>
-        </div>
-    ";
+        echo "        ";
+        // line 17
+        echo "            ";
+        // line 18
+        echo "                ";
+        // line 19
+        echo "            ";
+        // line 20
+        echo "                ";
+        // line 21
+        echo "        ";
+        // line 22
+        echo "    ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -416,7 +422,7 @@ class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9
 
     public function getDebugInfo()
     {
-        return array (  395 => 94,  386 => 93,  373 => 55,  364 => 54,  354 => 38,  343 => 35,  338 => 34,  333 => 33,  324 => 32,  308 => 16,  299 => 15,  287 => 115,  281 => 112,  277 => 110,  275 => 104,  274 => 102,  269 => 101,  266 => 97,  263 => 96,  260 => 93,  257 => 92,  254 => 88,  248 => 85,  244 => 83,  242 => 74,  241 => 73,  240 => 72,  236 => 71,  231 => 70,  228 => 66,  225 => 65,  217 => 62,  209 => 59,  195 => 58,  192 => 57,  189 => 54,  186 => 53,  169 => 52,  165 => 51,  162 => 50,  157 => 49,  155 => 48,  147 => 46,  142 => 45,  139 => 44,  136 => 40,  133 => 39,  130 => 32,  127 => 31,  124 => 27,  122 => 26,  117 => 23,  114 => 15,  105 => 14,  88 => 10,  77 => 11,  75 => 10,  69 => 8,  60 => 7,  50 => 1,  44 => 4,  40 => 3,  28 => 1,);
+        return array (  401 => 94,  392 => 93,  379 => 55,  370 => 54,  360 => 38,  349 => 35,  344 => 34,  339 => 33,  330 => 32,  320 => 22,  318 => 21,  316 => 20,  314 => 19,  312 => 18,  310 => 17,  308 => 16,  299 => 15,  287 => 115,  281 => 112,  277 => 110,  275 => 104,  274 => 102,  269 => 101,  266 => 97,  263 => 96,  260 => 93,  257 => 92,  254 => 88,  248 => 85,  244 => 83,  242 => 74,  241 => 73,  240 => 72,  236 => 71,  231 => 70,  228 => 66,  225 => 65,  217 => 62,  209 => 59,  195 => 58,  192 => 57,  189 => 54,  186 => 53,  169 => 52,  165 => 51,  162 => 50,  157 => 49,  155 => 48,  147 => 46,  142 => 45,  139 => 44,  136 => 40,  133 => 39,  130 => 32,  127 => 31,  124 => 27,  122 => 26,  117 => 23,  114 => 15,  105 => 14,  88 => 10,  77 => 11,  75 => 10,  69 => 8,  60 => 7,  50 => 1,  44 => 4,  40 => 3,  28 => 1,);
     }
 
     public function getSourceContext()
@@ -436,12 +442,12 @@ class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9
 
 {% block content %}
     {% block buttons %}
-        <div class=\"btn-group\">
-            <a class=\"btn btn-sm btn-info\" href=\"javascript:history.back()\">
-                <i class=\"fa fa-reply\"></i>&nbsp;Retour</a>
-            <a class=\"btn btn-sm btn-info\" href=\"#anchor\">
-                <i class=\"fa fa-arrow-down\"></i>&nbsp;Bas de page</a>
-        </div>
+        {#<div class=\"btn-group\">#}
+            {#<a class=\"btn btn-sm btn-info\" href=\"javascript:history.back()\">#}
+                {#<i class=\"fa fa-reply\"></i>&nbsp;Retour</a>#}
+            {#<a class=\"btn btn-sm btn-info\" href=\"#anchor\">#}
+                {#<i class=\"fa fa-arrow-down\"></i>&nbsp;Bas de page</a>#}
+        {#</div>#}
     {% endblock %}
 
     <p></p>
@@ -492,7 +498,7 @@ class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9
         #}
         {{ form_start(form) }}
         {{ form_errors(form) }}
-        {% embed \"AcStrasbourgCrudBundle::tab.html.twig\" with {
+        {% embed \"crud/tab.html.twig\" with {
             override_tab_tabs : override_tab_tabs,
             override_tab_tabscontent: override_tab_tabscontent
         } %}
@@ -522,7 +528,7 @@ class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9
             Form box
         #}
         {{ form_start(form) }}
-        {% embed \"AcStrasbourgCrudBundle::box.html.twig\" with {
+        {% embed \"crud/box.html.twig\" with {
             'box_class': 'box-primary',
             override_box_boxcontent : override_box_boxcontent}
         %}
@@ -538,13 +544,13 @@ class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9
 
     <div id=\"anchor\"></div>
 {% endblock %}
-", "crud/form.html.twig", "/Users/djech/Developpement/mariane/templates/crud/form.html.twig");
+", "crud/form.html.twig", "/home/jerome/Developpement/mariane/templates/crud/form.html.twig");
     }
 }
 
 
 /* crud/form.html.twig */
-class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9e5cd0_1809506402 extends Twig_Template
+class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9e5cd0_1475584748 extends Twig_Template
 {
     private $source;
 
@@ -555,7 +561,7 @@ class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9
         $this->source = $this->getSourceContext();
 
         // line 72
-        $this->parent = $this->loadTemplate("AcStrasbourgCrudBundle::tab.html.twig", "crud/form.html.twig", 72);
+        $this->parent = $this->loadTemplate("crud/tab.html.twig", "crud/form.html.twig", 72);
         $this->blocks = array(
             'tabs' => array($this, 'block_tabs'),
             'tabscontent' => array($this, 'block_tabscontent'),
@@ -564,7 +570,7 @@ class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9
 
     protected function doGetParent(array $context)
     {
-        return "AcStrasbourgCrudBundle::tab.html.twig";
+        return "crud/tab.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -640,7 +646,7 @@ class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9
 
     public function getDebugInfo()
     {
-        return array (  619 => 80,  610 => 79,  597 => 77,  588 => 76,  558 => 72,  395 => 94,  386 => 93,  373 => 55,  364 => 54,  354 => 38,  343 => 35,  338 => 34,  333 => 33,  324 => 32,  308 => 16,  299 => 15,  287 => 115,  281 => 112,  277 => 110,  275 => 104,  274 => 102,  269 => 101,  266 => 97,  263 => 96,  260 => 93,  257 => 92,  254 => 88,  248 => 85,  244 => 83,  242 => 74,  241 => 73,  240 => 72,  236 => 71,  231 => 70,  228 => 66,  225 => 65,  217 => 62,  209 => 59,  195 => 58,  192 => 57,  189 => 54,  186 => 53,  169 => 52,  165 => 51,  162 => 50,  157 => 49,  155 => 48,  147 => 46,  142 => 45,  139 => 44,  136 => 40,  133 => 39,  130 => 32,  127 => 31,  124 => 27,  122 => 26,  117 => 23,  114 => 15,  105 => 14,  88 => 10,  77 => 11,  75 => 10,  69 => 8,  60 => 7,  50 => 1,  44 => 4,  40 => 3,  28 => 1,);
+        return array (  625 => 80,  616 => 79,  603 => 77,  594 => 76,  564 => 72,  401 => 94,  392 => 93,  379 => 55,  370 => 54,  360 => 38,  349 => 35,  344 => 34,  339 => 33,  330 => 32,  320 => 22,  318 => 21,  316 => 20,  314 => 19,  312 => 18,  310 => 17,  308 => 16,  299 => 15,  287 => 115,  281 => 112,  277 => 110,  275 => 104,  274 => 102,  269 => 101,  266 => 97,  263 => 96,  260 => 93,  257 => 92,  254 => 88,  248 => 85,  244 => 83,  242 => 74,  241 => 73,  240 => 72,  236 => 71,  231 => 70,  228 => 66,  225 => 65,  217 => 62,  209 => 59,  195 => 58,  192 => 57,  189 => 54,  186 => 53,  169 => 52,  165 => 51,  162 => 50,  157 => 49,  155 => 48,  147 => 46,  142 => 45,  139 => 44,  136 => 40,  133 => 39,  130 => 32,  127 => 31,  124 => 27,  122 => 26,  117 => 23,  114 => 15,  105 => 14,  88 => 10,  77 => 11,  75 => 10,  69 => 8,  60 => 7,  50 => 1,  44 => 4,  40 => 3,  28 => 1,);
     }
 
     public function getSourceContext()
@@ -660,12 +666,12 @@ class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9
 
 {% block content %}
     {% block buttons %}
-        <div class=\"btn-group\">
-            <a class=\"btn btn-sm btn-info\" href=\"javascript:history.back()\">
-                <i class=\"fa fa-reply\"></i>&nbsp;Retour</a>
-            <a class=\"btn btn-sm btn-info\" href=\"#anchor\">
-                <i class=\"fa fa-arrow-down\"></i>&nbsp;Bas de page</a>
-        </div>
+        {#<div class=\"btn-group\">#}
+            {#<a class=\"btn btn-sm btn-info\" href=\"javascript:history.back()\">#}
+                {#<i class=\"fa fa-reply\"></i>&nbsp;Retour</a>#}
+            {#<a class=\"btn btn-sm btn-info\" href=\"#anchor\">#}
+                {#<i class=\"fa fa-arrow-down\"></i>&nbsp;Bas de page</a>#}
+        {#</div>#}
     {% endblock %}
 
     <p></p>
@@ -716,7 +722,7 @@ class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9
         #}
         {{ form_start(form) }}
         {{ form_errors(form) }}
-        {% embed \"AcStrasbourgCrudBundle::tab.html.twig\" with {
+        {% embed \"crud/tab.html.twig\" with {
             override_tab_tabs : override_tab_tabs,
             override_tab_tabscontent: override_tab_tabscontent
         } %}
@@ -746,7 +752,7 @@ class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9
             Form box
         #}
         {{ form_start(form) }}
-        {% embed \"AcStrasbourgCrudBundle::box.html.twig\" with {
+        {% embed \"crud/box.html.twig\" with {
             'box_class': 'box-primary',
             override_box_boxcontent : override_box_boxcontent}
         %}
@@ -762,13 +768,13 @@ class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9
 
     <div id=\"anchor\"></div>
 {% endblock %}
-", "crud/form.html.twig", "/Users/djech/Developpement/mariane/templates/crud/form.html.twig");
+", "crud/form.html.twig", "/home/jerome/Developpement/mariane/templates/crud/form.html.twig");
     }
 }
 
 
 /* crud/form.html.twig */
-class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9e5cd0_69733101 extends Twig_Template
+class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9e5cd0_152322705 extends Twig_Template
 {
     private $source;
 
@@ -779,7 +785,7 @@ class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9
         $this->source = $this->getSourceContext();
 
         // line 102
-        $this->parent = $this->loadTemplate("AcStrasbourgCrudBundle::box.html.twig", "crud/form.html.twig", 102);
+        $this->parent = $this->loadTemplate("crud/box.html.twig", "crud/form.html.twig", 102);
         $this->blocks = array(
             'boxcontent' => array($this, 'block_boxcontent'),
         );
@@ -787,7 +793,7 @@ class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9
 
     protected function doGetParent(array $context)
     {
-        return "AcStrasbourgCrudBundle::box.html.twig";
+        return "crud/box.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -841,7 +847,7 @@ class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9
 
     public function getDebugInfo()
     {
-        return array (  820 => 107,  811 => 106,  782 => 102,  619 => 80,  610 => 79,  597 => 77,  588 => 76,  558 => 72,  395 => 94,  386 => 93,  373 => 55,  364 => 54,  354 => 38,  343 => 35,  338 => 34,  333 => 33,  324 => 32,  308 => 16,  299 => 15,  287 => 115,  281 => 112,  277 => 110,  275 => 104,  274 => 102,  269 => 101,  266 => 97,  263 => 96,  260 => 93,  257 => 92,  254 => 88,  248 => 85,  244 => 83,  242 => 74,  241 => 73,  240 => 72,  236 => 71,  231 => 70,  228 => 66,  225 => 65,  217 => 62,  209 => 59,  195 => 58,  192 => 57,  189 => 54,  186 => 53,  169 => 52,  165 => 51,  162 => 50,  157 => 49,  155 => 48,  147 => 46,  142 => 45,  139 => 44,  136 => 40,  133 => 39,  130 => 32,  127 => 31,  124 => 27,  122 => 26,  117 => 23,  114 => 15,  105 => 14,  88 => 10,  77 => 11,  75 => 10,  69 => 8,  60 => 7,  50 => 1,  44 => 4,  40 => 3,  28 => 1,);
+        return array (  826 => 107,  817 => 106,  788 => 102,  625 => 80,  616 => 79,  603 => 77,  594 => 76,  564 => 72,  401 => 94,  392 => 93,  379 => 55,  370 => 54,  360 => 38,  349 => 35,  344 => 34,  339 => 33,  330 => 32,  320 => 22,  318 => 21,  316 => 20,  314 => 19,  312 => 18,  310 => 17,  308 => 16,  299 => 15,  287 => 115,  281 => 112,  277 => 110,  275 => 104,  274 => 102,  269 => 101,  266 => 97,  263 => 96,  260 => 93,  257 => 92,  254 => 88,  248 => 85,  244 => 83,  242 => 74,  241 => 73,  240 => 72,  236 => 71,  231 => 70,  228 => 66,  225 => 65,  217 => 62,  209 => 59,  195 => 58,  192 => 57,  189 => 54,  186 => 53,  169 => 52,  165 => 51,  162 => 50,  157 => 49,  155 => 48,  147 => 46,  142 => 45,  139 => 44,  136 => 40,  133 => 39,  130 => 32,  127 => 31,  124 => 27,  122 => 26,  117 => 23,  114 => 15,  105 => 14,  88 => 10,  77 => 11,  75 => 10,  69 => 8,  60 => 7,  50 => 1,  44 => 4,  40 => 3,  28 => 1,);
     }
 
     public function getSourceContext()
@@ -861,12 +867,12 @@ class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9
 
 {% block content %}
     {% block buttons %}
-        <div class=\"btn-group\">
-            <a class=\"btn btn-sm btn-info\" href=\"javascript:history.back()\">
-                <i class=\"fa fa-reply\"></i>&nbsp;Retour</a>
-            <a class=\"btn btn-sm btn-info\" href=\"#anchor\">
-                <i class=\"fa fa-arrow-down\"></i>&nbsp;Bas de page</a>
-        </div>
+        {#<div class=\"btn-group\">#}
+            {#<a class=\"btn btn-sm btn-info\" href=\"javascript:history.back()\">#}
+                {#<i class=\"fa fa-reply\"></i>&nbsp;Retour</a>#}
+            {#<a class=\"btn btn-sm btn-info\" href=\"#anchor\">#}
+                {#<i class=\"fa fa-arrow-down\"></i>&nbsp;Bas de page</a>#}
+        {#</div>#}
     {% endblock %}
 
     <p></p>
@@ -917,7 +923,7 @@ class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9
         #}
         {{ form_start(form) }}
         {{ form_errors(form) }}
-        {% embed \"AcStrasbourgCrudBundle::tab.html.twig\" with {
+        {% embed \"crud/tab.html.twig\" with {
             override_tab_tabs : override_tab_tabs,
             override_tab_tabscontent: override_tab_tabscontent
         } %}
@@ -947,7 +953,7 @@ class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9
             Form box
         #}
         {{ form_start(form) }}
-        {% embed \"AcStrasbourgCrudBundle::box.html.twig\" with {
+        {% embed \"crud/box.html.twig\" with {
             'box_class': 'box-primary',
             override_box_boxcontent : override_box_boxcontent}
         %}
@@ -963,6 +969,6 @@ class __TwigTemplate_e483ec27dd6c983f02273a2380b891272512092bd18bd59df40e489efc9
 
     <div id=\"anchor\"></div>
 {% endblock %}
-", "crud/form.html.twig", "/Users/djech/Developpement/mariane/templates/crud/form.html.twig");
+", "crud/form.html.twig", "/home/jerome/Developpement/mariane/templates/crud/form.html.twig");
     }
 }

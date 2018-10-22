@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Information;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -18,12 +19,12 @@ class InformationLogicielsType extends AbstractType
     {
         $builder
             ->add('logiciels', CollectionType::class, array(
-                'label' => false,
+                'label' => "Logiciels",
                 'entry_type'   => LogicielType::class,
                 'allow_add'    => true,
                 'allow_delete' => true,
                 'by_reference'=> false,
-                'prototype_name' => '__information_logiciels__'
+                'prototype_name' => '__logiciels__'
             ))
         ;
         ;

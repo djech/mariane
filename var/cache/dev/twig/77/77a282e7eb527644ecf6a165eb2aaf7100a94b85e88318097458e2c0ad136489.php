@@ -12,7 +12,7 @@ class __TwigTemplate_7c10f1bccdc75743699af1f46aff23fddff818e07b64f4762ba2eceebc5
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("AcStrasbourgCrudBundle:crud:form.html.twig", "crud/new.html.twig", 1);
+        $this->parent = $this->loadTemplate("crud/form.html.twig", "crud/new.html.twig", 1);
         $this->blocks = array(
             'content_header_small' => array($this, 'block_content_header_small'),
         );
@@ -20,7 +20,7 @@ class __TwigTemplate_7c10f1bccdc75743699af1f46aff23fddff818e07b64f4762ba2eceebc5
 
     protected function doGetParent(array $context)
     {
-        return "AcStrasbourgCrudBundle:crud:form.html.twig";
+        return "crud/form.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -77,11 +77,11 @@ class __TwigTemplate_7c10f1bccdc75743699af1f46aff23fddff818e07b64f4762ba2eceebc5
 
     public function getSourceContext()
     {
-        return new Twig_Source("{% extends \"AcStrasbourgCrudBundle:crud:form.html.twig\" %}
+        return new Twig_Source("{% extends \"crud/form.html.twig\" %}
 
 {% block content_header_small %}
     Nouveau
 {% endblock %}
-", "crud/new.html.twig", "/Users/djech/Developpement/mariane/templates/crud/new.html.twig");
+", "crud/new.html.twig", "/home/jerome/Developpement/mariane/templates/crud/new.html.twig");
     }
 }

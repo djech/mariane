@@ -43,8 +43,8 @@ class __TwigTemplate_54fb60b8c527f3a8d457ce68338e94fdb763f5d8bdf24c30f8e52bdc091
         // line 14
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/reference-image-1.jpg"), "html", null, true);
         echo "\" alt=\"Image\"/>
-                                <div class=\"h5 pt-2\">Aiyana</div>
-                                <p class=\"category\">CEO / WEBM</p>
+                                <div class=\"h5 pt-2\">Blabla</div>
+                                <p class=\"category\">Poste</p>
                             </div>
                             <div class=\"col-lg-10 col-md-9\">
                                 <p> Habitasse venenatis commodo tempor eleifend arcu sociis sollicitudin ante pulvinar ad, est porta cras erat ullamcorper volutpat metus duis platea convallis, tortor primis ac quisque etiam luctus nisl nullam fames. Ligula purus suscipit tempus nascetur curabitur donec nam ullamcorper, laoreet nullam mauris dui aptent facilisis neque elementum ac, risus semper felis parturient fringilla rhoncus eleifend.</p>
@@ -57,8 +57,8 @@ class __TwigTemplate_54fb60b8c527f3a8d457ce68338e94fdb763f5d8bdf24c30f8e52bdc091
         // line 25
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/reference-image-2.jpg"), "html", null, true);
         echo "\" alt=\"Image\"/>
-                                <div class=\"h5 pt-2\">Braiden</div>
-                                <p class=\"category\">CEO / Creativem</p>
+                                <div class=\"h5 pt-2\">Bloblo</div>
+                                <p class=\"category\">Poste</p>
                             </div>
                             <div class=\"col-lg-10 col-md-9\">
                                 <p> Habitasse venenatis commodo tempor eleifend arcu sociis sollicitudin ante pulvinar ad, est porta cras erat ullamcorper volutpat metus duis platea convallis, tortor primis ac quisque etiam luctus nisl nullam fames. Ligula purus suscipit tempus nascetur curabitur donec nam ullamcorper, laoreet nullam mauris dui aptent facilisis neque elementum ac, risus semper felis parturient fringilla rhoncus eleifend.</p>
@@ -71,8 +71,8 @@ class __TwigTemplate_54fb60b8c527f3a8d457ce68338e94fdb763f5d8bdf24c30f8e52bdc091
         // line 36
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/reference-image-3.jpg"), "html", null, true);
         echo "\" alt=\"Image\"/>
-                                <div class=\"h5 pt-2\">Alexander</div>
-                                <p class=\"category\">CEO / Webnote</p>
+                                <div class=\"h5 pt-2\">Blabla</div>
+                                <p class=\"category\">Poste</p>
                             </div>
                             <div class=\"col-lg-10 col-md-9\">
                                 <p> Habitasse venenatis commodo tempor eleifend arcu sociis sollicitudin ante pulvinar ad, est porta cras erat ullamcorper volutpat metus duis platea convallis, tortor primis ac quisque etiam luctus nisl nullam fames. Ligula purus suscipit tempus nascetur curabitur donec nam ullamcorper, laoreet nullam mauris dui aptent facilisis neque elementum ac, risus semper felis parturient fringilla rhoncus eleifend.</p>
@@ -123,8 +123,8 @@ class __TwigTemplate_54fb60b8c527f3a8d457ce68338e94fdb763f5d8bdf24c30f8e52bdc091
                     <div class=\"carousel-item active\">
                         <div class=\"row\">
                             <div class=\"col-lg-2 col-md-3 cc-reference-header\"><img src=\"{{asset('build/images/reference-image-1.jpg')}}\" alt=\"Image\"/>
-                                <div class=\"h5 pt-2\">Aiyana</div>
-                                <p class=\"category\">CEO / WEBM</p>
+                                <div class=\"h5 pt-2\">Blabla</div>
+                                <p class=\"category\">Poste</p>
                             </div>
                             <div class=\"col-lg-10 col-md-9\">
                                 <p> Habitasse venenatis commodo tempor eleifend arcu sociis sollicitudin ante pulvinar ad, est porta cras erat ullamcorper volutpat metus duis platea convallis, tortor primis ac quisque etiam luctus nisl nullam fames. Ligula purus suscipit tempus nascetur curabitur donec nam ullamcorper, laoreet nullam mauris dui aptent facilisis neque elementum ac, risus semper felis parturient fringilla rhoncus eleifend.</p>
@@ -134,8 +134,8 @@ class __TwigTemplate_54fb60b8c527f3a8d457ce68338e94fdb763f5d8bdf24c30f8e52bdc091
                     <div class=\"carousel-item\">
                         <div class=\"row\">
                             <div class=\"col-lg-2 col-md-3 cc-reference-header\"><img src=\"{{asset('build/images/reference-image-2.jpg')}}\" alt=\"Image\"/>
-                                <div class=\"h5 pt-2\">Braiden</div>
-                                <p class=\"category\">CEO / Creativem</p>
+                                <div class=\"h5 pt-2\">Bloblo</div>
+                                <p class=\"category\">Poste</p>
                             </div>
                             <div class=\"col-lg-10 col-md-9\">
                                 <p> Habitasse venenatis commodo tempor eleifend arcu sociis sollicitudin ante pulvinar ad, est porta cras erat ullamcorper volutpat metus duis platea convallis, tortor primis ac quisque etiam luctus nisl nullam fames. Ligula purus suscipit tempus nascetur curabitur donec nam ullamcorper, laoreet nullam mauris dui aptent facilisis neque elementum ac, risus semper felis parturient fringilla rhoncus eleifend.</p>
@@ -145,8 +145,8 @@ class __TwigTemplate_54fb60b8c527f3a8d457ce68338e94fdb763f5d8bdf24c30f8e52bdc091
                     <div class=\"carousel-item\">
                         <div class=\"row\">
                             <div class=\"col-lg-2 col-md-3 cc-reference-header\"><img src=\"{{asset('build/images/reference-image-3.jpg')}}\" alt=\"Image\"/>
-                                <div class=\"h5 pt-2\">Alexander</div>
-                                <p class=\"category\">CEO / Webnote</p>
+                                <div class=\"h5 pt-2\">Blabla</div>
+                                <p class=\"category\">Poste</p>
                             </div>
                             <div class=\"col-lg-10 col-md-9\">
                                 <p> Habitasse venenatis commodo tempor eleifend arcu sociis sollicitudin ante pulvinar ad, est porta cras erat ullamcorper volutpat metus duis platea convallis, tortor primis ac quisque etiam luctus nisl nullam fames. Ligula purus suscipit tempus nascetur curabitur donec nam ullamcorper, laoreet nullam mauris dui aptent facilisis neque elementum ac, risus semper felis parturient fringilla rhoncus eleifend.</p>
@@ -157,6 +157,6 @@ class __TwigTemplate_54fb60b8c527f3a8d457ce68338e94fdb763f5d8bdf24c30f8e52bdc091
             </div>
         </div>
     </div>
-</div>", "default/section/reference.html.twig", "/Users/djech/Developpement/mariane/templates/default/section/reference.html.twig");
+</div>", "default/section/reference.html.twig", "/home/jerome/Developpement/mariane/templates/default/section/reference.html.twig");
     }
 }

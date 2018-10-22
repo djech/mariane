@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block content %}
-    {% embed "AcStrasbourgCrudBundle::box.html.twig" with {'box_class': 'box-primary'}%}
+    {% embed "crud/box.html.twig" with {'box_class': 'box-primary'}%}
         {% block boxheader %}
             {% if right_create == true %}
                 <a class="btn btn-sm btn-success" href="{{ path(route_new) }}">

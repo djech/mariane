@@ -37,11 +37,6 @@ class Formation
     private $lieu;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $description;
-
-    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Information", inversedBy="formations", cascade={"persist"})
      */
     private $information;
@@ -95,18 +90,6 @@ class Formation
     public function setLieu(string $lieu): self
     {
         $this->lieu = $lieu;
-
-        return $this;
-    }
-
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(string $description): self
-    {
-        $this->description = $description;
 
         return $this;
     }

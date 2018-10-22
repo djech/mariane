@@ -71,4 +71,14 @@ class Skill
 
         return $this;
     }
+
+    /**
+     * Retourne le __toString()
+     * @return string Libellé
+     */
+    public function getTitle() : string
+    {
+        return "Compétence n°";
+    }
+
 }

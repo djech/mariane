@@ -523,6 +523,6 @@ class __TwigTemplate_050dc2a8c7ab7fcaec3d85802e14d440a96ebf7790ba5409b8667223420
 {% block spanElement %}{% import _self as knp_menu %}<span{{ knp_menu.attributes(item.labelAttributes) }}>{{ block('label') }}</span>{% endblock %}
 
 {% block label %}{% if options.allow_safe_labels and item.getExtra('safe_label', false) %}{{ item.label|raw }}{% else %}{{ item.label }}{% endif %}{% endblock %}
-", "knp_menu.html.twig", "/Users/djech/Developpement/mariane/vendor/knplabs/knp-menu/src/Knp/Menu/Resources/views/knp_menu.html.twig");
+", "knp_menu.html.twig", "/home/jerome/Developpement/mariane/vendor/knplabs/knp-menu/src/Knp/Menu/Resources/views/knp_menu.html.twig");
     }
 }

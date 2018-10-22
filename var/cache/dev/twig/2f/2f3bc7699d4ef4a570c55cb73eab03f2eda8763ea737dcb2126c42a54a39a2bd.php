@@ -32,53 +32,34 @@ class __TwigTemplate_935cbf2ede01c13b15662f784d11804d4872f9cdd82eb6e34f416049e39
         <div class=\"card\" data-aos=\"fade-up\" data-aos-anchor-placement=\"top-bottom\">
             <div class=\"card-body\">
                 <div class=\"row\">
-                    <div class=\"col-md-6\">
-                        <div class=\"progress-container progress-primary\"><span class=\"progress-badge\">HTML</span>
-                            <div class=\"progress\">
-                                <div class=\"progress-bar progress-bar-primary\" data-aos=\"progress-full\" data-aos-offset=\"10\" data-aos-duration=\"2000\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 80%;\"></div><span class=\"progress-value\">80%</span>
+                    ";
+        // line 7
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["information"]) || array_key_exists("information", $context) ? $context["information"] : (function () { throw new Twig_Error_Runtime('Variable "information" does not exist.', 7, $this->source); })()), "logiciels", array()));
+        foreach ($context['_seq'] as $context["_key"] => $context["logiciel"]) {
+            // line 8
+            echo "                        <div class=\"col-md-6\">
+                            <div class=\"progress-container progress-primary\"><span class=\"progress-badge\">";
+            // line 9
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["logiciel"], "nom", array()), "html", null, true);
+            echo "</span>
+                                <div class=\"progress\">
+                                    <div class=\"progress-bar progress-bar-primary\" data-aos=\"progress-full\" data-aos-offset=\"10\" data-aos-duration=\"2000\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: ";
+            // line 11
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["logiciel"], "pourcentage", array()), "html", null, true);
+            echo "%;\"></div><span class=\"progress-value\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["logiciel"], "pourcentage", array()), "html", null, true);
+            echo "%</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class=\"col-md-6\">
-                        <div class=\"progress-container progress-primary\"><span class=\"progress-badge\">CSS</span>
-                            <div class=\"progress\">
-                                <div class=\"progress-bar progress-bar-primary\" data-aos=\"progress-full\" data-aos-offset=\"10\" data-aos-duration=\"2000\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 75%;\"></div><span class=\"progress-value\">75%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"row\">
-                    <div class=\"col-md-6\">
-                        <div class=\"progress-container progress-primary\"><span class=\"progress-badge\">JavaScript</span>
-                            <div class=\"progress\">
-                                <div class=\"progress-bar progress-bar-primary\" data-aos=\"progress-full\" data-aos-offset=\"10\" data-aos-duration=\"2000\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 60%;\"></div><span class=\"progress-value\">60%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=\"col-md-6\">
-                        <div class=\"progress-container progress-primary\"><span class=\"progress-badge\">SASS</span>
-                            <div class=\"progress\">
-                                <div class=\"progress-bar progress-bar-primary\" data-aos=\"progress-full\" data-aos-offset=\"10\" data-aos-duration=\"2000\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 60%;\"></div><span class=\"progress-value\">60%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"row\">
-                    <div class=\"col-md-6\">
-                        <div class=\"progress-container progress-primary\"><span class=\"progress-badge\">Bootstrap</span>
-                            <div class=\"progress\">
-                                <div class=\"progress-bar progress-bar-primary\" data-aos=\"progress-full\" data-aos-offset=\"10\" data-aos-duration=\"2000\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 75%;\"></div><span class=\"progress-value\">75%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=\"col-md-6\">
-                        <div class=\"progress-container progress-primary\"><span class=\"progress-badge\">Photoshop</span>
-                            <div class=\"progress\">
-                                <div class=\"progress-bar progress-bar-primary\" data-aos=\"progress-full\" data-aos-offset=\"10\" data-aos-duration=\"2000\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 70%;\"></div><span class=\"progress-value\">70%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['logiciel'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 16
+        echo "                </div>
             </div>
         </div>
     </div>
@@ -97,9 +78,14 @@ class __TwigTemplate_935cbf2ede01c13b15662f784d11804d4872f9cdd82eb6e34f416049e39
         return "default/section/logiciel.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  29 => 1,);
+        return array (  62 => 16,  49 => 11,  44 => 9,  41 => 8,  37 => 7,  29 => 1,);
     }
 
     public function getSourceContext()
@@ -110,57 +96,20 @@ class __TwigTemplate_935cbf2ede01c13b15662f784d11804d4872f9cdd82eb6e34f416049e39
         <div class=\"card\" data-aos=\"fade-up\" data-aos-anchor-placement=\"top-bottom\">
             <div class=\"card-body\">
                 <div class=\"row\">
-                    <div class=\"col-md-6\">
-                        <div class=\"progress-container progress-primary\"><span class=\"progress-badge\">HTML</span>
-                            <div class=\"progress\">
-                                <div class=\"progress-bar progress-bar-primary\" data-aos=\"progress-full\" data-aos-offset=\"10\" data-aos-duration=\"2000\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 80%;\"></div><span class=\"progress-value\">80%</span>
+                    {% for logiciel in information.logiciels %}
+                        <div class=\"col-md-6\">
+                            <div class=\"progress-container progress-primary\"><span class=\"progress-badge\">{{ logiciel.nom }}</span>
+                                <div class=\"progress\">
+                                    <div class=\"progress-bar progress-bar-primary\" data-aos=\"progress-full\" data-aos-offset=\"10\" data-aos-duration=\"2000\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: {{ logiciel.pourcentage }}%;\"></div><span class=\"progress-value\">{{ logiciel.pourcentage }}%</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class=\"col-md-6\">
-                        <div class=\"progress-container progress-primary\"><span class=\"progress-badge\">CSS</span>
-                            <div class=\"progress\">
-                                <div class=\"progress-bar progress-bar-primary\" data-aos=\"progress-full\" data-aos-offset=\"10\" data-aos-duration=\"2000\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 75%;\"></div><span class=\"progress-value\">75%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"row\">
-                    <div class=\"col-md-6\">
-                        <div class=\"progress-container progress-primary\"><span class=\"progress-badge\">JavaScript</span>
-                            <div class=\"progress\">
-                                <div class=\"progress-bar progress-bar-primary\" data-aos=\"progress-full\" data-aos-offset=\"10\" data-aos-duration=\"2000\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 60%;\"></div><span class=\"progress-value\">60%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=\"col-md-6\">
-                        <div class=\"progress-container progress-primary\"><span class=\"progress-badge\">SASS</span>
-                            <div class=\"progress\">
-                                <div class=\"progress-bar progress-bar-primary\" data-aos=\"progress-full\" data-aos-offset=\"10\" data-aos-duration=\"2000\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 60%;\"></div><span class=\"progress-value\">60%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"row\">
-                    <div class=\"col-md-6\">
-                        <div class=\"progress-container progress-primary\"><span class=\"progress-badge\">Bootstrap</span>
-                            <div class=\"progress\">
-                                <div class=\"progress-bar progress-bar-primary\" data-aos=\"progress-full\" data-aos-offset=\"10\" data-aos-duration=\"2000\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 75%;\"></div><span class=\"progress-value\">75%</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=\"col-md-6\">
-                        <div class=\"progress-container progress-primary\"><span class=\"progress-badge\">Photoshop</span>
-                            <div class=\"progress\">
-                                <div class=\"progress-bar progress-bar-primary\" data-aos=\"progress-full\" data-aos-offset=\"10\" data-aos-duration=\"2000\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 70%;\"></div><span class=\"progress-value\">70%</span>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
     </div>
 </div>
-", "default/section/logiciel.html.twig", "/Users/djech/Developpement/mariane/templates/default/section/logiciel.html.twig");
+", "default/section/logiciel.html.twig", "/home/jerome/Developpement/mariane/templates/default/section/logiciel.html.twig");
     }
 }
