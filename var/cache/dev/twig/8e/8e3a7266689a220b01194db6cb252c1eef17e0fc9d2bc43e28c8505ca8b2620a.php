@@ -42,22 +42,24 @@ class __TwigTemplate_406b85a84e873541d3d815a151a1f2c5ef7bc393f2b5b248c4d3fe916da
         echo " ";
         echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["information"]) || array_key_exists("information", $context) ? $context["information"] : (function () { throw new Twig_Error_Runtime('Variable "information" does not exist.', 8, $this->source); })()), "nom", array())), "html", null, true);
         echo "</div>
-                    <p class=\"category text-white\">Relation presse</p><a class=\"btn btn-primary smooth-scroll mr-2\" href=\"#contact\" data-aos=\"zoom-in\" data-aos-anchor=\"data-aos-anchor\">Engagez moi</a><a class=\"btn btn-primary\" href=\"#\" data-aos=\"zoom-in\" data-aos-anchor=\"data-aos-anchor\">Télécharger CV</a>
+                    <p class=\"category text-white\">";
+        // line 9
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["information"]) || array_key_exists("information", $context) ? $context["information"] : (function () { throw new Twig_Error_Runtime('Variable "information" does not exist.', 9, $this->source); })()), "description", array()), "html", null, true);
+        echo "</p><a class=\"btn btn-primary smooth-scroll mr-2\" href=\"#contact\" data-aos=\"zoom-in\" data-aos-anchor=\"data-aos-anchor\">Engagez moi</a><a class=\"btn btn-primary\" href=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/CV-ERARD-MARIANE-1.pdf"), "html", null, true);
+        echo "\" data-aos=\"zoom-in\" data-aos-anchor=\"data-aos-anchor\">Télécharger CV</a>
                 </div>
             </div>
             <div class=\"section\">
                 <div class=\"container\">
                     <div class=\"button-container\">
-                        <a class=\"btn btn-default btn-round btn-lg btn-icon\" href=\"#\" rel=\"tooltip\" title=\"Facebook\">
+                        <a class=\"btn btn-default btn-round btn-lg btn-icon\" href=\"https://www.facebook.com/mariane.erard\" rel=\"tooltip\" title=\"Facebook\">
                             <i class=\"fa fa-facebook\"></i>
                         </a>
-                        <a class=\"btn btn-default btn-round btn-lg btn-icon\" href=\"#\" rel=\"tooltip\" title=\"Twitter\">
+                        <a class=\"btn btn-default btn-round btn-lg btn-icon\" href=\"https://twitter.com/Marian_erard?lang=fr\" rel=\"tooltip\" title=\"Twitter\">
                             <i class=\"fa fa-twitter\"></i>
                         </a>
-                        <a class=\"btn btn-default btn-round btn-lg btn-icon\" href=\"#\" rel=\"tooltip\" title=\"Google+\">
-                            <i class=\"fa fa-google-plus\"></i>
-                        </a>
-                        <a class=\"btn btn-default btn-round btn-lg btn-icon\" href=\"#\" rel=\"tooltip\" title=\"Instagram\">
+                        <a class=\"btn btn-default btn-round btn-lg btn-icon\" href=\"https://www.instagram.com/marianerard/\" rel=\"tooltip\" title=\"Instagram\">
                             <i class=\"fa fa-instagram\"></i>
                         </a>
                     </div>
@@ -86,7 +88,7 @@ class __TwigTemplate_406b85a84e873541d3d815a151a1f2c5ef7bc393f2b5b248c4d3fe916da
 
     public function getDebugInfo()
     {
-        return array (  41 => 8,  37 => 7,  29 => 1,);
+        return array (  47 => 9,  41 => 8,  37 => 7,  29 => 1,);
     }
 
     public function getSourceContext()
@@ -99,22 +101,19 @@ class __TwigTemplate_406b85a84e873541d3d815a151a1f2c5ef7bc393f2b5b248c4d3fe916da
                 <div class=\"content-center\">
                     <div class=\"cc-profile-image\"><a href=\"#\"><img src=\"{{asset('build/images/mariane_erard.jpg')}}\" alt=\"Image\"/></a></div>
                     <div class=\"h2 title\">{{ information.prenom|capitalize }} {{ information.nom|upper }}</div>
-                    <p class=\"category text-white\">Relation presse</p><a class=\"btn btn-primary smooth-scroll mr-2\" href=\"#contact\" data-aos=\"zoom-in\" data-aos-anchor=\"data-aos-anchor\">Engagez moi</a><a class=\"btn btn-primary\" href=\"#\" data-aos=\"zoom-in\" data-aos-anchor=\"data-aos-anchor\">Télécharger CV</a>
+                    <p class=\"category text-white\">{{ information.description }}</p><a class=\"btn btn-primary smooth-scroll mr-2\" href=\"#contact\" data-aos=\"zoom-in\" data-aos-anchor=\"data-aos-anchor\">Engagez moi</a><a class=\"btn btn-primary\" href=\"{{asset('build/images/CV-ERARD-MARIANE-1.pdf')}}\" data-aos=\"zoom-in\" data-aos-anchor=\"data-aos-anchor\">Télécharger CV</a>
                 </div>
             </div>
             <div class=\"section\">
                 <div class=\"container\">
                     <div class=\"button-container\">
-                        <a class=\"btn btn-default btn-round btn-lg btn-icon\" href=\"#\" rel=\"tooltip\" title=\"Facebook\">
+                        <a class=\"btn btn-default btn-round btn-lg btn-icon\" href=\"https://www.facebook.com/mariane.erard\" rel=\"tooltip\" title=\"Facebook\">
                             <i class=\"fa fa-facebook\"></i>
                         </a>
-                        <a class=\"btn btn-default btn-round btn-lg btn-icon\" href=\"#\" rel=\"tooltip\" title=\"Twitter\">
+                        <a class=\"btn btn-default btn-round btn-lg btn-icon\" href=\"https://twitter.com/Marian_erard?lang=fr\" rel=\"tooltip\" title=\"Twitter\">
                             <i class=\"fa fa-twitter\"></i>
                         </a>
-                        <a class=\"btn btn-default btn-round btn-lg btn-icon\" href=\"#\" rel=\"tooltip\" title=\"Google+\">
-                            <i class=\"fa fa-google-plus\"></i>
-                        </a>
-                        <a class=\"btn btn-default btn-round btn-lg btn-icon\" href=\"#\" rel=\"tooltip\" title=\"Instagram\">
+                        <a class=\"btn btn-default btn-round btn-lg btn-icon\" href=\"https://www.instagram.com/marianerard/\" rel=\"tooltip\" title=\"Instagram\">
                             <i class=\"fa fa-instagram\"></i>
                         </a>
                     </div>

@@ -35,7 +35,7 @@ class __TwigTemplate_0116f38e59b31a207d591981c186b5294e9259caecc86d4e530ff1ac306
         echo twig_escape_filter($this->env, twig_upper_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["information"]) || array_key_exists("information", $context) ? $context["information"] : (function () { throw new Twig_Error_Runtime('Variable "information" does not exist.', 3, $this->source); })()), "nom", array())), "html", null, true);
         echo "</div>
     <div class=\"text-center text-muted\">
-        <p>&copy; CV CREATIF. Tout droits réservés.</p>
+        <p>&copy; CV. Tout droits réservés.</p>
     </div>
 </footer>";
         
@@ -67,7 +67,7 @@ class __TwigTemplate_0116f38e59b31a207d591981c186b5294e9259caecc86d4e530ff1ac306
     <div class=\"container text-center\"><a class=\"cc-facebook btn btn-link\" href=\"#\"><i class=\"fa fa-facebook fa-2x \" aria-hidden=\"true\"></i></a><a class=\"cc-twitter btn btn-link \" href=\"#\"><i class=\"fa fa-twitter fa-2x \" aria-hidden=\"true\"></i></a><a class=\"cc-google-plus btn btn-link\" href=\"#\"><i class=\"fa fa-google-plus fa-2x\" aria-hidden=\"true\"></i></a><a class=\"cc-instagram btn btn-link\" href=\"#\"><i class=\"fa fa-instagram fa-2x \" aria-hidden=\"true\"></i></a></div>
     <div class=\"h4 title text-center\">{{ information.prenom|capitalize }} {{ information.nom|upper }}</div>
     <div class=\"text-center text-muted\">
-        <p>&copy; CV CREATIF. Tout droits réservés.</p>
+        <p>&copy; CV. Tout droits réservés.</p>
     </div>
 </footer>", "footer.html.twig", "/home/jerome/Developpement/mariane/templates/footer.html.twig");
     }
