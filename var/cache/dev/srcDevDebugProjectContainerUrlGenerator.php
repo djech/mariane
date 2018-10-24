@@ -78,6 +78,18 @@ class srcDevDebugProjectContainerUrlGenerator extends Symfony\Component\Routing\
         'experience_show' => array(array('id'), array('_controller' => 'App\\Controller\\ExperienceController:showAction'), array('id' => '\\d+'), array(array('variable', '/', '\\d+', 'id'), array('text', '/experience')), array(), array()),
         'experience_edit' => array(array('id'), array('_controller' => 'App\\Controller\\ExperienceController:editAction'), array('id' => '\\d+'), array(array('text', '/edit'), array('variable', '/', '\\d+', 'id'), array('text', '/experience')), array(), array()),
         'experience_delete' => array(array('id'), array('_controller' => 'App\\Controller\\ExperienceController:deleteAction'), array('id' => '\\d+'), array(array('variable', '/', '\\d+', 'id'), array('text', '/experience')), array(), array()),
+        'workcategory_index' => array(array(), array('_controller' => 'App\\Controller\\WorkCategoryController:indexAction'), array(), array(array('text', '/workcategory/')), array(), array()),
+        'workcategory_source' => array(array(), array('_controller' => 'App\\Controller\\WorkCategoryController:sourceAction'), array(), array(array('text', '/workcategory/source')), array(), array()),
+        'workcategory_new' => array(array('id'), array('_controller' => 'App\\Controller\\WorkCategoryController:newAction', 'id' => null), array('id' => '\\d+'), array(array('variable', '/', '\\d+', 'id'), array('text', '/workcategory/new')), array(), array()),
+        'workcategory_show' => array(array('id'), array('_controller' => 'App\\Controller\\WorkCategoryController:showAction'), array('id' => '\\d+'), array(array('variable', '/', '\\d+', 'id'), array('text', '/workcategory')), array(), array()),
+        'workcategory_edit' => array(array('id'), array('_controller' => 'App\\Controller\\WorkCategoryController:editAction'), array('id' => '\\d+'), array(array('text', '/edit'), array('variable', '/', '\\d+', 'id'), array('text', '/workcategory')), array(), array()),
+        'workcategory_delete' => array(array('id'), array('_controller' => 'App\\Controller\\WorkCategoryController:deleteAction'), array('id' => '\\d+'), array(array('variable', '/', '\\d+', 'id'), array('text', '/workcategory')), array(), array()),
+        'work_index' => array(array(), array('_controller' => 'App\\Controller\\WorkController:indexAction'), array(), array(array('text', '/work/')), array(), array()),
+        'work_source' => array(array(), array('_controller' => 'App\\Controller\\WorkController:sourceAction'), array(), array(array('text', '/work/source')), array(), array()),
+        'work_new' => array(array('id'), array('_controller' => 'App\\Controller\\WorkController:newAction', 'id' => null), array('id' => '\\d+'), array(array('variable', '/', '\\d+', 'id'), array('text', '/work/new')), array(), array()),
+        'work_show' => array(array('id'), array('_controller' => 'App\\Controller\\WorkController:showAction'), array('id' => '\\d+'), array(array('variable', '/', '\\d+', 'id'), array('text', '/work')), array(), array()),
+        'work_edit' => array(array('id'), array('_controller' => 'App\\Controller\\WorkController:editAction'), array('id' => '\\d+'), array(array('text', '/edit'), array('variable', '/', '\\d+', 'id'), array('text', '/work')), array(), array()),
+        'work_delete' => array(array('id'), array('_controller' => 'App\\Controller\\WorkController:deleteAction'), array('id' => '\\d+'), array(array('variable', '/', '\\d+', 'id'), array('text', '/work')), array(), array()),
     );
         }
     }

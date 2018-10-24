@@ -26,6 +26,7 @@
       <parameter key="FMElfinderBundle">FM\ElfinderBundle\FMElfinderBundle</parameter>
       <parameter key="SwiftmailerBundle">Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle</parameter>
       <parameter key="WebServerBundle">Symfony\Bundle\WebServerBundle\WebServerBundle</parameter>
+      <parameter key="VichUploaderBundle">Vich\UploaderBundle\VichUploaderBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
@@ -96,6 +97,10 @@
         <parameter key="path">/home/jerome/Developpement/mariane/vendor/symfony/web-server-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\WebServerBundle</parameter>
       </parameter>
+      <parameter key="VichUploaderBundle" type="collection">
+        <parameter key="path">/home/jerome/Developpement/mariane/vendor/vich/uploader-bundle</parameter>
+        <parameter key="namespace">Vich\UploaderBundle</parameter>
+      </parameter>
     </parameter>
     <parameter key="kernel.charset">UTF-8</parameter>
     <parameter key="kernel.container_class">srcDevDebugProjectContainer</parameter>
@@ -109,6 +114,8 @@
       <parameter>App\Controller\LogicielController:Logiciel</parameter>
       <parameter>App\Controller\FormationController:Formation</parameter>
       <parameter>App\Controller\ExperienceController:Experience</parameter>
+      <parameter>App\Controller\WorkCategoryController:WorkCategory</parameter>
+      <parameter>App\Controller\WorkController:Work</parameter>
     </parameter>
     <parameter key="admin_lte_theme.options" type="collection">
       <parameter key="skin">skin-blue</parameter>
@@ -202,6 +209,7 @@
     <parameter key="twig.form.resources" type="collection">
       <parameter>@FMElfinder/Form/elfinder_widget.html.twig</parameter>
       <parameter>@FOSCKEditor/Form/ckeditor_widget.html.twig</parameter>
+      <parameter>@VichUploader/Form/fields.html.twig</parameter>
       <parameter>form_div_layout.html.twig</parameter>
       <parameter>@AdminLTE/layout/form-theme.html.twig</parameter>
       <parameter>@AdminLTE/layout/form-theme.html.twig</parameter>
@@ -559,6 +567,26 @@
       <parameter key="default">swiftmailer.mailer.default</parameter>
     </parameter>
     <parameter key="swiftmailer.default_mailer">default</parameter>
+    <parameter key="vich_uploader.default_filename_attribute_suffix">_name</parameter>
+    <parameter key="vich_uploader.mappings" type="collection">
+      <parameter key="previews" type="collection">
+        <parameter key="uri_prefix">/uploads/previews</parameter>
+        <parameter key="upload_destination">/home/jerome/Developpement/mariane/public/uploads/previews</parameter>
+        <parameter key="namer" type="collection">
+          <parameter key="service">Vich\UploaderBundle\Naming\UniqidNamer.previews</parameter>
+          <parameter key="options" type="collection"/>
+        </parameter>
+        <parameter key="inject_on_load">false</parameter>
+        <parameter key="delete_on_update">true</parameter>
+        <parameter key="delete_on_remove">true</parameter>
+        <parameter key="directory_namer" type="collection">
+          <parameter key="service">null</parameter>
+          <parameter key="options">null</parameter>
+        </parameter>
+        <parameter key="db_driver">orm</parameter>
+      </parameter>
+    </parameter>
+    <parameter key="vich_uploader.file_injector.class">Vich\UploaderBundle\Injector\FileInjector</parameter>
     <parameter key="data_collector.templates" type="collection">
       <parameter key="data_collector.request" type="collection">
         <parameter>request</parameter>
@@ -663,6 +691,12 @@
     <service id="App\Controller\SkillController" class="App\Controller\SkillController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
+    <service id="App\Controller\WorkCategoryController" class="App\Controller\WorkCategoryController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="App\Controller\WorkController" class="App\Controller\WorkController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
     <service id="App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" public="false" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
       <argument type="service" id="security.user_password_encoder.generic"/>
@@ -675,6 +709,9 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\FormationType" class="App\Form\FormationType" public="false" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\IconChoiceType" class="App\Form\IconChoiceType" public="false" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\InformationExperiencesType" class="App\Form\InformationExperiencesType" public="false" autowire="true" autoconfigure="true">
@@ -699,6 +736,9 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\SkillType" class="App\Form\SkillType" public="false" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\WorkCategoryType" class="App\Form\WorkCategoryType" public="false" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\WorkType" class="App\Form\WorkType" public="false" autowire="true" autoconfigure="true">
@@ -763,6 +803,9 @@
     </service>
     <service id="app_crud.crud" class="App\Service\Crud" public="true" autowire="true" autoconfigure="true">
       <argument type="service" id="doctrine"/>
+    </service>
+    <service id="app.form.icon_choice_type" class="App\Form\ChoiceIconType" public="false" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
     </service>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
@@ -999,14 +1042,6 @@
       </call>
       <call method="addListener">
         <argument>kernel.request</argument>
-        <argument type="collection">
-          <argument type="service" id="debug.debug_handlers_listener"/>
-          <argument>configure</argument>
-        </argument>
-        <argument>2048</argument>
-      </call>
-      <call method="addListener">
-        <argument>console.command</argument>
         <argument type="collection">
           <argument type="service" id="debug.debug_handlers_listener"/>
           <argument>configure</argument>
@@ -1527,11 +1562,13 @@
         <argument>FOS\UserBundle\Form\Type</argument>
         <argument>FOS\CKEditorBundle\Form\Type</argument>
         <argument></argument>
+        <argument>Vich\UploaderBundle\Form\Type</argument>
       </argument>
       <argument type="collection">
         <argument>App\Form\AboutType</argument>
         <argument>App\Form\ExperienceType</argument>
         <argument>App\Form\FormationType</argument>
+        <argument>App\Form\IconChoiceType</argument>
         <argument>App\Form\InformationExperiencesType</argument>
         <argument>App\Form\InformationFormationsType</argument>
         <argument>App\Form\InformationLogicielsType</argument>
@@ -1540,7 +1577,9 @@
         <argument>App\Form\LogicielType</argument>
         <argument>App\Form\PortfolioType</argument>
         <argument>App\Form\SkillType</argument>
+        <argument>App\Form\WorkCategoryType</argument>
         <argument>App\Form\WorkType</argument>
+        <argument>App\Form\ChoiceIconType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type\EntityType</argument>
@@ -1551,6 +1590,8 @@
         <argument>FOS\UserBundle\Form\Type\ResettingFormType</argument>
         <argument>FOS\CKEditorBundle\Form\Type\CKEditorType</argument>
         <argument>FM\ElfinderBundle\Form\Type\ElFinderType</argument>
+        <argument>Vich\UploaderBundle\Form\Type\VichFileType</argument>
+        <argument>Vich\UploaderBundle\Form\Type\VichImageType</argument>
       </argument>
       <argument type="collection">
         <argument>Symfony\Component\Form\Extension\HttpFoundation\Type\FormTypeHttpFoundationExtension</argument>
@@ -1774,7 +1815,7 @@
       <argument type="service" id="form.resolved_type_factory"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.yTLmd0f"/>
+      <argument type="service" id=".service_locator.8tjD_HP"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.http_foundation"/>
@@ -1955,6 +1996,7 @@
           <argument key="logout_url">templating.helper.logout_url</argument>
           <argument key="security">templating.helper.security</argument>
           <argument key="fos_ckeditor">fos_ck_editor.templating.helper</argument>
+          <argument key="vich_uploader">vich_uploader.templating.helper.uploader_helper</argument>
         </argument>
       </call>
     </service>
@@ -1974,6 +2016,7 @@
         <argument key="templating.helper.slots" type="service" id="templating.helper.slots"/>
         <argument key="templating.helper.stopwatch" type="service" id="templating.helper.stopwatch"/>
         <argument key="templating.helper.translator" type="service" id="templating.helper.translator"/>
+        <argument key="vich_uploader.templating.helper.uploader_helper" type="service" id="vich_uploader.templating.helper.uploader_helper"/>
       </argument>
     </service>
     <service id="templating.helper.slots" class="Symfony\Component\Templating\Helper\SlotsHelper" public="false">
@@ -2141,6 +2184,7 @@
             <argument>/home/jerome/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/translations/AdminLTEBundle.ar.xliff</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ar.yml</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ar.yml</argument>
+            <argument>/home/jerome/Developpement/mariane/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.ar.yml</argument>
           </argument>
           <argument key="az" type="collection">
             <argument>/home/jerome/Developpement/mariane/vendor/symfony/validator/Resources/translations/validators.az.xlf</argument>
@@ -2168,6 +2212,7 @@
             <argument>/home/jerome/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/translations/AdminLTEBundle.cs.xliff</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.cs.yml</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.cs.yml</argument>
+            <argument>/home/jerome/Developpement/mariane/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.cs.yml</argument>
           </argument>
           <argument key="cy" type="collection">
             <argument>/home/jerome/Developpement/mariane/vendor/symfony/validator/Resources/translations/validators.cy.xlf</argument>
@@ -2186,6 +2231,7 @@
             <argument>/home/jerome/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/translations/AdminLTEBundle.de.xliff</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.de.yml</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.de.yml</argument>
+            <argument>/home/jerome/Developpement/mariane/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.de.yml</argument>
           </argument>
           <argument key="el" type="collection">
             <argument>/home/jerome/Developpement/mariane/vendor/symfony/validator/Resources/translations/validators.el.xlf</argument>
@@ -2201,6 +2247,7 @@
             <argument>/home/jerome/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/translations/AdminLTEBundle.en.xliff</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.en.yml</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.en.yml</argument>
+            <argument>/home/jerome/Developpement/mariane/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.en.yml</argument>
           </argument>
           <argument key="es" type="collection">
             <argument>/home/jerome/Developpement/mariane/vendor/symfony/validator/Resources/translations/validators.es.xlf</argument>
@@ -2208,6 +2255,7 @@
             <argument>/home/jerome/Developpement/mariane/vendor/symfony/security/Core/Resources/translations/security.es.xlf</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.es.yml</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.es.yml</argument>
+            <argument>/home/jerome/Developpement/mariane/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.es.yml</argument>
           </argument>
           <argument key="et" type="collection">
             <argument>/home/jerome/Developpement/mariane/vendor/symfony/validator/Resources/translations/validators.et.xlf</argument>
@@ -2239,6 +2287,7 @@
             <argument>/home/jerome/Developpement/mariane/vendor/symfony/security/Core/Resources/translations/security.fr.xlf</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.fr.yml</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.fr.yml</argument>
+            <argument>/home/jerome/Developpement/mariane/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.fr.yml</argument>
           </argument>
           <argument key="gl" type="collection">
             <argument>/home/jerome/Developpement/mariane/vendor/symfony/validator/Resources/translations/validators.gl.xlf</argument>
@@ -2266,6 +2315,7 @@
             <argument>/home/jerome/Developpement/mariane/vendor/symfony/security/Core/Resources/translations/security.hu.xlf</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.hu.yml</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.hu.yml</argument>
+            <argument>/home/jerome/Developpement/mariane/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.hu.yml</argument>
           </argument>
           <argument key="hy" type="collection">
             <argument>/home/jerome/Developpement/mariane/vendor/symfony/validator/Resources/translations/validators.hy.xlf</argument>
@@ -2285,6 +2335,7 @@
             <argument>/home/jerome/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/translations/AdminLTEBundle.it.xliff</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.it.yml</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.it.yml</argument>
+            <argument>/home/jerome/Developpement/mariane/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.it.yml</argument>
           </argument>
           <argument key="ja" type="collection">
             <argument>/home/jerome/Developpement/mariane/vendor/symfony/validator/Resources/translations/validators.ja.xlf</argument>
@@ -2347,12 +2398,14 @@
             <argument>/home/jerome/Developpement/mariane/vendor/symfony/security/Core/Resources/translations/security.pl.xlf</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.pl.yml</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.pl.yml</argument>
+            <argument>/home/jerome/Developpement/mariane/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.pl.yml</argument>
           </argument>
           <argument key="pt" type="collection">
             <argument>/home/jerome/Developpement/mariane/vendor/symfony/validator/Resources/translations/validators.pt.xlf</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/symfony/form/Resources/translations/validators.pt.xlf</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.pt.yml</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.pt.yml</argument>
+            <argument>/home/jerome/Developpement/mariane/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.pt.yml</argument>
           </argument>
           <argument key="pt_BR" type="collection">
             <argument>/home/jerome/Developpement/mariane/vendor/symfony/validator/Resources/translations/validators.pt_BR.xlf</argument>
@@ -2375,6 +2428,7 @@
             <argument>/home/jerome/Developpement/mariane/vendor/kevinpapst/adminlte-bundle/Resources/translations/AdminLTEBundle.ru.xliff</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ru.yml</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ru.yml</argument>
+            <argument>/home/jerome/Developpement/mariane/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.ru.yml</argument>
           </argument>
           <argument key="sk" type="collection">
             <argument>/home/jerome/Developpement/mariane/vendor/symfony/validator/Resources/translations/validators.sk.xlf</argument>
@@ -2389,6 +2443,7 @@
             <argument>/home/jerome/Developpement/mariane/vendor/symfony/security/Core/Resources/translations/security.sl.xlf</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.sl.yml</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.sl.yml</argument>
+            <argument>/home/jerome/Developpement/mariane/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.sl.yml</argument>
           </argument>
           <argument key="sq" type="collection">
             <argument>/home/jerome/Developpement/mariane/vendor/symfony/validator/Resources/translations/validators.sq.xlf</argument>
@@ -2428,12 +2483,14 @@
             <argument>/home/jerome/Developpement/mariane/vendor/symfony/security/Core/Resources/translations/security.tr.xlf</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.tr.yml</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.tr.yml</argument>
+            <argument>/home/jerome/Developpement/mariane/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.tr.yml</argument>
           </argument>
           <argument key="uk" type="collection">
             <argument>/home/jerome/Developpement/mariane/vendor/symfony/validator/Resources/translations/validators.uk.xlf</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/symfony/form/Resources/translations/validators.uk.xlf</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.uk.yml</argument>
             <argument>/home/jerome/Developpement/mariane/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.uk.yml</argument>
+            <argument>/home/jerome/Developpement/mariane/vendor/vich/uploader-bundle/Resources/translations/VichUploaderBundle.uk.yml</argument>
           </argument>
           <argument key="vi" type="collection">
             <argument>/home/jerome/Developpement/mariane/vendor/symfony/validator/Resources/translations/validators.vi.xlf</argument>
@@ -3217,6 +3274,9 @@
       <call method="addExtension">
         <argument type="service" id="twig.extension.fm_elfinder_init"/>
       </call>
+      <call method="addExtension">
+        <argument type="service" id="vich_uploader.twig.extension.uploader"/>
+      </call>
       <call method="addGlobal">
         <argument>app</argument>
         <argument type="service" id="twig.app_variable"/>
@@ -3366,6 +3426,14 @@
       <call method="addPath">
         <argument>/home/jerome/Developpement/mariane/vendor/symfony/swiftmailer-bundle/Resources/views</argument>
         <argument>!Swiftmailer</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/jerome/Developpement/mariane/vendor/vich/uploader-bundle/Resources/views</argument>
+        <argument>VichUploader</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/jerome/Developpement/mariane/vendor/vich/uploader-bundle/Resources/views</argument>
+        <argument>!VichUploader</argument>
       </call>
       <call method="addPath">
         <argument>/home/jerome/Developpement/mariane/templates</argument>
@@ -3579,6 +3647,14 @@
         <argument>!Swiftmailer</argument>
       </call>
       <call method="addPath">
+        <argument>/home/jerome/Developpement/mariane/vendor/vich/uploader-bundle/Resources/views</argument>
+        <argument>VichUploader</argument>
+      </call>
+      <call method="addPath">
+        <argument>/home/jerome/Developpement/mariane/vendor/vich/uploader-bundle/Resources/views</argument>
+        <argument>!VichUploader</argument>
+      </call>
+      <call method="addPath">
         <argument>/home/jerome/Developpement/mariane/templates</argument>
       </call>
       <call method="addPath">
@@ -3715,7 +3791,16 @@
     <service id="doctrine.dbal.default_connection.event_manager" class="Symfony\Bridge\Doctrine\ContainerAwareEventManager" public="false">
       <argument type="service" id="service_container"/>
       <call method="addEventSubscriber">
+        <argument type="service" id="vich_uploader.listener.clean.previews"/>
+      </call>
+      <call method="addEventSubscriber">
         <argument type="service" id="fos_user.user_listener"/>
+      </call>
+      <call method="addEventSubscriber">
+        <argument type="service" id="vich_uploader.listener.remove.previews"/>
+      </call>
+      <call method="addEventSubscriber">
+        <argument type="service" id="vich_uploader.listener.upload.previews"/>
       </call>
       <call method="addEventListener">
         <argument type="collection">
@@ -3885,6 +3970,7 @@
       <call method="setEntityNamespaces">
         <argument type="collection">
           <argument key="App">App\Entity</argument>
+          <argument key="VichUploaderBundle">Vich\UploaderBundle\Entity</argument>
         </argument>
       </call>
       <call method="setMetadataCacheImpl">
@@ -3931,12 +4017,17 @@
       <argument type="service" id="annotations.cached_reader"/>
       <argument type="collection">
         <argument>/home/jerome/Developpement/mariane/src/Entity</argument>
+        <argument>/home/jerome/Developpement/mariane/vendor/vich/uploader-bundle/Entity</argument>
       </argument>
     </service>
     <service id="doctrine.orm.default_metadata_driver" class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
       <call method="addDriver">
         <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
         <argument>App\Entity</argument>
+      </call>
+      <call method="addDriver">
+        <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
+        <argument>Vich\UploaderBundle\Entity</argument>
       </call>
       <call method="addDriver">
         <argument type="service">
@@ -5554,6 +5645,248 @@
         <argument>server:status</argument>
       </call>
     </service>
+    <service id="Vich\UploaderBundle\Naming\UniqidNamer.previews" class="Vich\UploaderBundle\Naming\UniqidNamer" public="true"/>
+    <service id="vich_uploader.adapter.propel" class="Vich\UploaderBundle\Adapter\Propel\PropelORMAdapter" public="false"/>
+    <service id="vich_uploader.adapter.mongodb" class="Vich\UploaderBundle\Adapter\ODM\MongoDB\MongoDBAdapter" public="false"/>
+    <service id="vich_uploader.adapter.orm" class="Vich\UploaderBundle\Adapter\ORM\DoctrineORMAdapter" public="false"/>
+    <service id="vich_uploader.adapter.phpcr" class="Vich\UploaderBundle\Adapter\PHPCR\PHPCRAdapter" public="false"/>
+    <service id="vich_uploader.listener.doctrine.base" public="false" abstract="true">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.inject.orm" class="Vich\UploaderBundle\EventListener\Doctrine\InjectListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.upload.orm" class="Vich\UploaderBundle\EventListener\Doctrine\UploadListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.clean.orm" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.remove.orm" class="Vich\UploaderBundle\EventListener\Doctrine\RemoveListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.inject.mongodb" class="Vich\UploaderBundle\EventListener\Doctrine\InjectListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.upload.mongodb" class="Vich\UploaderBundle\EventListener\Doctrine\UploadListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.clean.mongodb" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.remove.mongodb" class="Vich\UploaderBundle\EventListener\Doctrine\RemoveListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.inject.phpcr" class="Vich\UploaderBundle\EventListener\Doctrine\InjectListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.upload.phpcr" class="Vich\UploaderBundle\EventListener\Doctrine\UploadListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.clean.phpcr" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.remove.phpcr" class="Vich\UploaderBundle\EventListener\Doctrine\RemoveListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.propel.base" public="false" abstract="true">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.inject.propel" class="Vich\UploaderBundle\EventListener\Propel\InjectListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.upload.propel" class="Vich\UploaderBundle\EventListener\Propel\UploadListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.clean.propel" class="Vich\UploaderBundle\EventListener\Propel\CleanListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.remove.propel" class="Vich\UploaderBundle\EventListener\Propel\RemoveListener" public="false">
+      <argument></argument>
+      <argument></argument>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.storage.file_system" class="Vich\UploaderBundle\Storage\FileSystemStorage" public="false">
+      <argument type="service" id="vich_uploader.property_mapping_factory"/>
+    </service>
+    <service id="vich_uploader.file_injector" class="Vich\UploaderBundle\Injector\FileInjector" public="false">
+      <argument type="service" id="vich_uploader.storage.file_system"/>
+    </service>
+    <service id="vich_uploader.metadata.file_locator" class="Metadata\Driver\FileLocator" public="false">
+      <argument type="collection"/>
+    </service>
+    <service id="vich_uploader.metadata_driver.annotation" class="Vich\UploaderBundle\Metadata\Driver\AnnotationDriver" public="false">
+      <argument type="service" id="annotations.cached_reader"/>
+    </service>
+    <service id="vich_uploader.metadata_driver.xml" class="Vich\UploaderBundle\Metadata\Driver\XmlDriver" public="false">
+      <argument type="service" id="vich_uploader.metadata.file_locator"/>
+    </service>
+    <service id="vich_uploader.metadata_driver.yaml" class="Vich\UploaderBundle\Metadata\Driver\YamlDriver" public="false">
+      <argument type="service" id="vich_uploader.metadata.file_locator"/>
+    </service>
+    <service id="vich_uploader.metadata_driver.chain" class="Metadata\Driver\DriverChain" public="false">
+      <argument type="collection">
+        <argument type="service" id="vich_uploader.metadata_driver.annotation"/>
+        <argument type="service" id="vich_uploader.metadata_driver.yaml"/>
+        <argument type="service" id="vich_uploader.metadata_driver.xml"/>
+      </argument>
+    </service>
+    <service id="vich_uploader.metadata.cache.file_cache" class="Metadata\Cache\FileCache" public="false">
+      <argument>/home/jerome/Developpement/mariane/var/cache/dev/vich_uploader</argument>
+    </service>
+    <service id="vich_uploader.metadata_factory" class="Metadata\MetadataFactory" public="false">
+      <argument type="service" id="vich_uploader.metadata_driver.chain"/>
+      <argument>Metadata\ClassHierarchyMetadata</argument>
+      <argument>true</argument>
+      <call method="setCache">
+        <argument type="service" id="vich_uploader.metadata.cache.file_cache" on-invalid="ignore"/>
+      </call>
+    </service>
+    <service id="vich_uploader.metadata_reader" class="Vich\UploaderBundle\Metadata\MetadataReader" public="false">
+      <argument type="service" id="vich_uploader.metadata_factory"/>
+    </service>
+    <service id="vich_uploader.property_mapping_factory" class="Vich\UploaderBundle\Mapping\PropertyMappingFactory" public="false">
+      <argument type="service" id="service_container"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument>%vich_uploader.mappings%</argument>
+      <argument>_name</argument>
+    </service>
+    <service id="vich_uploader.namer_uniqid" class="Vich\UploaderBundle\Naming\UniqidNamer" public="true"/>
+    <service id="vich_uploader.namer_property" class="Vich\UploaderBundle\Naming\PropertyNamer" public="true"/>
+    <service id="vich_uploader.namer_origname" class="Vich\UploaderBundle\Naming\OrignameNamer" public="true"/>
+    <service id="vich_uploader.namer_hash" class="Vich\UploaderBundle\Naming\HashNamer" public="true"/>
+    <service id="vich_uploader.namer_base64" class="Vich\UploaderBundle\Naming\Base64Namer" public="true"/>
+    <service id="vich_uploader.directory_namer_subdir" class="Vich\UploaderBundle\Naming\SubdirDirectoryNamer" public="true"/>
+    <service id="vich_uploader.namer_directory_property" class="Vich\UploaderBundle\Naming\PropertyDirectoryNamer" public="true">
+      <argument type="service" id="property_accessor"/>
+    </service>
+    <service id="vich_uploader.download_handler" class="Vich\UploaderBundle\Handler\DownloadHandler" public="true">
+      <argument type="service" id="vich_uploader.property_mapping_factory"/>
+      <argument type="service" id="vich_uploader.storage.file_system"/>
+    </service>
+    <service id="vich_uploader.upload_handler" class="Vich\UploaderBundle\Handler\UploadHandler" public="true">
+      <argument type="service" id="vich_uploader.property_mapping_factory"/>
+      <argument type="service" id="vich_uploader.storage.file_system"/>
+      <argument type="service" id="vich_uploader.file_injector"/>
+      <argument type="service" id="event_dispatcher"/>
+    </service>
+    <service id="vich_uploader.command.mapping_debug_class" class="Vich\UploaderBundle\Command\MappingDebugClassCommand" public="false">
+      <tag name="console.command" command="vich:mapping:debug-class"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <call method="setName">
+        <argument>vich:mapping:debug-class</argument>
+      </call>
+    </service>
+    <service id="vich_uploader.command.mapping_debug" class="Vich\UploaderBundle\Command\MappingDebugCommand" public="false">
+      <tag name="console.command" command="vich:mapping:debug"/>
+      <argument>%vich_uploader.mappings%</argument>
+      <call method="setName">
+        <argument>vich:mapping:debug</argument>
+      </call>
+    </service>
+    <service id="vich_uploader.command.mapping_list_classes" class="Vich\UploaderBundle\Command\MappingListClassesCommand" public="false">
+      <tag name="console.command" command="vich:mapping:list-classes"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <call method="setName">
+        <argument>vich:mapping:list-classes</argument>
+      </call>
+    </service>
+    <service id="vich_uploader.form.type.file" class="Vich\UploaderBundle\Form\Type\VichFileType" public="true">
+      <tag name="form.type" alias="vich_file"/>
+      <argument type="service" id="vich_uploader.storage.file_system"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+      <argument type="service" id="vich_uploader.property_mapping_factory"/>
+      <argument type="service" id="property_accessor"/>
+    </service>
+    <service id="vich_uploader.form.type.image" class="Vich\UploaderBundle\Form\Type\VichImageType" public="true">
+      <tag name="form.type" alias="vich_image"/>
+      <argument type="service" id="vich_uploader.storage.file_system"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+      <argument type="service" id="vich_uploader.property_mapping_factory"/>
+      <argument type="service" id="property_accessor"/>
+      <argument>null</argument>
+    </service>
+    <service id="vich_uploader.templating.helper.uploader_helper" class="Vich\UploaderBundle\Templating\Helper\UploaderHelper" public="true">
+      <tag name="templating.helper" alias="vich_uploader"/>
+      <argument type="service" id="vich_uploader.storage.file_system"/>
+    </service>
+    <service id="vich_uploader.twig.extension.uploader" class="Vich\UploaderBundle\Twig\Extension\UploaderExtension" public="false">
+      <tag name="twig.extension"/>
+      <argument type="service" id="vich_uploader.templating.helper.uploader_helper"/>
+    </service>
+    <service id="vich_uploader.listener.clean.previews" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener" public="false">
+      <tag name="doctrine.event_subscriber" priority="50"/>
+      <argument>previews</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.remove.previews" class="Vich\UploaderBundle\EventListener\Doctrine\RemoveListener" public="false">
+      <tag name="doctrine.event_subscriber" priority="0"/>
+      <argument>previews</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.upload.previews" class="Vich\UploaderBundle\EventListener\Doctrine\UploadListener" public="false">
+      <tag name="doctrine.event_subscriber" priority="0"/>
+      <argument>previews</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.App\Controller\AdministrationController" class="App\Controller\AdministrationController" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AdministrationController" class="App\Controller\AdministrationController" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.App\Controller\DefaultController" class="App\Controller\DefaultController" public="false" autowire="true" abstract="true"/>
@@ -5566,6 +5899,10 @@
     <service id=".abstract.instanceof.App\Controller\LogicielController" class="App\Controller\LogicielController" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.App\Controller\SkillController" class="App\Controller\SkillController" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SkillController" class="App\Controller\SkillController" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.App\Controller\WorkCategoryController" class="App\Controller\WorkCategoryController" public="false" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\WorkCategoryController" class="App\Controller\WorkCategoryController" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.App\Controller\WorkController" class="App\Controller\WorkController" public="false" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\WorkController" class="App\Controller\WorkController" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AboutType" class="App\Form\AboutType" public="false" autowire="true" abstract="true"/>
@@ -5574,6 +5911,8 @@
     <service id=".abstract.instanceof.App\Form\ExperienceType" class="App\Form\ExperienceType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\FormationType" class="App\Form\FormationType" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\FormationType" class="App\Form\FormationType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\IconChoiceType" class="App\Form\IconChoiceType" public="false" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\IconChoiceType" class="App\Form\IconChoiceType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\InformationExperiencesType" class="App\Form\InformationExperiencesType" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\InformationExperiencesType" class="App\Form\InformationExperiencesType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\InformationFormationsType" class="App\Form\InformationFormationsType" public="false" autowire="true" abstract="true"/>
@@ -5590,6 +5929,8 @@
     <service id=".abstract.instanceof.App\Form\PortfolioType" class="App\Form\PortfolioType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SkillType" class="App\Form\SkillType" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\SkillType" class="App\Form\SkillType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\WorkCategoryType" class="App\Form\WorkCategoryType" public="false" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\WorkCategoryType" class="App\Form\WorkCategoryType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\WorkType" class="App\Form\WorkType" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\WorkType" class="App\Form\WorkType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AboutRepository" class="App\Repository\AboutRepository" public="false" autowire="true" abstract="true"/>
@@ -5782,13 +6123,15 @@
         <argument key="inline" type="service" id="fragment.renderer.inline"/>
       </argument>
     </service>
-    <service id=".service_locator.yTLmd0f" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.8tjD_HP" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="FM\ElfinderBundle\Form\Type\ElFinderType" type="service" id="fm_elfinder.form.type"/>
         <argument key="App\Form\AboutType" type="service" id="App\Form\AboutType"/>
+        <argument key="App\Form\ChoiceIconType" type="service" id="app.form.icon_choice_type"/>
         <argument key="App\Form\ExperienceType" type="service" id="App\Form\ExperienceType"/>
         <argument key="App\Form\FormationType" type="service" id="App\Form\FormationType"/>
+        <argument key="App\Form\IconChoiceType" type="service" id="App\Form\IconChoiceType"/>
         <argument key="App\Form\InformationExperiencesType" type="service" id="App\Form\InformationExperiencesType"/>
         <argument key="App\Form\InformationFormationsType" type="service" id="App\Form\InformationFormationsType"/>
         <argument key="App\Form\InformationLogicielsType" type="service" id="App\Form\InformationLogicielsType"/>
@@ -5797,6 +6140,7 @@
         <argument key="App\Form\LogicielType" type="service" id="App\Form\LogicielType"/>
         <argument key="App\Form\PortfolioType" type="service" id="App\Form\PortfolioType"/>
         <argument key="App\Form\SkillType" type="service" id="App\Form\SkillType"/>
+        <argument key="App\Form\WorkCategoryType" type="service" id="App\Form\WorkCategoryType"/>
         <argument key="App\Form\WorkType" type="service" id="App\Form\WorkType"/>
         <argument key="FOS\CKEditorBundle\Form\Type\CKEditorType" type="service" id="fos_ck_editor.form.type"/>
         <argument key="FOS\UserBundle\Form\Type\ChangePasswordFormType" type="service" id="fos_user.change_password.form.type"/>
@@ -5807,6 +6151,8 @@
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="service" id="form.type.form"/>
+        <argument key="Vich\UploaderBundle\Form\Type\VichFileType" type="service" id="vich_uploader.form.type.file"/>
+        <argument key="Vich\UploaderBundle\Form\Type\VichImageType" type="service" id="vich_uploader.form.type.image"/>
       </argument>
     </service>
     <service id=".service_locator.RThQlyn" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5910,7 +6256,7 @@
       </argument>
     </service>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
-      <argument type="service" id=".service_locator.saSqFFF"/>
+      <argument type="service" id=".service_locator.EtQCwXg"/>
       <argument type="collection">
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
@@ -5969,6 +6315,9 @@
         <argument key="server:start">web_server.command.server_start</argument>
         <argument key="server:stop">web_server.command.server_stop</argument>
         <argument key="server:status">web_server.command.server_status</argument>
+        <argument key="vich:mapping:debug-class">vich_uploader.command.mapping_debug_class</argument>
+        <argument key="vich:mapping:debug">vich_uploader.command.mapping_debug</argument>
+        <argument key="vich:mapping:list-classes">vich_uploader.command.mapping_list_classes</argument>
         <argument key="make:auth">maker.auto_command.make_auth</argument>
         <argument key="make:command">maker.auto_command.make_command</argument>
         <argument key="make:controller">maker.auto_command.make_controller</argument>
@@ -5987,7 +6336,7 @@
         <argument key="make:migration">maker.auto_command.make_migration</argument>
       </argument>
     </service>
-    <service id=".service_locator.saSqFFF" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.EtQCwXg" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="console.command.about" type="service" id="console.command.about"/>
@@ -6059,6 +6408,9 @@
         <argument key="swiftmailer.command.send_email" type="service" id="swiftmailer.command.send_email"/>
         <argument key="twig.command.debug" type="service" id="twig.command.debug"/>
         <argument key="twig.command.lint" type="service" id="twig.command.lint"/>
+        <argument key="vich_uploader.command.mapping_debug" type="service" id="vich_uploader.command.mapping_debug"/>
+        <argument key="vich_uploader.command.mapping_debug_class" type="service" id="vich_uploader.command.mapping_debug_class"/>
+        <argument key="vich_uploader.command.mapping_list_classes" type="service" id="vich_uploader.command.mapping_list_classes"/>
         <argument key="web_server.command.server_run" type="service" id="web_server.command.server_run"/>
         <argument key="web_server.command.server_start" type="service" id="web_server.command.server_start"/>
         <argument key="web_server.command.server_status" type="service" id="web_server.command.server_status"/>
@@ -6239,6 +6591,25 @@
     <service id="Swift_Mailer" alias="swiftmailer.mailer.default" public="false"/>
     <service id="Swift_Transport" alias="swiftmailer.mailer.default.transport.spool" public="false"/>
     <service id="mailer" alias="swiftmailer.mailer.default" public="true"/>
+    <service id="vich_uploader.storage" alias="vich_uploader.storage.file_system"/>
+    <service id="Vich\UploaderBundle\Storage\StorageInterface" alias="vich_uploader.storage.file_system" public="false"/>
+    <service id="Vich\UploaderBundle\Storage\FileSystemStorage" alias="vich_uploader.storage.file_system" public="false"/>
+    <service id="vich_uploader.metadata_driver" alias="vich_uploader.metadata_driver.chain" public="false"/>
+    <service id="vich_uploader.metadata.cache" alias="vich_uploader.metadata.cache.file_cache" public="false"/>
+    <service id="Vich\UploaderBundle\Mapping\PropertyMappingFactory" alias="vich_uploader.property_mapping_factory" public="false"/>
+    <service id="Vich\UploaderBundle\Naming\UniqidNamer" alias="vich_uploader.namer_uniqid" public="false"/>
+    <service id="Vich\UploaderBundle\Naming\PropertyNamer" alias="vich_uploader.namer_property" public="false"/>
+    <service id="Vich\UploaderBundle\Naming\OrignameNamer" alias="vich_uploader.namer_origname" public="false"/>
+    <service id="Vich\UploaderBundle\Naming\HashNamer" alias="vich_uploader.namer_hash" public="false"/>
+    <service id="Vich\UploaderBundle\Naming\Base64Namer" alias="vich_uploader.namer_base64" public="false"/>
+    <service id="Vich\UploaderBundle\Naming\SubdirDirectoryNamer" alias="vich_uploader.namer_subdir" public="false"/>
+    <service id="Vich\UploaderBundle\Naming\PropertyDirectoryNamer" alias="vich_uploader.namer_property" public="false"/>
+    <service id="Vich\UploaderBundle\Handler\DownloadHandler" alias="vich_uploader.download_handler" public="false"/>
+    <service id="Vich\UploaderBundle\Handler\UploadHandler" alias="vich_uploader.upload_handler" public="false"/>
+    <service id="Vich\UploaderBundle\Form\Type\VichFileType" alias="vich_uploader.form.type.file" public="false"/>
+    <service id="Vich\UploaderBundle\Form\Type\VichImageType" alias="vich_uploader.form.type.image" public="false"/>
+    <service id="Vich\UploaderBundle\Templating\Helper\UploaderHelper" alias="vich_uploader.templating.helper.uploader_helper" public="false"/>
+    <service id="Vich\UploaderBundle\Twig\Extension\UploaderExtension" alias="vich_uploader.twig.extension.uploader" public="false"/>
     <service id="argument_resolver.controller_locator" alias=".service_locator.9_yeNH1"/>
     <service id="Symfony\Component\Templating\EngineInterface" alias="templating.engine.delegating" public="false"/>
     <service id="Symfony\Bundle\FrameworkBundle\Templating\EngineInterface" alias="templating.engine.delegating" public="false"/>
@@ -6246,7 +6617,7 @@
     <service id="knp_menu.menu_provider" alias="knp_menu.menu_provider.chain"/>
     <service id="Psr\Log\LoggerInterface" alias="logger" public="false"/>
     <service id=".service_locator.AoifO_3" alias=".2_ServiceLocator~bHAYrK1" public="false"/>
-    <service id=".service_locator.B8cB.9Q" alias="templating.engine.php.helpers_locator" public="false"/>
+    <service id=".service_locator.EjjqvnS" alias="templating.engine.php.helpers_locator" public="false"/>
     <service id=".service_locator.jD4_ZG7" alias=".1_ServiceLocator~kUvjV7T" public="false"/>
     <service id="validator" alias="debug.validator" public="true"/>
     <service id="translator.data_collector.inner" alias="translator.default" public="false"/>

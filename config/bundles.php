@@ -18,4 +18,5 @@ return [
     FM\ElfinderBundle\FMElfinderBundle::class => ['all' => true],
     Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle::class => ['all' => true],
     Symfony\Bundle\WebServerBundle\WebServerBundle::class => ['dev' => true],
+    Vich\UploaderBundle\VichUploaderBundle::class => ['all' => true],
 ];

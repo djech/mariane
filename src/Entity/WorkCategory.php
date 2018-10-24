@@ -31,7 +31,7 @@ class WorkCategory
     private $works;
 
     /**
-     * @Assert\Image()
+     * @ORM\Column(type="string", length=255)
      */
     private $icone;
 
@@ -88,13 +88,23 @@ class WorkCategory
         return $this;
     }
 
-    public function setIcone(File $icone = null)
-    {
-        $this->icone = $icone;
-    }
-
-    public function getIcone()
+    public function getIcone(): ?string
     {
         return $this->icone;
+    }
+
+    public function setIcone(string $icone): self
+    {
+        $this->icone = $icone;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString() : string
+    {
+        return $this->getNom();
     }
 }

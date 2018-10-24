@@ -20,6 +20,10 @@ class ComposerStaticInitb8816b1ae352859cd04a4f4e63d4345d
             'Zend\\EventManager\\' => 18,
             'Zend\\Code\\' => 10,
         ),
+        'V' => 
+        array (
+            'Vich\\UploaderBundle\\' => 20,
+        ),
         'T' => 
         array (
             'Twig\\Extensions\\' => 16,
@@ -123,6 +127,10 @@ class ComposerStaticInitb8816b1ae352859cd04a4f4e63d4345d
         'Zend\\Code\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-code/src',
+        ),
+        'Vich\\UploaderBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/vich/uploader-bundle',
         ),
         'Twig\\Extensions\\' => 
         array (
@@ -424,6 +432,13 @@ class ComposerStaticInitb8816b1ae352859cd04a4f4e63d4345d
                 0 => __DIR__ . '/..' . '/ocramius/proxy-manager/src',
             ),
         ),
+        'M' => 
+        array (
+            'Metadata\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/jms/metadata/src',
+            ),
+        ),
         'D' => 
         array (
             'Doctrine\\DBAL\\' => 
@@ -444,6 +459,13 @@ class ComposerStaticInitb8816b1ae352859cd04a4f4e63d4345d
             'ComponentInstaller' => 
             array (
                 0 => __DIR__ . '/..' . '/robloach/component-installer/src',
+            ),
+        ),
+        'B' => 
+        array (
+            'Behat\\Transliterator' => 
+            array (
+                0 => __DIR__ . '/..' . '/behat/transliterator/src',
             ),
         ),
         'A' => 

@@ -19,7 +19,7 @@ class InformationExperiencesType extends AbstractType
     {
         $builder
             ->add('experiences', CollectionType::class, array(
-                'label' => "Compétences",
+                'label' => "Expériences pro",
                 'entry_type'   => ExperienceType::class,
                 'allow_add'    => true,
                 'allow_delete' => true,

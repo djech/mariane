@@ -57,7 +57,7 @@
                                     'value': attribute(entity, key),
                                     'join_separator': join_separator
                                 } %}
-                                <td>{% include 'filter.html.twig' with vars only %}</td>
+                                <td>{% include 'crud/filter.html.twig' with vars only %}</td>
                             </tr>
                         {% endif %}
                     {% endfor %}

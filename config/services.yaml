@@ -10,6 +10,8 @@ parameters:
         - App\Controller\LogicielController:Logiciel
         - App\Controller\FormationController:Formation
         - App\Controller\ExperienceController:Experience
+        - App\Controller\WorkCategoryController:WorkCategory
+        - App\Controller\WorkController:Work
 
 services:
     # default configuration for services in *this* file
@@ -47,3 +49,9 @@ services:
         class: App\Service\Crud
         arguments: ["@doctrine"]
         public: true
+
+    app.form.icon_choice_type:
+        class: App\Form\ChoiceIconType
+        # Symfony has already a container parameter to the kernel root directory.
+        tags:
+            - { name: form.type }

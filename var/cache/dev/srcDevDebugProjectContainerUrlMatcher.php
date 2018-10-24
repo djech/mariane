@@ -95,6 +95,10 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     '/formation/source' => array(array('_route' => 'formation_source', '_controller' => 'App\\Controller\\FormationController:sourceAction'), null, array('GET' => 0), null),
                     '/experience/' => array(array('_route' => 'experience_index', '_controller' => 'App\\Controller\\ExperienceController:indexAction'), null, array('GET' => 0), null),
                     '/experience/source' => array(array('_route' => 'experience_source', '_controller' => 'App\\Controller\\ExperienceController:sourceAction'), null, array('GET' => 0), null),
+                    '/workcategory/' => array(array('_route' => 'workcategory_index', '_controller' => 'App\\Controller\\WorkCategoryController:indexAction'), null, array('GET' => 0), null),
+                    '/workcategory/source' => array(array('_route' => 'workcategory_source', '_controller' => 'App\\Controller\\WorkCategoryController:sourceAction'), null, array('GET' => 0), null),
+                    '/work/' => array(array('_route' => 'work_index', '_controller' => 'App\\Controller\\WorkController:indexAction'), null, array('GET' => 0), null),
+                    '/work/source' => array(array('_route' => 'work_source', '_controller' => 'App\\Controller\\WorkController:sourceAction'), null, array('GET' => 0), null),
                 );
 
                 if (!isset($routes[$pathinfo])) {
@@ -167,6 +171,20 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                         .'|(\\d+)/edit(*:626)'
                         .'|(\\d+)(*:639)'
                     .')'
+                    .'|/work(?'
+                        .'|category/(?'
+                            .'|new(?:/(\\d+))?(*:682)'
+                            .'|(\\d+)(*:695)'
+                            .'|(\\d+)/edit(*:713)'
+                            .'|(\\d+)(*:726)'
+                        .')'
+                        .'|/(?'
+                            .'|new(?:/(\\d+))?(*:753)'
+                            .'|(\\d+)(*:766)'
+                            .'|(\\d+)/edit(*:784)'
+                            .'|(\\d+)(*:797)'
+                        .')'
+                    .')'
                 .')$}sD',
         );
 
@@ -202,6 +220,14 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                             608 => array(array('_route' => 'formation_show', '_controller' => 'App\\Controller\\FormationController:showAction'), array('id'), array('GET' => 0), null),
                             626 => array(array('_route' => 'formation_edit', '_controller' => 'App\\Controller\\FormationController:editAction'), array('id'), array('GET' => 0, 'POST' => 1), null),
                             639 => array(array('_route' => 'formation_delete', '_controller' => 'App\\Controller\\FormationController:deleteAction'), array('id'), array('DELETE' => 0), null),
+                            682 => array(array('_route' => 'workcategory_new', '_controller' => 'App\\Controller\\WorkCategoryController:newAction', 'id' => null), array('id'), array('GET' => 0, 'POST' => 1), null),
+                            695 => array(array('_route' => 'workcategory_show', '_controller' => 'App\\Controller\\WorkCategoryController:showAction'), array('id'), array('GET' => 0), null),
+                            713 => array(array('_route' => 'workcategory_edit', '_controller' => 'App\\Controller\\WorkCategoryController:editAction'), array('id'), array('GET' => 0, 'POST' => 1), null),
+                            726 => array(array('_route' => 'workcategory_delete', '_controller' => 'App\\Controller\\WorkCategoryController:deleteAction'), array('id'), array('DELETE' => 0), null),
+                            753 => array(array('_route' => 'work_new', '_controller' => 'App\\Controller\\WorkController:newAction', 'id' => null), array('id'), array('GET' => 0, 'POST' => 1), null),
+                            766 => array(array('_route' => 'work_show', '_controller' => 'App\\Controller\\WorkController:showAction'), array('id'), array('GET' => 0), null),
+                            784 => array(array('_route' => 'work_edit', '_controller' => 'App\\Controller\\WorkController:editAction'), array('id'), array('GET' => 0, 'POST' => 1), null),
+                            797 => array(array('_route' => 'work_delete', '_controller' => 'App\\Controller\\WorkController:deleteAction'), array('id'), array('DELETE' => 0), null),
                         );
 
                         list($ret, $vars, $requiredMethods, $requiredSchemes) = $routes[$m];
@@ -227,7 +253,7 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                         return $ret;
                 }
 
-                if (639 === $m) {
+                if (797 === $m) {
                     break;
                 }
                 $regex = substr_replace($regex, 'F', $m - $offset, 1 + strlen($m));

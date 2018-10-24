@@ -60,6 +60,18 @@ class KnpMenuBuilderListener
             'childOptions' => $event->getChildOptions()
         ])->setLabelAttribute('icon', 'fas fa-tachometer-alt');
 
+        $menu->addChild('workcategory', [
+            'route' => 'workcategory_index',
+            'label' => 'Catégories réalisations pro',
+            'childOptions' => $event->getChildOptions()
+        ])->setLabelAttribute('icon', 'fas fa-tachometer-alt');
+
+        $menu->addChild('work', [
+            'route' => 'work_index',
+            'label' => 'Réalisations pro',
+            'childOptions' => $event->getChildOptions()
+        ])->setLabelAttribute('icon', 'fas fa-tachometer-alt');
+
         $menu->addChild('retour', [
             'route' => 'home',
             'label' => 'Retour sur CV',
