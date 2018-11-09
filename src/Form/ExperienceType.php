@@ -15,9 +15,9 @@ class ExperienceType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('poste', TextType::class)
-            ->add('lieu', TextType::class)
-            ->add('dateDebut', DateType::class, array('required' => true,
+            ->add('poste', TextType::class, array('required' => false))
+            ->add('lieu', TextType::class, array('required' => false))
+            ->add('dateDebut', DateType::class, array('required' => false,
                 'label' => 'Date de début du poste',
                 'widget' => 'single_text',
                 'format' => 'MM/yyyy',
@@ -33,7 +33,7 @@ class ExperienceType extends AbstractType
                 'attr' => array(
                     'class' => 'form-field-normal experience js-datepicker',
                 )))
-            ->add('description', CKEditorType::class, array('config_name' => 'my_config'))
+            ->add('description', CKEditorType::class, array('config_name' => 'my_config', 'required' => false))
         ;
     }
 

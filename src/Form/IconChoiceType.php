@@ -57,7 +57,7 @@ class IconChoiceType extends AbstractType
         }
 
         // BTW we could configure the path to the "font-awesome.css".
-        $fontAwesome = file_get_contents($this->kernelRootDir.'/../public/build/fontawesome-free-5.4.1-web/css/fontawesome.css');
+        $fontAwesome = file_get_contents($this->kernelRootDir.'/../public/build/font-awesome/css/font-awesome.css');
 
         // this regular expression only works with uncompressed version (not works with "font-awesome.min.css")
         $pattern = '/\.(fa-(?:\w+(?:-)?)+):before\s+{\s*content:\s*"\\\\(.+)";\s+}/';

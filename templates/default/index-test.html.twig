@@ -1,0 +1,40 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}
+    Mariane Erard
+{% endblock %}
+
+{% block contenu %}
+
+    <div>
+        {% include 'default/section/profile.html.twig' %}
+
+        {% include 'default/section/about.html.twig' %}
+
+        {% if information.skills|length > 0 %}
+            {% include 'default/section/skill.html.twig' %}
+        {% endif %}
+
+        {% if information.logiciels|length > 0 %}
+            {% include 'default/section/logiciel.html.twig' %}
+        {% endif %}
+
+        {% include 'default/section/portfolio-test.html.twig' %}
+
+        {% if information.experiences|length > 0 %}
+            {% include 'default/section/experience.html.twig' %}
+        {% endif %}
+
+        {% if information.formations|length > 0 %}
+            {% include 'default/section/formation.html.twig' %}
+        {% endif %}
+
+        {% if information.references|length > 0 %}
+            {% include 'default/section/reference.html.twig' %}
+        {% endif %}
+
+        {% include 'default/section/contact.html.twig' %}
+
+    </div>
+
+{% endblock %}

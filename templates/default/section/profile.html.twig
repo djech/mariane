@@ -1,25 +1,22 @@
 <div class="profile-page">
     <div class="wrapper">
-        <div class="page-header page-header-small" filter-color="green">
-            <div class="page-header-image" data-parallax="true" style="background-image: url('build/images/cc-bg-1.jpg');"></div>
+        <div class="page-header page-header-small">
+            <div class="page-header-image" data-parallax="true" style="background-image: url('build/images/cc-bg-1.png');"></div>
             <div class="container">
                 <div class="content-center">
-                    <div class="cc-profile-image"><a href="#"><img src="{{asset('build/images/mariane_erard.jpg')}}" alt="Image"/></a></div>
+                    <div class="cc-profile-image"><a href="#"><img src="{{ vich_uploader_asset(information, 'photo') }}" alt="Image"/></a></div>
                     <div class="h2 title">{{ information.prenom|capitalize }} {{ information.nom|upper }}</div>
-                    <p class="category text-white">{{ information.description }}</p><a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Engagez moi</a><a class="btn btn-primary" href="{{asset('build/images/CV-ERARD-MARIANE-1.pdf')}}" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Télécharger CV</a>
+                    <p class="category text-white">{{ information.description }}</p>
+                    <a class="btn btn-primary smooth-scroll mr-2" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Me contacter</a>
+                    <a class="btn btn-primary smooth-scroll mr-2" href="{{asset('build/images/CV-ERARD-MARIANE.pdf')}}" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Télécharger CV</a>
+                    <a class="btn btn-primary smooth-scroll mr-2" href="{{asset('build/images/Book-Mariane.pdf')}}" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Télécharger Book</a>
                 </div>
             </div>
             <div class="section">
                 <div class="container">
                     <div class="button-container">
-                        <a class="btn btn-default btn-round btn-lg btn-icon" href="https://www.facebook.com/mariane.erard" rel="tooltip" title="Facebook">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                        <a class="btn btn-default btn-round btn-lg btn-icon" href="https://twitter.com/Marian_erard?lang=fr" rel="tooltip" title="Twitter">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                        <a class="btn btn-default btn-round btn-lg btn-icon" href="https://www.instagram.com/marianerard/" rel="tooltip" title="Instagram">
-                            <i class="fa fa-instagram"></i>
+                        <a class="btn btn-default btn-round btn-lg btn-icon" href="https://fr.linkedin.com/in/mariane-erard-3611b210b" rel="tooltip" title="LinkedIn">
+                            <i class="fa fa-linkedin"></i>
                         </a>
                     </div>
                 </div>

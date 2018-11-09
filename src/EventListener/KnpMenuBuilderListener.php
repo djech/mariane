@@ -72,6 +72,13 @@ class KnpMenuBuilderListener
             'childOptions' => $event->getChildOptions()
         ])->setLabelAttribute('icon', 'fas fa-tachometer-alt');
 
+        $menu->addChild('references', [
+            'route' => 'reference_edit',
+            'routeParameters' => array('id' => 1),
+            'label' => 'Références',
+            'childOptions' => $event->getChildOptions()
+        ])->setLabelAttribute('icon', 'fas fa-tachometer-alt');
+
         $menu->addChild('retour', [
             'route' => 'home',
             'label' => 'Retour sur CV',

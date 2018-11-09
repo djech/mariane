@@ -1,5 +1,9 @@
 {% extends "layout.html.twig" %}
 
+{% block title %}
+    Mariane Erard
+{% endblock %}
+
 {% block contenu %}
 
     <div>
@@ -7,17 +11,27 @@
 
         {% include 'default/section/about.html.twig' %}
 
-        {% include 'default/section/skill.html.twig' %}
+        {% if information.skills|length > 0 %}
+            {% include 'default/section/skill.html.twig' %}
+        {% endif %}
 
-        {% include 'default/section/logiciel.html.twig' %}
+        {% if information.logiciels|length > 0 %}
+            {% include 'default/section/logiciel.html.twig' %}
+        {% endif %}
 
         {% include 'default/section/portfolio.html.twig' %}
 
-        {% include 'default/section/experience.html.twig' %}
+        {% if information.experiences|length > 0 %}
+            {% include 'default/section/experience.html.twig' %}
+        {% endif %}
 
-        {% include 'default/section/formation.html.twig' %}
+        {% if information.formations|length > 0 %}
+            {% include 'default/section/formation.html.twig' %}
+        {% endif %}
 
-        {% include 'default/section/reference.html.twig' %}
+        {% if information.references|length > 0 %}
+            {% include 'default/section/reference.html.twig' %}
+        {% endif %}
 
         {% include 'default/section/contact.html.twig' %}
 

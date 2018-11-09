@@ -8,4 +8,4 @@ fm_elfinder:
                 roots:
                     uploads:
                         driver: LocalFileSystem
-                        path: uploads
+                        path: uploads/img

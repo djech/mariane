@@ -10,6 +10,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class InformationType extends AbstractType
 {
@@ -24,6 +25,10 @@ class InformationType extends AbstractType
             ->add('email', EmailType::class, array('required' => false))
             ->add('langue', TextType::class, array('required' => false))
             ->add('description', TextType::class, array('required' => false, 'label' => 'Petite description pro (figure en dessous du nom sur la page principale)'))
+            ->add('photo', VichImageType::class, [
+                'required' => false,
+                'allow_delete' => true
+            ]);
         ;
     }
 

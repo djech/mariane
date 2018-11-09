@@ -74,6 +74,11 @@ class Work
      */
     private $updatedAt;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $description;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -203,5 +208,17 @@ class Work
     public function __toString() : string
     {
         return $this->getTitre();
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
     }
 }

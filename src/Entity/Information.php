@@ -7,9 +7,12 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\OneToOne;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\InformationRepository")
+ * @Vich\Uploadable
  */
 class Information
 {
@@ -62,6 +65,35 @@ class Information
 
     /**
      *
+     * @Vich\UploadableField(mapping="photos", fileNameProperty="photoName", size="photoSize")
+     *
+     * @var File
+     */
+    private $photo;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     *
+     * @var string
+     */
+    private $photoName;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     *
+     * @var integer
+     */
+    private $photoSize;
+
+    /**
+     * @ORM\Column(type="datetime")
+     *
+     * @var \DateTime
+     */
+    private $updatedAt;
+    
+    /**
+     *
      * @OneToOne(targetEntity="App\Entity\About")
      *
      * @JoinColumn(name="about_id", referencedColumnName="id")
@@ -96,9 +128,16 @@ class Information
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Formation", mappedBy="information", cascade={"persist"})
      *
-     * @ORM\OrderBy({"dateFin" = "DESC"})
+     * @ORM\OrderBy({"dateFin" = "IS NULL","dateFin" = "DESC"})
      */
     private $formations;
+
+    /**
+     *
+     * @ORM\OneToMany(targetEntity="App\Entity\Reference", mappedBy="information", cascade={"persist"})
+     *
+     */
+    private $references;
 
     public function __construct()
     {
@@ -106,6 +145,7 @@ class Information
         $this->experiences = new ArrayCollection();
         $this->formations = new ArrayCollection();
         $this->logiciels = new ArrayCollection();
+        $this->references = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -365,4 +405,88 @@ class Information
     {
         return "Compétence n°";
     }
+
+    /**
+     * @return Collection|Reference[]
+     */
+    public function getReferences(): Collection
+    {
+        return $this->references;
+    }
+
+    public function addReference(Reference $reference): self
+    {
+        if (!$this->references->contains($reference)) {
+            $this->references[] = $reference;
+            $reference->setInformation($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReference(Reference $reference): self
+    {
+        if ($this->references->contains($reference)) {
+            $this->references->removeElement($reference);
+            // set the owning side to null (unless already changed)
+            if ($reference->getInformation() === $this) {
+                $reference->setInformation(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function setPhoto(?File $photo = null): void
+    {
+        $this->photo = $photo;
+
+        if (null !== $photo) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+    }
+
+    public function getPhoto(): ?File
+    {
+        return $this->photo;
+    }
+
+    public function getPhotoName(): ?string
+    {
+        return $this->photoName;
+    }
+
+    public function setPhotoName(?string $photoName): self
+    {
+        $this->photoName = $photoName;
+
+        return $this;
+    }
+
+    public function getPhotoSize(): ?int
+    {
+        return $this->photoSize;
+    }
+
+    public function setPhotoSize(?int $photoSize): self
+    {
+        $this->photoSize = $photoSize;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
 }

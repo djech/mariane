@@ -2,22 +2,44 @@
     <div class="container cc-education">
         <div class="h4 text-center mb-4 title">Expériences professionelles</div>
         {% for experience in information.experiences %}
-            <div class="card">
-                <div class="row">
-                    <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-                        <div class="card-body cc-education-header">
-                            <p>{{ experience.dateDebut|date('F Y') }} - {% if experience.dateFin is null %}Aujourd'hui{% else %}{{ experience.dateFin|date('F Y') }}{% endif %}</p>
-                            <div class="h5">{{ experience.lieu }}</div>
+            {% if experience.dateFin is null %}
+                <div class="card">
+                    <div class="row">
+                        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+                            <div class="card-body cc-education-header">
+                                <p>{{ experience.dateDebut|localizeddate('none','none',null,null,'MMMM Y') }} - {% if experience.dateFin is null %}Aujourd'hui{% else %}{{ experience.dateFin|localizeddate('none','none',null,null,'MMMM Y') }}{% endif %}</p>
+                                <div class="h5">{{ experience.lieu }}</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-                        <div class="card-body">
-                            <div class="h5">{{ experience.poste }}</div>
-                            <p>{{ experience.description|raw }}</p>
+                        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+                            <div class="card-body">
+                                <div class="h5">{{ experience.poste }}</div>
+                                <p>{{ experience.description|raw }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            {% endif %}
+        {% endfor %}
+        {% for experience in information.experiences %}
+            {% if experience.dateFin is not null %}
+                <div class="card">
+                    <div class="row">
+                        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+                            <div class="card-body cc-education-header">
+                                <p>{{ experience.dateDebut|localizeddate('none','none',null,null,'MMMM Y') }} - {% if experience.dateFin is null %}Aujourd'hui{% else %}{{ experience.dateFin|localizeddate('none','none',null,null,'MMMM Y') }}{% endif %}</p>
+                                <div class="h5">{{ experience.lieu }}</div>
+                            </div>
+                        </div>
+                        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+                            <div class="card-body">
+                                <div class="h5">{{ experience.poste }}</div>
+                                <p>{{ experience.description|raw }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
         {% endfor %}
     </div>
 </div>

@@ -1,0 +1,108 @@
+<div class="section" id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 ml-auto mr-auto">
+                <div class="h4 text-center mb-4 title">Portfolio</div>
+                <div class="nav-align-center">
+                    <ul class="nav nav-pills nav-pills-primary" role="tablist">
+                        {% set counter = 0 %}
+                        {% for workCategory in workCategories %}
+                            {% if workCategory|categoryempty(information.portfolio.works) == true %}
+                                <li class="nav-item"><a class="nav-link {% if counter == 0 %}active{% endif %}" data-toggle="tab" href="#{{ workCategory.id }}" role="tablist"><i class="fa {{ workCategory.icone }}" aria-hidden="true"></i></a></li>
+                                {% set counter = counter + 1 %}
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content gallery mt-5">
+            {% set counter = 0 %}
+            {% for workCategory in workCategories %}
+                <div class="tab-pane {% if counter == 0 %}active{% endif %}" id="{{ workCategory.id }}">
+                    <div class="h6 text-center mb-4 title">{{ workCategory.nom }}</div>
+                    <div class="ml-auto mr-auto">
+                        <div class="row">
+
+                            {% for work in information.portfolio.works %}
+
+                                {% if work.category == workCategory %}
+
+                                    {% set extension = work.previewName|split('.') %}
+
+                                    {% if extension[extension|length-1] == 'pdf' %}
+
+                                        <div class="col-md-{% if work.description != null %}12 row{% else %}6{% endif %}">
+                                            {% if work.description != null %}<div class="col-md-6">{% endif %}
+                                            <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                                <a href="{{ vich_uploader_asset(work, 'preview') }}">
+                                                    <figure class="cc-effect"><img src="{{ work|pdfthumbnail(project_dir,vich_uploader_asset(work, 'preview')) }}" alt="Image"/>
+                                                        <figcaption>
+                                                            <div class="h4">{{ work.titre }}</div>
+                                                        </figcaption>
+                                                    </figure>
+                                                </a>
+                                            </div>
+                                            {% if work.description != null %}
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                                        {{ work.description|raw }}
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+
+                                    {% elseif extension[extension|length-1] == "mp4" %}
+
+                                        <div class="col-md-12">
+                                            <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                                <video controls>
+                                                    <source src="{{ vich_uploader_asset(work, 'preview') }}" type="video/mp4">
+                                                </video>
+                                            </div>
+                                        </div>
+                                        {% if work.description != null %}
+                                            <div class="col-md-12">
+                                                <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                                    {{ work.description|raw }}
+                                                </div>
+                                            </div>
+                                        {% endif %}
+
+                                    {% else %}
+
+                                        <div class="col-md-{% if work.description != null %}12 row{% else %}6{% endif %}">
+                                            {% if work.description != null %}<div class="col-md-6">{% endif %}
+                                            <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                                <a href="{{ work.lien }}">
+                                                    <figure class="cc-effect"><img src="{{ vich_uploader_asset(work, 'preview') }}" alt="Image"/>
+                                                        <figcaption>
+                                                            <div class="h4">{{ work.titre }}</div>
+                                                        </figcaption>
+                                                    </figure>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        {% if work.description != null %}
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                                                    {{ work.description|raw }}
+                                                </div>
+                                            </div>
+                                        {% endif %}
+
+                                    {% endif %}
+
+                                {% endif %}
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% set counter = counter + 1 %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

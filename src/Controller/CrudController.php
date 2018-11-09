@@ -252,10 +252,8 @@ abstract class CrudController extends Controller
 
                     return $this->redirectToRoute($this->showRoute, array('id' => $entity->getId()));
                 } catch (UniqueConstraintViolationException $e) {
-                    $this->get('logger')->error($e->getMessage());
                     $this->addFlash('danger', $this->textUniqueConstraintViolation);
                 } catch (NotNullConstraintViolationException $e) {
-                    $this->get('logger')->error($e->getMessage());
                     $this->addFlash('danger', $this->textNotNullConstraintViolation);
                 }
             } else {
@@ -361,13 +359,10 @@ abstract class CrudController extends Controller
                     // Redirection vers la même page
                     $this->redirect($request->getUri());
                 } catch (UniqueConstraintViolationException $e) {
-                    $this->get('logger')->error($e->getMessage());
                     $this->addFlash('danger', $this->textUniqueConstraintViolation);
                 } catch (NotNullConstraintViolationException $e) {
-                    $this->get('logger')->error($e->getMessage());
                     $this->addFlash('danger', $this->textNotNullConstraintViolation);
                 } catch (ForeignKeyConstraintViolationException $e) {
-                    $this->get('logger')->error($e->getMessage());
                     $this->addFlash('danger', $this->textErrorForeignKeyConstraint);
 
                     $key = $crud::subStr($e->getMessage(), 'Key (id)=(', ')');
@@ -420,7 +415,6 @@ abstract class CrudController extends Controller
 
                 $manager->flush($entity);
             } catch (ForeignKeyConstraintViolationException $e) {
-                $this->get('logger')->error($e->getMessage());
                 $this->addFlash('danger', $crud->getTitle().': '.$this->textErrorForeignKeyConstraint);
 
                 $key = $crud::subStr($e->getMessage(), 'Key (id)=(', ')');

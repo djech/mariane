@@ -4,8 +4,12 @@
 $(document).ready(function() {
   AOS.init( {
     // uncomment below for on-scroll animations to played only once
-    // once: true  
+    //once: true
   }); // initialize animate on scroll library
+});
+
+$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    AOS.refresh(); // refresh animate on scroll library
 });
 
 // Smooth scroll for links with hashes

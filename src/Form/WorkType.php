@@ -41,6 +41,7 @@ class WorkType extends AbstractType
             ))
             ->add('titre', TextType::class)
             ->add('lien', TextType::class)
+            ->add('description', CKEditorType::class, array('config_name' => 'my_config', 'required' => false))
             ->add('date', DateType::class, array('required' => true,
                 'label' => 'Date',
                 'widget' => 'single_text',
@@ -50,7 +51,7 @@ class WorkType extends AbstractType
                     'class' => 'form-field-normal work js-datepicker',
                 )))
             ->add('preview', VichImageType::class, [
-                'required' => true,
+                'required' => false,
                 'allow_delete' => true
             ]);
         ;

@@ -4,6 +4,7 @@ $(document).ready(function() {
     setEmbedForm($('div#information_logiciels_logiciels'), 'logiciel');
     setEmbedForm($('div#information_formations_formations'), 'formation');
     setEmbedForm($('div#information_experiences_experiences'), 'expérience professionnelle');
+    setEmbedForm($('div#information_references_references'), 'référence');
 
     /**
      * Prépare un champ de type Collection (ajout bouton d'ajout, de suppression et ajout titre)

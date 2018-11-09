@@ -2,7 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Information;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 /**
  * Created by PhpStorm.
@@ -41,5 +44,19 @@ class WorkController extends CrudController
                 ->addLabel('Lien');
 
         parent::initialize();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function hydrateEntity($entity, bool $new, bool $submitted)
+    {
+        if ($new) {
+            if ($submitted) {
+                // Ajout portfolio
+                $information = $this->getDoctrine()->getRepository(Information::class)->findOrCreateOne();
+                $entity->setPortfolio($information->getPortfolio());
+            }
+        }
     }
 }

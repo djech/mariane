@@ -2,11 +2,12 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('build/fontawesome-free-5.4.1-web/css/fontawesome.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/font-awesome/css/font-awesome.css') }}">
     <link rel="stylesheet" href="{{ asset('build/datepicker/datepicker3.css') }}">
     {% if use_datatable is defined and use_datatable == true %}
         <link href="{{ asset('build/datatables/dataTables.bootstrap.css') }}" rel="stylesheet"/>
     {% endif %}
+
 {% endblock %}
 
 {% block logo_path %}{{ path('information'|route_alias) }}{% endblock %}
@@ -101,4 +102,5 @@
             })();
         </script>
     {% endif %}
+
 {% endblock %}
